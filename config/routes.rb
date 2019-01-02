@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  resources :artworks
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  namespace :api do
+    resources :artworks, :except => [:new, :edit] #no need for new and edit routes, because react renders the respective forms
+  end
+
 end
