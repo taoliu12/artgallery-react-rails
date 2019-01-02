@@ -335,3 +335,34 @@ Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
 ActiveRecord::RecordNotFound (Couldn't find Artwork with 'id'=2):
   
 app/controllers/api/artworks_controller.rb:8:in `show'
+Started PUT "/api/artworks/1" for 192.168.1.3 at 2019-01-02 12:23:59 -0800
+Processing by Api::ArtworksController#update as */*
+  Parameters: {"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa", "id"=>"1", "artwork"=>{"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa"}}
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artworks_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/artworks_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/artworks_controller.rb:23
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/api/artworks/1" for 192.168.1.3 at 2019-01-02 12:24:05 -0800
+Processing by Api::ArtworksController#update as */*
+  Parameters: {"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa", "id"=>"1", "artwork"=>{"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa"}}
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artworks_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/artworks_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/artworks_controller.rb:23
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 192.168.1.3 at 2019-01-02 12:31:45 -0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/2.5.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.5.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (4.4ms)
+Completed 200 OK in 37ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
