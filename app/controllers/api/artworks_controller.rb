@@ -28,7 +28,12 @@ class Api::ArtworksController < ApplicationController
     end
 
     def destroy
-        
+        @artwork = Artwork.find(params[:id])
+        if @artwork.destroy
+            render json: 204
+        else
+            render json: { message: 'Error' }, status: 400
+        end
     end
 
     private
