@@ -211,3 +211,101 @@ Processing by Api::ArtworksController#show as HTML
 Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.4ms)
 
 
+Started POST "/api/artworks/" for 192.168.1.3 at 2019-01-02 00:49:05 -0800
+Processing by Api::ArtworksController#create as */*
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: artwork):
+  
+app/controllers/api/artworks_controller.rb:37:in `artwork_params'
+app/controllers/api/artworks_controller.rb:13:in `create'
+Started POST "/api/artworks/" for 192.168.1.3 at 2019-01-02 00:49:37 -0800
+Processing by Api::ArtworksController#create as */*
+  Parameters: {"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa", "artwork"=>{"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa"}}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/api/artworks_controller.rb:13:in `create'
+Started POST "/api/artworks/" for 192.168.1.3 at 2019-01-02 00:49:50 -0800
+Processing by Api::ArtworksController#create as */*
+  Parameters: {"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: artwork):
+  
+app/controllers/api/artworks_controller.rb:37:in `artwork_params'
+app/controllers/api/artworks_controller.rb:13:in `create'
+Started POST "/api/artworks/" for 192.168.1.3 at 2019-01-02 00:49:56 -0800
+Processing by Api::ArtworksController#create as */*
+  Parameters: {"------WebKitFormBoundaryRWysvN9jD9D6nTkH\r\nContent-Disposition: form-data; name"=>"\"title\"\r\n\r\nLisa\r\n------WebKitFormBoundaryRWysvN9jD9D6nTkH\r\nContent-Disposition: form-data; name=\"description\"\r\n\r\nLisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world\r\n------WebKitFormBoundaryRWysvN9jD9D6nTkH\r\nContent-Disposition: form-data; name=\"url\"\r\n\r\nLisa\r\n------WebKitFormBoundaryRWysvN9jD9D6nTkH--\r\n"}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: artwork):
+  
+app/controllers/api/artworks_controller.rb:37:in `artwork_params'
+app/controllers/api/artworks_controller.rb:13:in `create'
+Started POST "/api/artworks/" for 192.168.1.3 at 2019-01-02 00:51:24 -0800
+Processing by Api::ArtworksController#create as */*
+  Parameters: {"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa", "artwork"=>{"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/api/artworks_controller.rb:13:in `create'
+Started POST "/api/artworks/" for 192.168.1.3 at 2019-01-02 00:51:52 -0800
+Processing by Api::ArtworksController#create as */*
+  Parameters: {"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa", "artwork"=>{"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa"}}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.7ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/api/artworks_controller.rb:13:in `create'
+Started POST "/api/artworks/" for 192.168.1.3 at 2019-01-02 00:52:04 -0800
+Processing by Api::ArtworksController#create as */*
+  Parameters: {"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa", "artwork"=>{"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/api/artworks_controller.rb:13:in `create'
+Started POST "/api/artworks/" for 192.168.1.3 at 2019-01-02 01:02:51 -0800
+Processing by Api::ArtworksController#create as */*
+  Parameters: {"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa", "artwork"=>{"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/artworks_controller.rb:14
+  [1m[36mArtwork Create (0.5ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "description", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Lisa"], ["description", "Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world"], ["url", "Lisa"], ["created_at", "2019-01-02 09:02:51.820779"], ["updated_at", "2019-01-02 09:02:51.820779"]]
+  ↳ app/controllers/api/artworks_controller.rb:14
+  [1m[35m (138.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/artworks_controller.rb:14
+Completed 200 OK in 161ms (Views: 0.4ms | ActiveRecord: 141.5ms)
+
+
+Started PATCH "/api/artworks/1" for 192.168.1.3 at 2019-01-02 01:03:07 -0800
+Processing by Api::ArtworksController#update as */*
+  Parameters: {"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa", "id"=>"1", "artwork"=>{"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa"}}
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artworks_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/artworks_controller.rb:23
+  [1m[36mArtwork Update (1.7ms)[0m  [1m[33mUPDATE "artworks" SET "title" = ?, "description" = ?, "url" = ?, "updated_at" = ? WHERE "artworks"."id" = ?[0m  [["title", "Lisa"], ["description", "Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world"], ["url", "Lisa"], ["updated_at", "2019-01-02 09:03:07.348523"], ["id", 1]]
+  ↳ app/controllers/api/artworks_controller.rb:23
+  [1m[35m (159.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/artworks_controller.rb:23
+Completed 200 OK in 166ms (Views: 0.3ms | ActiveRecord: 161.5ms)
+
+
