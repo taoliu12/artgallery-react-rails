@@ -5,7 +5,8 @@ class Api::ArtworksController < ApplicationController
     end
 
     def show
-        
+        @artwork = Artwork.find(params[:id])
+        render json: @artwork
     end
 
     def create
