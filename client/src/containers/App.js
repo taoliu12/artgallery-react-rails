@@ -6,7 +6,7 @@ const artworks = [
     {
         title: 'a',
         description: 'b',
-        url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/687px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg'
+        url: 'https://www.gamersdecide.com/sites/default/files/styles/news_images/public/content-images/news/2017/04/27/final-fantasy-15-pc-square-enix-director-wants-bring-ff15-pc/ff15_pc.jpg'
     },
     {
         title: 'b',
@@ -23,6 +23,22 @@ const artworks = [
 
 
 class App extends Component {
+    
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            artworks: []
+        }
+    }
+
+    componentDidMount() {
+        fetch('http://192.168.1.23:3000/api/artworks')
+        .then(response => response.json())
+        .then(artworks => this.setState( { artworks } ));
+        console.log(this.state);
+    }
+
     render() {
         return (
             
