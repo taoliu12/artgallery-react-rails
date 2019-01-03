@@ -15,11 +15,11 @@ class App extends Component {
     }
 
     componentDidMount() {
-        console.log(process.env.REACT_APP_API_URL)
-        console.log('a')
-        // fetch(`${API_URL}/artworks`)
-        // .then(response => response.json())
-        // .then(artworks => this.setState({ artworks }));
+        // console.log(API_URL)
+        // console.log('a')
+        fetch(`${API_URL}/artworks`)
+        .then(response => response.json())
+        .then(artworks => this.setState({ artworks }));
     }
 
     render() {
