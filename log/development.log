@@ -376,3 +376,76 @@ Processing by Api::ArtworksController#index as */*
 Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/api/artworks/1" for 192.168.1.3 at 2019-01-02 21:31:06 -0800
+Processing by Api::ArtworksController#show as */*
+  Parameters: {"id"=>"1", "artwork"=>{}}
+  [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artworks_controller.rb:8
+Completed 200 OK in 81ms (Views: 0.7ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/api/artworks/1" for 192.168.1.3 at 2019-01-02 21:31:24 -0800
+Processing by Api::ArtworksController#destroy as */*
+  Parameters: {"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa", "id"=>"1", "artwork"=>{"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa"}}
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artworks_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/artworks_controller.rb:32
+  [1m[36mArtwork Destroy (2.5ms)[0m  [1m[31mDELETE FROM "artworks" WHERE "artworks"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/api/artworks_controller.rb:32
+  [1m[35m (194.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/artworks_controller.rb:32
+Completed 200 OK in 202ms (Views: 0.2ms | ActiveRecord: 197.5ms)
+
+
+Started POST "/api/artworks" for 192.168.1.3 at 2019-01-02 21:32:38 -0800
+Processing by Api::ArtworksController#create as */*
+  Parameters: {"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci ", "url"=>"Lisa", "artwork"=>{"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci ", "url"=>"Lisa"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/artworks_controller.rb:14
+  [1m[36mArtwork Create (1.9ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "description", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Lisa"], ["description", "Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci "], ["url", "Lisa"], ["created_at", "2019-01-03 05:32:38.196477"], ["updated_at", "2019-01-03 05:32:38.196477"]]
+  ↳ app/controllers/api/artworks_controller.rb:14
+  [1m[35m (127.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/artworks_controller.rb:14
+Completed 200 OK in 133ms (Views: 0.4ms | ActiveRecord: 129.4ms)
+
+
+Started GET "/api/artworks" for 192.168.1.3 at 2019-01-02 21:32:41 -0800
+Processing by Api::ArtworksController#index as */*
+  Parameters: {"artwork"=>{}}
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/api/artworks_controller.rb:4
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/artworks/1" for 192.168.1.3 at 2019-01-02 21:42:50 -0800
+Processing by Api::ArtworksController#show as */*
+  Parameters: {"id"=>"1", "artwork"=>{}}
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artworks_controller.rb:8
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artwork with 'id'=1):
+  
+app/controllers/api/artworks_controller.rb:8:in `show'
+Started GET "/api/artworks/" for 192.168.1.3 at 2019-01-02 21:42:58 -0800
+Processing by Api::ArtworksController#index as */*
+  Parameters: {"artwork"=>{}}
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/api/artworks_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/artworks/" for 192.168.1.3 at 2019-01-02 21:43:34 -0800
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::ArtworksController#index as */*
+  Parameters: {"artwork"=>{}}
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/api/artworks_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 73ms (Views: 71.4ms | ActiveRecord: 1.2ms)
+
+
