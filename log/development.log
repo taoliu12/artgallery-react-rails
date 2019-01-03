@@ -449,3 +449,109 @@ Processing by Api::ArtworksController#index as */*
 Completed 200 OK in 73ms (Views: 71.4ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/api/artworks" for 192.168.1.3 at 2019-01-03 00:07:49 -0800
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::ArtworksController#index as */*
+  [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/api/artworks_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+Completed 200 OK in 299ms (Views: 228.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/artworks" for 192.168.1.3 at 2019-01-03 00:08:44 -0800
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::ArtworksController#index as */*
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/api/artworks_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.73ms)
+Completed 200 OK in 111ms (Views: 96.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/api/artworks" for 192.168.1.3 at 2019-01-03 00:09:19 -0800
+Processing by Api::ArtworksController#create as */*
+  Parameters: {"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa", "artwork"=>{"title"=>"Lisa", "description"=>"Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world", "url"=>"Lisa"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/artworks_controller.rb:14
+  [1m[36mArtwork Create (41.9ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "description", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Lisa"], ["description", "Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world"], ["url", "Lisa"], ["created_at", "2019-01-03 08:09:19.025549"], ["updated_at", "2019-01-03 08:09:19.025549"]]
+  ↳ app/controllers/api/artworks_controller.rb:14
+  [1m[35m (484.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/artworks_controller.rb:14
+[active_model_serializers] Rendered ArtworkSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 200 OK in 534ms (Views: 1.2ms | ActiveRecord: 526.4ms)
+
+
+Started GET "/api/artworks" for 192.168.1.3 at 2019-01-03 00:09:34 -0800
+Processing by Api::ArtworksController#index as */*
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/api/artworks_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.7ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/artworks" for 192.168.1.3 at 2019-01-03 00:10:25 -0800
+Processing by Api::ArtworksController#index as */*
+  Parameters: {"artwork"=>{}}
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/api/artworks_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.8ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/artworks" for 192.168.1.3 at 2019-01-03 00:11:26 -0800
+Processing by Api::ArtworksController#index as */*
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/api/artworks_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.01ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/artworks" for 192.168.1.3 at 2019-01-03 00:12:52 -0800
+Processing by Api::ArtworksController#index as */*
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/api/artworks_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.78ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/artworks" for 192.168.1.3 at 2019-01-03 00:20:49 -0800
+Processing by Api::ArtworksController#index as */*
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/api/artworks_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.8ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/artworks" for 192.168.1.3 at 2019-01-03 00:21:05 -0800
+Processing by Api::ArtworksController#index as */*
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/api/artworks_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.85ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/artworks" for 192.168.1.3 at 2019-01-03 00:22:13 -0800
+Processing by Api::ArtworksController#index as */*
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/api/artworks_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.63ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/artworks" for 192.168.1.3 at 2019-01-03 00:22:47 -0800
+Processing by Api::ArtworksController#index as */*
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/api/artworks_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/artworks" for 192.168.1.3 at 2019-01-03 12:07:59 -0800
+Processing by Api::ArtworksController#index as */*
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/api/artworks_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.69ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.7ms)
+
+
