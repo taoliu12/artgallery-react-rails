@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Artworks from './Artworks';
+import ArtworkForm from './ArtworkForm';
 
 class App extends Component {
     
@@ -15,7 +16,7 @@ class App extends Component {
     render() {
         return (
             <div className='App'>
-                App Container
+                <ArtworkForm />
                 <Artworks artworks={this.state.artworks}/>
             </div>
         )
