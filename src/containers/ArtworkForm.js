@@ -4,7 +4,7 @@ export default class ArtworkForm extends Component {
 
     render() {
         return (
-            <div>
+            <div className='submit-artwork-form'>
                 <h3>Submit a new artwork</h3>
                 <form>
                     Title: <input type='text'/>
