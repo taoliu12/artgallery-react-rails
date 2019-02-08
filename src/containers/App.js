@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Artworks from './Artworks';
 import ArtworkForm from './ArtworkForm';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
     
@@ -16,6 +17,7 @@ class App extends Component {
     render() {
         return (
             <div className='App'>
+                <h1>React Art Gallery</h1>
                 <ArtworkForm />
                 <Artworks artworks={this.state.artworks}/>
             </div>
