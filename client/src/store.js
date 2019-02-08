@@ -7,9 +7,11 @@ import {
 import thunk from 'redux-thunk';
   
 import artworks from './reducers/artworks';
+import artworkFormData from './reducers/artworkFormData';
 
 const reducers = combineReducers({
-    artworks: artworks
+    artworks: artworks,
+    artworkFormData: artworkFormData
 })
 
 const middleware = [thunk];
