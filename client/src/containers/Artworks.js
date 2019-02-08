@@ -5,20 +5,27 @@ import ArtworkForm from './ArtworkForm';
 import { connect } from 'react-redux';
 import { getArtworks } from '../actions/artworks';
 
-const Artworks = (props) => (
-    <div>
-        <div className='ArtworksContainer'>
-            <h3>Artworks</h3>
-            {props.artworks.map((artwork) => (
-                <ArtworkCard artwork={artwork} />
-                )
-            )}
-            
-            
-        </div>
-        <ArtworkForm />
-    </div>
-);
+class Artworks extends Component {
+
+    componentDidMount() {
+        this.props.getArtworks();
+    }
+
+    render() {
+        return (
+            <div>
+                <div className='ArtworksContainer'>
+                    <h3>Artworks</h3>
+                    {this.props.artworks.map((artwork) => (
+                        <ArtworkCard artwork={artwork} />
+                        )
+                    )}
+                </div>
+                <ArtworkForm />
+            </div>
+        )
+    }
+}
 
 const mapStateToProps = (state) => ({
     artworks: state.artworks
