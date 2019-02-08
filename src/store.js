@@ -6,20 +6,11 @@ import {
 
 import thunk from 'redux-thunk';
   
-// import artworks from './reducers/artworks';
+import artworks from './reducers/artworks';
 // import artworkFormData from './reducers/artworkFormData';
 
-const artworksReducer = (state = [], action) => {
-    switch(action.type) {
-        case 'ADD_ARTWORK':
-            return action.artworks;
-        default: 
-            return state;
-    }
-}
-
 const reducers = combineReducers({
-    artworks: artworksReducer,
+    artworks: artworks
 })
 
 const middleware = [thunk];
