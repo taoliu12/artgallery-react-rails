@@ -19,4 +19,8 @@ const Artworks = (props) => (
     </div>
 );
 
-export default connect()(Artworks);
+const mapStateToProps = (state) => ({
+    artworks: state.artworks
+})
+
+export default connect(mapStateToProps)(Artworks);
