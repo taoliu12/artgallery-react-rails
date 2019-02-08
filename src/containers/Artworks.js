@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Artworks.css';
 import ArtworkCard from "../components/ArtworkCard";
 import ArtworkForm from './ArtworkForm';
+import { connect } from 'react-redux'
 
 const Artworks = (props) => (
     <div>
@@ -18,4 +19,4 @@ const Artworks = (props) => (
     </div>
 );
 
-export default Artworks;
+export default connect()(Artworks);
