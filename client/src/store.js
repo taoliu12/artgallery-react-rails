@@ -11,10 +11,10 @@ import thunk from 'redux-thunk';
 
 const artworksReducer = (state = [], action) => {
     switch(action.type) {
-        case: 'ADD_ARTWORK'
-            return action.artworks
+        case 'ADD_ARTWORK':
+            return action.artworks;
         default: 
-            return state
+            return state;
     }
 }
 
@@ -26,6 +26,6 @@ const middleware = [thunk];
 
 export default createStore(
     reducers,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     applyMiddleware(...middleware),
+    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
