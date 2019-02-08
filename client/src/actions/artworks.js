@@ -1,6 +1,6 @@
 // thunk action
-export default dispatch => {
-    return () = {
+export const getArtworks() => {
+    return dispatch => {
         return (
             fetch()
             .then(response => response.json)
@@ -11,6 +11,6 @@ export default dispatch => {
 
 // action creator
 const displayArtworks = artworks => ({
-    type:
+    type: 'GET_ARTWORKS'
     artworks
 })
