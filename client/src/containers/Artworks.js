@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Artworks.css';
 import ArtworkCard from "../components/ArtworkCard";
-import ArtworkForm from './ArtworkForm';
 import { connect } from 'react-redux';
 import { getArtworks } from '../actions/artworks';
 
@@ -21,7 +20,6 @@ class Artworks extends Component {
                         )
                     )}
                 </div>
-                <ArtworkForm />
             </div>
         )
     }
