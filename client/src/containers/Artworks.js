@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './Artworks.css';
 import ArtworkCard from "../components/ArtworkCard";
 import ArtworkForm from './ArtworkForm';
-import { connect } from 'react-redux'
-import { getArtworks } from './actions/artworks'
+import { connect } from 'react-redux';
+import { getArtworks } from '../actions/artworks';
 
 const Artworks = (props) => (
     <div>
@@ -24,8 +24,8 @@ const mapStateToProps = (state) => ({
     artworks: state.artworks
 })
 
-const mapDispatchToProps = ({
-    getArtworks
-})
+// const mapDispatchToProps = ({
+//     getArtworks
+// })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Artworks);
+export default connect(mapStateToProps, { getArtworks })(Artworks);
