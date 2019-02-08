@@ -1,6 +1,6 @@
 export default (state = [], action) => {
     switch(action.type) {
-        case 'ADD_ARTWORK':
+        case 'GET_ARTWORKS':
             return action.artworks;
         default: 
             return state;
