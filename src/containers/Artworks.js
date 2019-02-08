@@ -31,8 +31,8 @@ const mapStateToProps = (state) => ({
     artworks: state.artworks
 })
 
-// const mapDispatchToProps = ({
-//     getArtworks
-// })
+const mapDispatchToProps = ({
+    getArtworks
+})
 
-export default connect(mapStateToProps, { getArtworks })(Artworks);
+export default connect(mapStateToProps, mapDispatchToProps)(Artworks);
