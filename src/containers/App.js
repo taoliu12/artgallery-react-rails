@@ -18,8 +18,12 @@ class App extends Component {
         return (
             <div className='App'>
                 <h1>React Art Gallery</h1>
-                <ArtworkForm />
-                <Artworks artworks={this.state.artworks}/>
+                <Router>
+                    <React.Fragment>
+                        <Route exact path='/' component={Artworks} />
+                        <Route exact path='/new' component={ArtworkForm} />
+                    </React.Fragment>
+                </Router>
             </div>
         )
     }
