@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 
 class ArtworkForm extends Component {
 
+    handleOnChange = () => {
+        //update artworkFormData
+    }
+
     render() {
         return (
             <div className='submit-artwork-form'>
@@ -10,7 +14,12 @@ class ArtworkForm extends Component {
                 <form>
                     <div>
                         Title: 
-                        <input type='text' name='title' value={this.props.artworkFormData.title}/>
+                        <input 
+                            type='text'
+                            name='title' 
+                            value={this.props.artworkFormData.title}
+                            onChange={this.handleOnChange}
+                        />
                     </div>
                     
                 </form>
