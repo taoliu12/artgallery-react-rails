@@ -19,12 +19,18 @@ export const getArtworks = () => {
 
 export const createArtwork = (artwork) => {
     return dispatch => {
-        debugger
+        
         fetch(`${API_URL}/artworks`, {
             method: 'post',
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify(artwork)
             }
         )
-        // .then()
+        .then(response => response.json())
+        .then(artwork => {
+            debugger
+        })
     }
 }
