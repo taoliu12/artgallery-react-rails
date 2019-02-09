@@ -6,7 +6,7 @@ const displayArtworks = artworks => ({
     artworks
 })
 
-// thunk action
+// thunk actions
 export const getArtworks = () => {
     return dispatch => {
         return (
@@ -14,5 +14,17 @@ export const getArtworks = () => {
             .then(response => response.json())
             .then(artworks => dispatch(displayArtworks(artworks)))
         )
+    }
+}
+
+export const createArtwork = (artwork) => {
+    return dispatch => {
+        debugger
+        fetch(`${API_URL}/artworks`, {
+            method: 'post',
+            body: JSON.stringify(artwork)
+            }
+        )
+        // .then()
     }
 }
