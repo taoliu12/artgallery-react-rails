@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import updateArtworkFormData from '../actions/artworkForm'
+import { createArtwork } from '../actions/artworks'
 
 class ArtworkForm extends Component {
 
@@ -13,8 +14,8 @@ class ArtworkForm extends Component {
 
     handleOnSubmit = (e) => {
         e.preventDefault();
-        console.log(this.props.artworkFormData)
-        // this.props.createArtwork(artworkFormData);
+        // console.log(this.props.artworkFormData)
+        this.props.createArtwork(this.props.artworkFormData);
     }
 
     render() {
@@ -60,4 +61,4 @@ const mapStateToProps = (state) => ({
     artworkFormData: state.artworkFormData
 })
 
-export default connect(mapStateToProps, { updateArtworkFormData })(ArtworkForm)
+export default connect(mapStateToProps, { updateArtworkFormData, createArtwork })(ArtworkForm)
