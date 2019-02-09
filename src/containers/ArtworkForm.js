@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import updateArtworkFormData from '../actions/artworkForm'
 
 class ArtworkForm extends Component {
 
@@ -7,7 +8,7 @@ class ArtworkForm extends Component {
         const name = e.target.name
         const value = e.target.value
         const updatedData = Object.assign({}, this.props.artworkFormData, { [name]: value });
-        this.props.action(updatedData);
+        this.props.updateArtworkFormData(updatedData);
     }
 
     render() {
@@ -31,8 +32,10 @@ class ArtworkForm extends Component {
     }
 }
 
+
+
 const mapStateToProps = (state) => ({
     artworkFormData: state.artworkFormData
 })
 
-export default connect(mapStateToProps)(ArtworkForm)
+export default connect(mapStateToProps, { updateArtworkFormData })(ArtworkForm)
