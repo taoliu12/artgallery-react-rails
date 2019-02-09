@@ -6,15 +6,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 
 class App extends Component {
-    
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            artworks: []
-        }
-    }
-
     render() {
         return (
             <div className='App'>
