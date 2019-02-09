@@ -22,8 +22,23 @@ class ArtworkForm extends Component {
                             type='text'
                             name='title' 
                             value={this.props.artworkFormData.title}
-                            onChange={this.handleOnChange}
-                        />
+                            onChange={this.handleOnChange} />
+                    </div>
+                    <div>
+                        Description: 
+                        <input 
+                            type='text'
+                            name='description' 
+                            value={this.props.artworkFormData.description}
+                            onChange={this.handleOnChange} />
+                    </div>
+                    <div>
+                        Image URL: 
+                        <input 
+                            type='text'
+                            name='url' 
+                            value={this.props.artworkFormData.url}
+                            onChange={this.handleOnChange} />
                     </div>
                     
                 </form>
