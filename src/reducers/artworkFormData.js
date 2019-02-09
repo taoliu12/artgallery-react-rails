@@ -5,7 +5,7 @@ export default (state = {
     url: '',
 }, action) => {
     switch(action.type) {
-        case 'ADD_ARTWORK':
+        case 'UPDATE_DATA':
             return action.artworkFormData;
         default:
             return state;
