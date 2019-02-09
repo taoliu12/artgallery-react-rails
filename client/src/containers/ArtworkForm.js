@@ -11,11 +11,18 @@ class ArtworkForm extends Component {
         this.props.updateArtworkFormData(updatedData);
     }
 
+    handleOnSubmit = (e) => {
+        e.preventDefault();
+        console.log(this.props.artworkFormData)
+        // this.props.createArtwork(artworkFormData);
+    }
+
     render() {
         return (
             <div className='submit-artwork-form'>
                 <h3>Submit a new artwork</h3>
-                <form>
+
+                <form onSubmit={this.handleOnSubmit}>
                     <div>
                         Title: 
                         <input 
@@ -40,14 +47,14 @@ class ArtworkForm extends Component {
                             value={this.props.artworkFormData.url}
                             onChange={this.handleOnChange} />
                     </div>
-                    
+                    <div>
+                        <input type='submit' value='Submit' />
+                    </div>
                 </form>
             </div>
         )
     }
 }
-
-
 
 const mapStateToProps = (state) => ({
     artworkFormData: state.artworkFormData
