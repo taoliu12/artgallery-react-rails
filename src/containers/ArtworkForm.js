@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class ArtworkForm extends Component {
+class ArtworkForm extends Component {
 
     render() {
         return (
@@ -13,3 +14,5 @@ export default class ArtworkForm extends Component {
         )
     }
 }
+
+export default connect()(ArtworkForm)
