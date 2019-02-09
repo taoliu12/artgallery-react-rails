@@ -3,8 +3,11 @@ import { connect } from 'react-redux';
 
 class ArtworkForm extends Component {
 
-    handleOnChange = () => {
-        //update artworkFormData
+    handleOnChange = (e) => {
+        const name = e.target.name
+        const value = e.target.value
+        const updatedData = Object.assign({}, this.props.artworkFormData, { [name]: value });
+        this.props.action(updatedData);
     }
 
     render() {
