@@ -54,7 +54,7 @@ class ArtworkForm extends Component {
                             value={this.props.artworkFormData.url}
                             onChange={this.handleOnChange}
                             cols={40}
-                            rows={1}  />
+                            rows={2}  />
                     </div>
                     <div>
                         <input type='submit' value='Submit' />
