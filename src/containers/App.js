@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Artworks from './Artworks';
+import ArtworkShow from './ArtworkShow';
 import ArtworkForm from './ArtworkForm';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from '../components/NavBar';
