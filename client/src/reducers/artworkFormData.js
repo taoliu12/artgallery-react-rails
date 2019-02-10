@@ -10,7 +10,12 @@ export default (state = {
 
         case 'RESET_ARTWORK_FORM':
             // return initial_state;
-            alert('a')
+            return {
+                description: '',
+                id: null,
+                title: '',
+                url: '',
+            }
 
         default:
             return state;
