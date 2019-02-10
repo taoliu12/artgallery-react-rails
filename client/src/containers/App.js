@@ -4,6 +4,7 @@ import Artworks from './Artworks';
 import ArtworkForm from './ArtworkForm';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from '../components/NavBar';
+import About from '../components/About';
 
 class App extends Component {
     render() {
