@@ -26,32 +26,40 @@ class ArtworkForm extends Component {
 
                 <form onSubmit={this.handleOnSubmit}>
                     <div>
-                        Title: 
-                        <input 
+                        <p>Title:</p>
+                        <textarea 
                             type='text'
                             name='title' 
                             value={this.props.artworkFormData.title}
-                            onChange={this.handleOnChange} />
+                            onChange={this.handleOnChange}
+                            cols={40}
+                            rows={1}  />
                     </div>
                     <div>
-                        Description: 
-                        <input 
-                            type='text'
+                        <p>Description: </p>
+                       
+                        <textarea 
+                            type='textarea'
                             name='description' 
                             value={this.props.artworkFormData.description}
-                            onChange={this.handleOnChange} />
+                            onChange={this.handleOnChange}
+                            cols={40}
+                            rows={10}  />
                     </div>
                     <div>
-                        Image URL: 
-                        <input 
+                        <p>Image URL:  </p>
+                        <textarea 
                             type='text'
                             name='url' 
                             value={this.props.artworkFormData.url}
-                            onChange={this.handleOnChange} />
+                            onChange={this.handleOnChange}
+                            cols={40}
+                            rows={1}  />
                     </div>
                     <div>
                         <input type='submit' value='Submit' />
                     </div>
+                    <br />
                 </form>
             </div>
         )
