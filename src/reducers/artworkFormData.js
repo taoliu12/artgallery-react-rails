@@ -7,6 +7,11 @@ export default (state = {
     switch(action.type) {
         case 'UPDATE_DATA':
             return action.artworkFormData;
+
+        case 'RESET_ARTWORK_FORM':
+            // return initial_state;
+            alert('a')
+
         default:
             return state;
     }

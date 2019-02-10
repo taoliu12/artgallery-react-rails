@@ -3,3 +3,8 @@ export const updateArtworkFormData = (artworkFormData) => ({
     artworkFormData
 })
 
+export const resetArtworkForm = () => {
+    return {
+      type: 'RESET_ARTWORK_FORM'
+    }
+}
