@@ -5,6 +5,8 @@ import ArtworkForm from './ArtworkForm';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import About from '../components/About';
+import Challenges from './Challenges';
+
 
 class App extends Component {
     render() {
@@ -17,6 +19,7 @@ class App extends Component {
                         <Route exact path='/artworks' component={Artworks} />
                         <Route exact path='/artworks/new' component={ArtworkForm} />
                         <Route exact path='/about' component={About} />
+                        <Route exact path='/challenges' component={Challenges} />
                     </React.Fragment>
                 </Router>
             </div>
