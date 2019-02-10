@@ -19,8 +19,8 @@ class App extends Component {
                     <React.Fragment>
                         <NavBar />
                         <Route exact path='/artworks' component={Artworks} />
-                        <Route exact path='/artworks/:id' component={ArtworkShow} />
                         <Route exact path='/artworks/new' component={ArtworkForm} />
+                        <Route exact path='/artworks/:id' component={ArtworkShow} />
                         <Route exact path='/about' component={About} />
                         <Route exact path='/challenges' component={Challenges} />
                     </React.Fragment>

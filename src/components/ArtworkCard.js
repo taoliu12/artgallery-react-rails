@@ -8,7 +8,7 @@ export default class ArtworkCard extends Component {
             <div className='ArtworkCard'>
                 <h3>{this.props.artwork.title}</h3>
                 <p>{this.props.artwork.description}</p>
-                <Link to={`/artworks/${this.props.artwork.id}`} title={this.props.artwork.title}>
+                <Link to={`/artworks/${this.props.artwork.id}`} >
                     <img className='ArtworkImage' src={this.props.artwork.url} />
                 </Link>
             </div>
