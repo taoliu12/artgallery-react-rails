@@ -8,6 +8,8 @@ const NavBar = () => {
         <span> | </span>
         <NavLink to="/artworks/new">Submit</NavLink>
         <span> | </span>
+        <NavLink to="/challenges">Challenges</NavLink>
+        <span> | </span>
         <NavLink to="/about">About</NavLink>
     </div>
 )}
