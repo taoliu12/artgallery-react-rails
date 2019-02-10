@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import updateArtworkFormData from '../actions/artworkForm'
+import { updateArtworkFormData } from '../actions/artworkForm'
 import { createArtwork } from '../actions/artworks'
 
 class ArtworkForm extends Component {
