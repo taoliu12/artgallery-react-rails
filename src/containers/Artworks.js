@@ -16,7 +16,6 @@ class Artworks extends Component {
         return (
             <div>
                 <Route path='/artworks/:id' component={ArtworkShow} />
-                <h3>Test</h3>
                 <div className='ArtworksContainer'>
                     <h3>Artworks</h3>
                     {this.props.artworks.map((artwork) => (
