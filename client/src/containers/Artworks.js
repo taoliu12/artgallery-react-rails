@@ -7,15 +7,33 @@ import { getArtworks } from '../actions/artworks';
 import ArtworkShow from './ArtworkShow';
 
 class Artworks extends Component {
+    // constructor(props) {
+    //     super(props)
+    //     console.log(this.props.artworks)
+    // }
 
     componentDidMount() {
         this.props.getArtworks();
+
     }
 
     render() {
+        // console.log(this.props.artworks)
+        // const artworks = this.props.artworks
         return (
             <div>
-                <Route path='/artworks/:id'  render={routerProps => <ArtworkShow artworks={this.props.artworks} {...routerProps} /> } />
+                <Route 
+                    path='/artworks/:id'  
+                    render={
+                        routerProps => {
+                            console.log(this.props.artworks)
+                            return (
+                                <ArtworkShow artworks={'a'} {...routerProps} />
+                            )
+                        } 
+                    }
+                    
+                />
                 <div className='ArtworksContainer'>
                     <h3>Artworks</h3>
                     {this.props.artworks.map((artwork) => (
