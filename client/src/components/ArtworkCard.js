@@ -8,7 +8,10 @@ export default class ArtworkCard extends Component {
             <div className='ArtworkCard'>
                 <h3>{this.props.artwork.title}</h3>
                 <p>{this.props.artwork.description}</p>
-                <Link to={`/artworks/${this.props.artwork.id}`} >
+                <Link 
+                    to={`/artworks/${this.props.artwork.id}`}
+                    onClick={() => window.scrollTo(0,0)}
+                >
                     <img className='ArtworkImage' src={this.props.artwork.url} />
                 </Link>
             </div>
