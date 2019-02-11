@@ -26,7 +26,7 @@ class Artworks extends Component {
                     path='/artworks/:id'  
                     render={
                         routerProps => {
-                            console.log(this.props.artworks)
+                            // console.log(this.props.artworks)
                             return (
                                 <ArtworkShow artworks={'a'} {...routerProps} />
                             )
