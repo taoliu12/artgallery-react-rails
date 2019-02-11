@@ -28,7 +28,7 @@ class Artworks extends Component {
                         routerProps => {
                             // console.log(this.props.artworks)
                             return (
-                                <ArtworkShow artworks={'a'} {...routerProps} />
+                                <ArtworkShow {...routerProps} />
                             )
                         } 
                     }
