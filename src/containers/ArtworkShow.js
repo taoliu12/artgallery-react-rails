@@ -6,27 +6,24 @@ import { getArtworks } from '../actions/artworks';
 class ArtworkShow extends Component {
 
     componentDidMount() {
-        this.props.getArtworks();
+        // this.props.getArtworks();
     }
 
     render() { 
         console.log(this.props.artworks)
-        let artwork
-        const id = this.props.match.params.id
-        if (this.props.artworks.length > 0 )    {
-            debugger
-            artwork = this.props.artworks.find(function(element) {               
-                return element.id === id;
-            });
-        }
-        debugger
+        // const id = this.props.match.params.id
+        // if (this.props.artworks.length > 0 )    {
+        //     debugger
+        //     artwork = this.props.artworks.find(function(element) {               
+        //         return element.id === id;
+        //     });
+        // }
+        // debugger
         return (
             <div className='ArtworkShow'>
-                <h3>ArtworkShow</h3>
-                <h3>{this.props.match.params.id}</h3>
-                <p>{artwork.description}</p>
-                {/* <p>{this.props.artworks[1].description}</p> */}
+                <h3>{ this.props.artworks[parseInt(this.props.match.params.id) - 1] ? <p>{this.props.artworks[parseInt(this.props.match.params.id) - 1].title}</p> : null }</h3>
                 
+                <p>{ this.props.artworks[parseInt(this.props.match.params.id) - 1] ? <p>{this.props.artworks[parseInt(this.props.match.params.id) - 1].description}</p> : null }</p>
             </div>
         )
     }
@@ -40,4 +37,4 @@ const mapDispatchToProps = ({
     getArtworks
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArtworkShow);
+export default connect(mapStateToProps)(ArtworkShow);
