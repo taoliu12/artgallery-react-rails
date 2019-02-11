@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import Artworks from './Artworks';
-import ArtworkShow from './ArtworkShow';
+
 import ArtworkForm from './ArtworkForm';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import About from '../components/About';
+import ArtworkShow from './ArtworkShow';
 
 import Challenges from './Challenges';
 
@@ -18,9 +19,10 @@ class App extends Component {
                 <Router>
                     <React.Fragment>
                         <NavBar />
-                        <Route exact path='/artworks' component={Artworks} />
+                        <Route exact path='/' component={Artworks} />
+                        <Route path='/artworks' component={Artworks} />
                         <Route exact path='/artworks/new' component={ArtworkForm} />
-                        <Route exact path='/artworks/:id' component={ArtworkShow} />
+                        
                         <Route exact path='/about' component={About} />
                         <Route exact path='/challenges' component={Challenges} />
                     </React.Fragment>
