@@ -21,9 +21,12 @@ class ArtworkShow extends Component {
         // debugger
         return (
             <div className='ArtworkShow'>
+                <p>{this.props.match.params.id}</p>
                 <h3>{ this.props.artworks[parseInt(this.props.match.params.id) - 1] ? <p>{this.props.artworks[parseInt(this.props.match.params.id) - 1].title}</p> : null }</h3>
                 
                 <p>{ this.props.artworks[parseInt(this.props.match.params.id) - 1] ? <p>{this.props.artworks[parseInt(this.props.match.params.id) - 1].description}</p> : null }</p>
+
+                <img src={ this.props.artworks[parseInt(this.props.match.params.id) - 1] ? this.props.artworks[parseInt(this.props.match.params.id) - 1].url : null } />
             </div>
         )
     }
