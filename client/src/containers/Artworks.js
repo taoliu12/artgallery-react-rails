@@ -7,19 +7,11 @@ import { getArtworks } from '../actions/artworks';
 import ArtworkShow from './ArtworkShow';
 
 class Artworks extends Component {
-    // constructor(props) {
-    //     super(props)
-    //     console.log(this.props.artworks)
-    // }
-
     componentDidMount() {
         this.props.getArtworks();
-
     }
 
     render() {
-        // console.log(this.props.artworks)
-        // const artworks = this.props.artworks
         return (
             <div>
 
