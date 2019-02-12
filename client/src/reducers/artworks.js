@@ -10,7 +10,7 @@ export default (state = initialState, action) => {
         case "LOADING_ARTWORKS":
             return {...state, loading: true}
         case 'GET_ARTWORKS':
-            return {...state, artworks: action.artworks};
+            return {loading: false, artworks: action.artworks};
             // return action.artworks;
         case 'ADD_ARTWORK':
             return state.artworks.concat(action.artwork);
