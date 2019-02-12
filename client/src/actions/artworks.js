@@ -18,7 +18,7 @@ const addArtwork = artwork => ({
 
 // thunk actions
 export const getArtworks = () => {
-    
+   
     return dispatch => {
         dispatch({ type: "LOADING_ARTWORKS" });
         return (
@@ -44,6 +44,7 @@ export const getArtwork = (id) => {
 }
 
 export const createArtwork = (artwork) => {
+    console.log('C')
     return dispatch => {
         
         return (
@@ -56,9 +57,12 @@ export const createArtwork = (artwork) => {
                 }
             )
             .then(response => response.json())
-            .then(artwork => dispatch( addArtwork(artwork) )
+            .then(artwork =>{
+                console.log('D')
+                dispatch( addArtwork(artwork) )}
             )
         )
     }
+    console.log('E')
 }
 
