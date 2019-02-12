@@ -8,7 +8,6 @@ class ArtworkShow extends Component {
 
     componentDidMount() {
         this.props.getArtworks();
-        debugger
     }
 
     componentWillUpdate() {
@@ -23,7 +22,9 @@ class ArtworkShow extends Component {
         return (
             
             <div className='ArtworkShow'>
-                {this.artwork ? <p>{this.artwork.id}</p> : <p>Loading...</p>}
+                {this.artwork ? <p>{this.artwork.id}</p> 
+                
+                : <p>Loading...</p>}
 
                 {/* <p>{this.id}</p>
                 <h3>{ this.props.artworks[parseInt(this.id) - 1] ? <p>{this.props.artworks[parseInt(this.id) - 1].title}</p> : null }</h3>

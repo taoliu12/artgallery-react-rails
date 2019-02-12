@@ -22,18 +22,7 @@ class Artworks extends Component {
         // const artworks = this.props.artworks
         return (
             <div>
-                <Route 
-                    path='/artworks/:id'  
-                    render={
-                        routerProps => {
-                            // console.log(this.props.artworks)
-                            return (
-                                <ArtworkShow {...routerProps} />
-                            )
-                        } 
-                    }
-                    
-                />
+
                 <div className='ArtworksContainer'>
                     <h3>Artworks</h3>
                     {this.props.artworks.map((artwork) => (
