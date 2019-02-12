@@ -13,9 +13,10 @@ class ArtworkShow extends Component {
 
     render() { 
         console.log(this.artwork)
+        debugger
         return (
             <div className='ArtworkShow'>
-                {/* <p>{this.artwork.id}</p> */}
+                {this.props.isLoading ? <p>Loading...</p> : <p>{this.artwork.id}</p>}
 
                 <p>{this.props.match.params.id}</p>
                 <h3>{ this.props.artworks[parseInt(this.props.match.params.id) - 1] ? <p>{this.props.artworks[parseInt(this.props.match.params.id) - 1].title}</p> : null }</h3>
@@ -29,7 +30,8 @@ class ArtworkShow extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    artworks: state.artworks.artworks
+    artworks: state.artworks.artworks,
+    isLoading: state.artworks.loading
 })
 
 const mapDispatchToProps = ({
