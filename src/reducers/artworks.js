@@ -11,7 +11,6 @@ export default (state = initialState, action) => {
         case 'GET_ARTWORKS':
             return {...state, artworks: action.artworks};
         case 'GET_ARTWORK_SHOW':
-                debugger
                 return {...state, artwork: action.artwork};
         case 'ADD_ARTWORK':
             // debugger

@@ -9,25 +9,13 @@ class ArtworkShow extends Component {
         this.props.getArtwork(this.id);
     }
 
-    // componentWillUpdate() {
-    //     this.artwork = this.props.artworks.find((element) => {               
-    //         return element.id === this.id;
-    //     });
-    // }
-
     render() { 
         return (
             
             <div className='ArtworkShow'>
-            {this.props.artwork.id}
-                {/* {this.artwork ? 
-                    <div>
-                        <h3>{this.artwork.title}</h3>
-                        <p>{this.artwork.description}</p> 
-                        <img src={this.artwork.url} />
-                    </div>           
-                : 
-                    <p>Loading...</p>} */}
+                <h3>{this.props.artwork.title}</h3>
+                <p>{this.props.artwork.description}</p>
+                <img src={this.props.artwork.url} />
             </div>
         )
     }
