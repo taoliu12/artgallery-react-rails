@@ -7,7 +7,7 @@ const displayArtworks = artworks => ({
 })
 
 const displayArtwork = artwork => ({
-    type: 'GET_ARTWORK',
+    type: 'GET_ARTWORK_SHOW',
     artwork
 })
 
