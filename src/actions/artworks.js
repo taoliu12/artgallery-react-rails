@@ -44,7 +44,7 @@ export const getArtwork = (id) => {
 }
 
 export const createArtwork = (artwork) => {
-    console.log('C')
+
     return dispatch => {
         
         return (
@@ -58,11 +58,9 @@ export const createArtwork = (artwork) => {
             )
             .then(response => response.json())
             .then(artwork =>{
-                console.log('D')
                 dispatch( addArtwork(artwork) )}
             )
         )
     }
-    console.log('E')
 }
 
