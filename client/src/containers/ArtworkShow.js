@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ArtworkCard from "../components/ArtworkCard";
 import { getArtworks } from '../actions/artworks';
 
 class ArtworkShow extends Component {
@@ -17,8 +16,7 @@ class ArtworkShow extends Component {
     }
 
     render() { 
-        console.log(this.artwork)
-        
+     
         return (
             
             <div className='ArtworkShow'>

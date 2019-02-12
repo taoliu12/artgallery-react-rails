@@ -2,18 +2,14 @@ import React, { Component } from 'react';
 import './Artworks.css';
 import ArtworkCard from "../components/ArtworkCard";
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
 import { getArtworks } from '../actions/artworks';
-import ArtworkShow from './ArtworkShow';
 
 class Artworks extends Component {
     componentDidMount() {
         this.props.getArtworks();
-        // debugger
     }
 
     render() {
-        // debugger
         return (
             <div>
 
