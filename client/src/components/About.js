@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Policy from "../components/Policy";
 
 const About = () => { 
