@@ -22,8 +22,12 @@ class ArtworkShow extends Component {
         return (
             
             <div className='ArtworkShow'>
-                {this.artwork ? <p>{this.artwork.id}</p> 
-                
+                {this.artwork ? 
+                    <div>
+                        <h3>{this.artwork.title}</h3>
+                        <p>{this.artwork.description}</p> 
+                        <img src={this.artwork.url} />
+                    </div>           
                 : <p>Loading...</p>}
             </div>
         )
