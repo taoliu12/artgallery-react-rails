@@ -30,14 +30,12 @@ export const getArtworks = () => {
 }
 
 export const getArtwork = (id) => {
-    debugger
     return dispatch => {
         dispatch({ type: "LOADING_ARTWORKS" });
         return (
             fetch(`${API_URL}/artworks/${id}`)
             .then(response => response.json())
             .then(artwork => {
-                debugger
                 dispatch(displayArtwork(artwork))
             }
             )
