@@ -7,7 +7,8 @@ export default (state = initialState, action) => {
     // debugger
     // console.log(action.type)
     switch(action.type) {
-        
+        case "LOADING_ARTWORKS":
+            return {...state, loading: true}
         case 'GET_ARTWORKS':
             return {...state, artworks: action.artworks};
             // return action.artworks;
