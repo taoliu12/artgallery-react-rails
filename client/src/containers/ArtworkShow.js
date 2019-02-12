@@ -28,7 +28,8 @@ class ArtworkShow extends Component {
                         <p>{this.artwork.description}</p> 
                         <img src={this.artwork.url} />
                     </div>           
-                : <p>Loading...</p>}
+                : 
+                    <p>Loading...</p>}
             </div>
         )
     }

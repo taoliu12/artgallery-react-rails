@@ -10,7 +10,8 @@ export default (state = initialState, action) => {
         case 'GET_ARTWORKS':
             return {loading: false, artworks: action.artworks};
         case 'ADD_ARTWORK':
-            return state.artworks.concat(action.artwork);
+            // debugger
+            return {...state, artworks: state.artworks.concat(action.artwork)}
 
         default: 
             return state;
