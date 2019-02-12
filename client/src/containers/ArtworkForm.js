@@ -14,10 +14,7 @@ class ArtworkForm extends Component {
 
     handleOnSubmit = (e) => {
         e.preventDefault();
-        // console.log(this.props.artworkFormData)
-        console.log('A')
         this.props.createArtwork(this.props.artworkFormData);
-        console.log('B')
         this.props.resetArtworkForm();
     }
 
