@@ -24,6 +24,7 @@ export const getArtworks = () => {
 
 export const createArtwork = (artwork) => {
     return dispatch => {
+        dispatch({ type: "LOADING_ARTWORKS" })
         return (
             fetch(`${API_URL}/artworks`, {
                 method: 'post',
