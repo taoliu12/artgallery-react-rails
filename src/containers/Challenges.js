@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import './Artworks.css';
 import ChallengeCard from "../components/ChallengeCard";
 
 export default class Challenges extends Component {
