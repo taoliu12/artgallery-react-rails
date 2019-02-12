@@ -6,6 +6,11 @@ const displayArtworks = artworks => ({
     artworks
 })
 
+const displayArtwork = artwork => ({
+    type: 'GET_ARTWORK',
+    artwork
+})
+
 const addArtwork = artwork => ({
     type: 'ADD_ARTWORK',
     artwork
@@ -20,6 +25,18 @@ export const getArtworks = () => {
             fetch(`${API_URL}/artworks`)
             .then(response => response.json())
             .then(artworks => dispatch(displayArtworks(artworks)))
+        )
+    }
+}
+
+export const getArtwork = (id) => {
+
+    return dispatch => {
+        dispatch({ type: "LOADING_ARTWORKS" });
+        return (
+            fetch(`${API_URL}/artworks/${id}`)
+            .then(response => response.json())
+            .then(artwork => dispatch(displayArtwork(artwork)))
         )
     }
 }
