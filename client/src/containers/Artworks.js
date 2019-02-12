@@ -49,7 +49,7 @@ class Artworks extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    artworks: state.artworks
+    artworks: state.artworks.artworks
 })
 
 const mapDispatchToProps = ({
