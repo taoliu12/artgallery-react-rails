@@ -9,18 +9,18 @@ import ArtworkShow from './ArtworkShow';
 class Artworks extends Component {
     componentDidMount() {
         this.props.getArtworks();
+        // debugger
     }
 
     render() {
+        // debugger
         return (
             <div>
 
                 <div className='ArtworksContainer'>
                     <h3>Artworks</h3>
                     {this.props.artworks.map((artwork) => (
-
                         <ArtworkCard artwork={artwork} />
-
                         )
                     )}
                 </div>
