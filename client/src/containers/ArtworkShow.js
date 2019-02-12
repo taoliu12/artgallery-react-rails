@@ -25,13 +25,6 @@ class ArtworkShow extends Component {
                 {this.artwork ? <p>{this.artwork.id}</p> 
                 
                 : <p>Loading...</p>}
-
-                {/* <p>{this.id}</p>
-                <h3>{ this.props.artworks[parseInt(this.id) - 1] ? <p>{this.props.artworks[parseInt(this.id) - 1].title}</p> : null }</h3>
-                
-                <p>{ this.props.artworks[parseInt(this.id) - 1] ? <p>{this.props.artworks[parseInt(this.id) - 1].description}</p> : null }</p>
-
-                <img src={ this.props.artworks[parseInt(this.id) - 1] ? this.props.artworks[parseInt(this.id) - 1].url : null } /> */}
             </div>
         )
     }
