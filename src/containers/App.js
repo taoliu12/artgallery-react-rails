@@ -21,7 +21,7 @@ class App extends Component {
                         <NavBar />
                         <Route exact path='/' component={Artworks} />
                         <Route exact path='/artworks' component={Artworks} />
-                        <Route exact path='/new' component={ArtworkForm} />
+                        <Route exact path='/artwork/new' component={ArtworkForm} />
                         <Route path='/artworks/:id'  component={ArtworkShow} />
                         <Route exact path='/about' component={About} />
                         <Route exact path='/challenges' component={Challenges} />
