@@ -1,6 +1,6 @@
 # Art Gallery
 
-The project is a react app that allows users to browser images and post them. It features an intuitive UI that is all contained in a single page app. Users can quickly perform different tasks without a page reload.
+The project is a react app that allows users to browser images and post them. It features an intuitive UI that is all contained in a single page app.
 
 ## Installation Instructions
 
@@ -29,4 +29,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/ThePee
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+Available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
