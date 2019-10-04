@@ -18,8 +18,8 @@ export default class ArtworkCard extends Component {
     render() {
         return (
             <div className='ArtworkCard'>
-                <button onClick={this.handleClick}>Vote</button>
-                <p>{this.state.voteCount}</p>
+                {/* <button onClick={this.handleClick}>Vote</button>
+                <p>{this.state.voteCount}</p> */}
                 <h3>{this.props.artwork.title}</h3>
                 <p>{this.props.artwork.description}</p>
                 <Link 
