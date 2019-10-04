@@ -10,7 +10,7 @@ Clone this repo, and then navigate to the repo directory in your terminal.
 
 Run `bundle install` to install all gem dependencies.
 
-Run all rake migrations with `rake db:migrate`
+Run all rake migrations with `rake db:migrate` and `rake db:seed`
 
 Start up a rails server on port 3001: `rails s -p 3001`
 
