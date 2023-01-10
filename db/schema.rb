@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2019_01_02_024624) do
 
   create_table "artworks", force: :cascade do |t|
     t.string "title"
+    t.string "author"
     t.string "description"
     t.string "url"
     t.datetime "created_at", null: false

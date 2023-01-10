@@ -2,10 +2,12 @@ export default (state = {
     description: '',
     id: null,
     title: '',
+    author: '',
     url: '',
 }, action) => {
     switch(action.type) {
         case 'UPDATE_DATA':
+// debugger
             return action.artworkFormData;
 
         case 'RESET_ARTWORK_FORM':
@@ -14,6 +16,7 @@ export default (state = {
                 description: '',
                 id: null,
                 title: '',
+                author: '',
                 url: '',
             }
 

@@ -16,11 +16,13 @@ export default class ArtworkCard extends Component {
     }
 
     render() {
+        // debugger
         return (
             <div className='ArtworkCard'>
                 {/* <button onClick={this.handleClick}>Vote</button>
                 <p>{this.state.voteCount}</p> */}
                 <h3>{this.props.artwork.title}</h3>
+                <p>by: {this.props.artwork.author}</p>
                 <p>{this.props.artwork.description}</p>
                 <Link 
                     to={`/artworks/${this.props.artwork.id}`}
