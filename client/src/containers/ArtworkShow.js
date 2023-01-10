@@ -14,6 +14,7 @@ class ArtworkShow extends Component {
             
             <div className='ArtworkShow'>
                 <h3>{this.props.artwork.title}</h3>
+                <p>by: {this.props.artwork.author}</p>
                 <p>{this.props.artwork.description}</p>
                 <img src={this.props.artwork.url} />
             </div>

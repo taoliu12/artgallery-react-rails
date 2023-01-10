@@ -6,7 +6,7 @@ export default class ChallengeCard extends Component {
         return (
             <div className='ChallengeCard'>
                 <h3>{this.props.title}</h3>
-                <p>{this.props.description}</p>
+                <p>by: {this.props.author}</p>
             </div>
         )
     }
