@@ -13,8 +13,10 @@ class ArtworkForm extends Component {
     }
 
     handleOnSubmit = (e) => {
+        
         e.preventDefault();
         this.props.createArtwork(this.props.artworkFormData);
+        debugger
         this.props.resetArtworkForm();
     }
 
@@ -30,6 +32,16 @@ class ArtworkForm extends Component {
                             type='text'
                             name='title' 
                             value={this.props.artworkFormData.title}
+                            onChange={this.handleOnChange}
+                            cols={40}
+                            rows={1}  />
+                    </div>
+                    <div>
+                        <p>Author:</p>
+                        <textarea 
+                            type='text'
+                            name='author' 
+                            value={this.props.artworkFormData.author}
                             onChange={this.handleOnChange}
                             cols={40}
                             rows={1}  />
