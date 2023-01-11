@@ -12,16 +12,12 @@ class Artworks extends Component {
     render() {
         // debugger
         return (
-            <div>
-
-                    <h3>Artworks</h3>
                 <div className='ArtworksContainer'>
                     {this.props.artworks.map((artwork) => (
                         <ArtworkCard key={artwork.id} artwork={artwork} />
                         )
                     )}
-                </div>
-            </div>
+                </div>             
         )
     }
 }
