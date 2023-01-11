@@ -14,8 +14,8 @@ class Artworks extends Component {
         return (
             <div>
 
-                <div className='ArtworksContainer'>
                     <h3>Artworks</h3>
+                <div className='ArtworksContainer'>
                     {this.props.artworks.map((artwork) => (
                         <ArtworkCard artwork={artwork} />
                         )
