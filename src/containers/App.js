@@ -72,8 +72,8 @@ class App extends Component {
                          <Route exact path='/artworks' component={Artworks} />
                          <Route exact path='/artwork/new' component={ArtworkForm} />
                          <Route path='/artworks/:id'  component={ArtworkShow} />
-                        <Route exact path='/about' component={About} />
-                         <Route exact path='/challenges' component={Challenges} />
+                        {/* <Route exact path='/about' component={About} />
+                         <Route exact path='/challenges' component={Challenges} /> */}
                      </React.Fragment>
                  </Router>
              </div>
