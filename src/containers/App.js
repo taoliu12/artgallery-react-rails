@@ -40,42 +40,45 @@ function Header() {
     )
   }
   
-  function App() {
-    return (
-      <main>
-        <Header />
-        <div id="container">
-          <h1>Simple React Dark Mode.</h1>
-          <p>Uses state to set a class on the body if dark mode is enabled.</p>
-        </div>
-      </main>
-    )
-  }
+//   function App() {
+//     return (
+//       <main>
+//         <Header />
+//         <div id="container">
+//           <h1>Simple React Dark Mode.</h1>
+//           <p>Uses state to set a class on the body if dark mode is enabled.</p>
+//         </div>
+//       </main>
+//     )
+//   }
   
 //   ReactDOM.render(
 //     <App />,
 //     document.getElementById('app')
 //   )
   
-// class App extends Component {
-//     render() {
-//          return (
-//              <div className='App'>                 
-//                 <h1>React Art Gallery</h1>
-//                 <Router>
-//                     <React.Fragment>
-//                         <NavBar />
-//                         <Route exact path='/' component={Artworks} />
-//                         <Route exact path='/artworks' component={Artworks} />
-//                         <Route exact path='/artwork/new' component={ArtworkForm} />
-//                         <Route path='/artworks/:id'  component={ArtworkShow} />
-//                         <Route exact path='/about' component={About} />
-//                         <Route exact path='/challenges' component={Challenges} />
-//                     </React.Fragment>
-//                 </Router>
-//             </div>
-//         )
-//     }
-// }
+class App extends Component {
+    render() {
+         return (
+            <main>
+              <Header />
+              <div className='App' id="container">                 
+               <h1>React Art Gallery</h1>
+                 <Router>
+                     <React.Fragment>
+                         <NavBar />
+                         <Route exact path='/' component={Artworks} />
+                         <Route exact path='/artworks' component={Artworks} />
+                         <Route exact path='/artwork/new' component={ArtworkForm} />
+                         <Route path='/artworks/:id'  component={ArtworkShow} />
+                        <Route exact path='/about' component={About} />
+                         <Route exact path='/challenges' component={Challenges} />
+                     </React.Fragment>
+                 </Router>
+             </div>
+            </main>
+        )
+    }
+}
 
 export default App;
