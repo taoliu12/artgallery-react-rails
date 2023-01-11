@@ -1,3 +1,20 @@
+button {
+  background-color: hwb(122 30% 31%);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 11px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;  
+  font-size: 14px;
+  font-weight: bold;  
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
 .App {
   text-align: center;
 }
