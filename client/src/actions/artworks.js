@@ -18,12 +18,12 @@ const addArtwork = artwork => ({
 
 // thunk actions
 export const getArtworks = () => {
-   
+//    debugger
     return dispatch => {
         dispatch({ type: "LOADING_ARTWORKS" });
         return (
-            fetch(`${API_URL}/artworks`)
-            .then(response => response.json())
+            fetch(`${API_URL}/artworks`)             
+            .then(response => response.json())             
             .then(artworks => dispatch(displayArtworks(artworks)))
         )
     }

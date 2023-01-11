@@ -1,6 +1,6 @@
 class Api::ArtworksController < ApplicationController
     def index
-        @artworks = Artwork.newest_to_oldest
+        @artworks = Artwork.newest_to_oldest         
         render json: @artworks
     end
 
@@ -39,6 +39,6 @@ class Api::ArtworksController < ApplicationController
     private
 
     def artwork_params
-        params.require(:artwork).permit(:title, :description, :url)
+        params.require(:artwork).permit(:title, :author, :description, :url)
     end
 end
