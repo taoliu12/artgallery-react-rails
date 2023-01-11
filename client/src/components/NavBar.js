@@ -9,10 +9,8 @@ const NavBar = () => {
         <NavLink to="/artworks">Artworks</NavLink>
         <span> | </span>
         <NavLink to="/artwork/new">Submit</NavLink>
-        <span> | </span>
-        <NavLink to="/challenges">Challenges</NavLink>
-        <span> | </span>
-        <NavLink to="/about">About</NavLink>
+        {/* <span> | </span> */}
+        {/* <NavLink to="/about">About</NavLink> */}
         </h2>
     </div>
 )}
