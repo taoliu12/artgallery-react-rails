@@ -27,17 +27,16 @@ class ArtworkForm extends Component {
                 <form onSubmit={this.handleOnSubmit}>
                     <div>
                         <p>Title:</p>
-                        <textarea 
+                        <input 
                             type='text'
                             name='title' 
                             value={this.props.artworkFormData.title}
                             onChange={this.handleOnChange}
-                            cols={40}
-                            rows={1}  />
+                            />
                     </div>
                     <div>
-                        <p>Author:</p>
-                        <textarea 
+                        <p>Artist:</p>
+                        <input 
                             type='text'
                             name='author' 
                             value={this.props.artworkFormData.author}
@@ -58,7 +57,7 @@ class ArtworkForm extends Component {
                     </div>
                     <div>
                         <p>Image URL:  </p>
-                        <textarea 
+                        <input 
                             type='text'
                             name='url' 
                             value={this.props.artworkFormData.url}
