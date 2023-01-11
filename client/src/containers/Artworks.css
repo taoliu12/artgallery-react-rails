@@ -5,7 +5,7 @@
 }
 
 .ArtworkCard {
-  float: left;
+  float: none;
   margin: 1%;
   padding-bottom: 15px;
   width: 20%;
