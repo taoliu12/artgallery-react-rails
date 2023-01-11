@@ -10,6 +10,7 @@ class Artworks extends Component {
     }
 
     render() {
+        // debugger
         return (
             <div>
 
