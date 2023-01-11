@@ -17,7 +17,7 @@ class Artworks extends Component {
                     <h3>Artworks</h3>
                 <div className='ArtworksContainer'>
                     {this.props.artworks.map((artwork) => (
-                        <ArtworkCard artwork={artwork} />
+                        <ArtworkCard key={artwork.id} artwork={artwork} />
                         )
                     )}
                 </div>
