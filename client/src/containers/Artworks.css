@@ -1,3 +1,9 @@
+.ArtworksContainer {  
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1%;
+}
+
 .ArtworkCard {
   float: left;
   margin: 1%;
@@ -19,8 +25,4 @@
   height: 70%;
   border-radius: 2%;
   overflow: hidden;
-}
-
-.ArtworksContainer {
-  padding: 1%;
 }

@@ -8,13 +8,12 @@ import NavBar from '../components/NavBar';
 import About from '../components/About';
 import ArtworkShow from './ArtworkShow';
 
-import Challenges from './Challenges';
-
+import Challenges from './Challenges'; 
 
 class App extends Component {
     render() {
-        return (
-            <div className='App'>
+         return (
+             <div className='App'>                 
                 <h1>React Art Gallery</h1>
                 <Router>
                     <React.Fragment>
