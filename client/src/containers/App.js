@@ -64,10 +64,10 @@ class App extends Component {
             <main>
               <Header />
               <div className='App' id="container">                 
-               <h1>React Art Gallery</h1>
+              <h1>React Art Gallery</h1>
                  <Router>
                      <React.Fragment>
-                         <NavBar />
+                         <NavBar /><br></br>
                          <Route exact path='/' component={Artworks} />
                          <Route exact path='/artworks' component={Artworks} />
                          <Route exact path='/artwork/new' component={ArtworkForm} />
