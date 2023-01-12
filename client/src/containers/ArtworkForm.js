@@ -14,7 +14,7 @@ export default function ArtworkForm() {
 
     const onSubmit = artwork => {
         console.log('submit form data',artwork)
-        fetch(`http://localhost:3001/artworks`, {
+        fetch(`http://localhost:3001/api/artworks`, {
             method: 'post',
             headers: {
                 "Content-Type": "application/json"
@@ -24,8 +24,9 @@ export default function ArtworkForm() {
         )
         .then(response => response.json())
         .then(artwork =>{
-            console.log('response',artwork)}             
-        )
+            console.log('response',artwork);
+            setIsSuccessfullySubmitted(true);             
+        })
     };
   
     // console.log(watch("example")); // watch input value by passing the name of it
