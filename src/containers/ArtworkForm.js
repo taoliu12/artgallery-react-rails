@@ -7,7 +7,7 @@ import { createArtwork } from '../actions/artworks'
 import { useForm } from "react-hook-form";
 
 export default function ArtworkForm() {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
     const [isSuccessfullySubmitted, setIsSuccessfullySubmitted] = React.useState(
         false
       );
@@ -25,7 +25,12 @@ export default function ArtworkForm() {
         .then(response => response.json())
         .then(artwork =>{
             console.log('response',artwork);
-            setIsSuccessfullySubmitted(true);             
+            setIsSuccessfullySubmitted(true);  
+            reset({
+                title: '', 
+                author: '', 
+                description: '', 
+                url: '' })           
         })
     };
   
