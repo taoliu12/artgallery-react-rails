@@ -12,25 +12,31 @@ import Challenges from './Challenges';
 
 function Header() {
     const [ darkMode, setDarkMode ] = React.useState(false)
-     
+    const [ darkModeText, setDarkModeText ] = React.useState("Toggle Dark")
+
     React.useEffect(() => {
       const body = document.body
       const toggle = document.querySelector('.toggle-inner')
       
       // If dark mode is enabled - adds classes to update dark-mode styling.
       // Else, removes and styling is as normal.
+      
       if( darkMode === true ) {
         body.classList.add('dark-mode')
         toggle.classList.add('toggle-active')
+        setDarkModeText("Toggle Light")
+    
       } else {
         body.classList.remove('dark-mode')
         toggle.classList.remove('toggle-active')
+        setDarkModeText("Toggle Dark")
       }
     }, [darkMode])
     
+
     return (
-      <header>
-        Dark Mode
+        <header>
+            {darkModeText}
         <div
           id="toggle"
           onClick={() => darkMode === false ? setDarkMode(true) : setDarkMode(false)}
