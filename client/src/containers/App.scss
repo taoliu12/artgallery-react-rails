@@ -72,7 +72,9 @@ main {
 }
 
 header {
-  position: absolute;
+  position: left;
+  align-items: right;
+  padding: 5px;
 }
 
 #toggle {
