@@ -24,12 +24,12 @@ function Header() {
       if( darkMode === true ) {
         body.classList.add('dark-mode')
         toggle.classList.add('toggle-active')
-        setDarkModeText("Toggle Light")
+        setDarkModeText("Go Light")
     
       } else {
         body.classList.remove('dark-mode')
         toggle.classList.remove('toggle-active')
-        setDarkModeText("Toggle Dark")
+        setDarkModeText("Go Dark")
       }
     }, [darkMode])
     

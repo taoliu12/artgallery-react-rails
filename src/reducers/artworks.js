@@ -8,7 +8,7 @@ export default (state = initialState, action) => {
     switch(action.type) {
         case "LOADING_ARTWORKS":
             return {...state, loading: true}
-        case 'GET_ARTWORKS':
+        case 'GET_ARTWORKS':             
             return {...state, artworks: action.artworks};
         case 'GET_ARTWORK_SHOW':
                 return {...state, artwork: action.artwork};
