@@ -30,17 +30,17 @@ export default function ArtworkForm() {
       /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
       <form onSubmit={handleSubmit(onSubmit)}>
           <div>
-            <p>Title:</p>
+            
+            <p>Title: {errors.title && <span class='formError'>(This field is required)</span>}</p>
             <input 
                 type='text'
                 name='title' 
                 {...register("title", { required: true })}
                 />
         </div>
-        {errors.title && <span>This field is required</span>}
                              
         <div>
-            <p>Artist:</p>
+            <p>Artist: {errors.author && <span class='formError'>(This field is required)</span>}</p>
             <input 
                 type='text'
                 name='author' 
@@ -48,10 +48,10 @@ export default function ArtworkForm() {
                 cols={40}
                 rows={1}  />
         </div>
-        {errors.author && <span>This field is required</span>}
+        
 
         <div>
-            <p>Description: </p>
+            <p>Description: {errors.description && <span class='formError'>(This field is required)</span>}</p>
            
             <textarea 
                 type='textarea'
@@ -60,10 +60,10 @@ export default function ArtworkForm() {
                 cols={40}
                 rows={10}  />
         </div>
-        {errors.description && <span>This field is required</span>}
+        
 
         <div>
-            <p>Image URL:  </p>
+            <p>Image URL: {errors.url && <span class='formError'>(This field is required)</span>}</p>
             <input 
                 type='text'
                 name='url' 
@@ -71,7 +71,7 @@ export default function ArtworkForm() {
                 cols={40}
                 rows={2}  />
         </div>
-        {errors.url && <span>This field is required</span>} 
+        
         
         <input type="submit" />
       </form>
