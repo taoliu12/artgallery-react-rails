@@ -29,25 +29,49 @@ export default function ArtworkForm() {
     return (
       /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
       <form onSubmit={handleSubmit(onSubmit)}>
-        {/* register your input into the hook by invoking the "register" function */}
-        <input defaultValue="test" {...register("example")} />
-        
-        {/* include validation with required or other standard HTML validation rules */}
-        <input {...register("exampleRequired", { required: true })} />
-
-                     <div>
-                         <p>Title:</p>
-                         <input 
-                             type='text'
-                             name='title' 
-                             {...register("title", { required: true })}
-                             />
-                     </div>
-
-
-
-        {/* errors will return when field validation fails  */}
+          <div>
+            <p>Title:</p>
+            <input 
+                type='text'
+                name='title' 
+                {...register("title", { required: true })}
+                />
+        </div>
         {errors.title && <span>This field is required</span>}
+                             
+        <div>
+            <p>Artist:</p>
+            <input 
+                type='text'
+                name='author' 
+                {...register("author", { required: true })}
+                cols={40}
+                rows={1}  />
+        </div>
+        {errors.author && <span>This field is required</span>}
+
+        <div>
+            <p>Description: </p>
+           
+            <textarea 
+                type='textarea'
+                name='description' 
+                {...register("description", { required: true })}
+                cols={40}
+                rows={10}  />
+        </div>
+        {errors.description && <span>This field is required</span>}
+
+        <div>
+            <p>Image URL:  </p>
+            <input 
+                type='text'
+                name='url' 
+                {...register("url", { required: true })}
+                cols={40}
+                rows={2}  />
+        </div>
+        {errors.url && <span>This field is required</span>} 
         
         <input type="submit" />
       </form>
