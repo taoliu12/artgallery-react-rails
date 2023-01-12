@@ -8,6 +8,10 @@ import { useForm } from "react-hook-form";
 
 export default function ArtworkForm() {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const [isSuccessfullySubmitted, setIsSuccessfullySubmitted] = React.useState(
+        false
+      );
+
     const onSubmit = artwork => {
         console.log('submit form data',artwork)
         fetch(`http://localhost:3001/artworks`, {
@@ -31,7 +35,7 @@ export default function ArtworkForm() {
       <form onSubmit={handleSubmit(onSubmit)}>
           <div>
             
-            <p>Title: {errors.title && <span class='formError'>(This field is required)</span>}</p>
+            <p>Title: {errors.title && <span className='formError'>(This field is required)</span>}</p>
             <input 
                 type='text'
                 name='title' 
@@ -40,7 +44,7 @@ export default function ArtworkForm() {
         </div>
                              
         <div>
-            <p>Artist: {errors.author && <span class='formError'>(This field is required)</span>}</p>
+            <p>Artist: {errors.author && <span className='formError'>(This field is required)</span>}</p>
             <input 
                 type='text'
                 name='author' 
@@ -51,7 +55,7 @@ export default function ArtworkForm() {
         
 
         <div>
-            <p>Description: {errors.description && <span class='formError'>(This field is required)</span>}</p>
+            <p>Description: {errors.description && <span className='formError'>(This field is required)</span>}</p>
            
             <textarea 
                 type='textarea'
@@ -63,7 +67,7 @@ export default function ArtworkForm() {
         
 
         <div>
-            <p>Image URL: {errors.url && <span class='formError'>(This field is required)</span>}</p>
+            <p>Image URL: {errors.url && <span className='formError'>(This field is required)</span>}</p>
             <input 
                 type='text'
                 name='url' 
@@ -74,6 +78,9 @@ export default function ArtworkForm() {
         
         
         <input type="submit" />
+        {isSuccessfullySubmitted && (
+          <div className="success">Form submitted successfully</div>
+        )}
       </form>
     );
   }
