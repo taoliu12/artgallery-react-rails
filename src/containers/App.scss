@@ -70,7 +70,7 @@ input:hover {
 
 body {
   color: #1a202c;
-  transition: color 0.2s ease-in;
+  transition: color 0.2s ease-in;   
 }
 
 #app {
@@ -84,6 +84,16 @@ main {
   width: 100%;
   padding: 20px;
   transition: background-color 0.2s ease-in;
+}
+
+.navbar button {
+  color: white;
+  background-color: #003ad9;
+  font-size: 1.5em;
+}
+
+.site-title {
+  font-size: 2.5em;
 }
 
 header {
