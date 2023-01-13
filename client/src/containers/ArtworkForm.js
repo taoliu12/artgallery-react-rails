@@ -83,7 +83,7 @@ export default function ArtworkForm() {
         </div>
         
         
-        <input type="submit" />
+        <input className='submitBtn' type="submit" />
         {isSuccessfullySubmitted && (
           <div className="success">Artwork submitted successfully!</div>
         )}
