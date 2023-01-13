@@ -33,7 +33,7 @@ function DarkModeButton() {
     }, [darkMode])
     
     return (
-        <div>
+      <div className='dark-mode-div'>
             {darkModeText}
         <div
           id="toggle"
