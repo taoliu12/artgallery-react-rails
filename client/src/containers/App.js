@@ -10,7 +10,7 @@ import ArtworkShow from './ArtworkShow';
 
 import Challenges from './Challenges'; 
 
-function Header() {
+function DarkModeButton() {
     const [ darkMode, setDarkMode ] = React.useState(false)
     const [ darkModeText, setDarkModeText ] = React.useState("Toggle Dark")
 
@@ -35,7 +35,7 @@ function Header() {
     
 
     return (
-        <header>
+        <div>
             {darkModeText}
         <div
           id="toggle"
@@ -43,14 +43,14 @@ function Header() {
         >
           <div className="toggle-inner"/>
         </div>
-      </header>
+      </div>
     )
   }
   
 //   function App() {
 //     return (
 //       <main>
-//         <Header />
+//         <DarkModeButton />
 //         <div id="container">
 //           <h1>Simple React Dark Mode.</h1>
 //           <p>Uses state to set a class on the body if dark mode is enabled.</p>
@@ -68,9 +68,9 @@ class App extends Component {
     render() {
          return (
             <main>
-              <Header />
+              <DarkModeButton />
               <div className='App' id="container">                 
-              <h1>React Art Gallery</h1>
+              <h1 className='site-title'>React Art Gallery</h1>
                  <Router>
                      <React.Fragment>
                          <NavBar /><br></br>
