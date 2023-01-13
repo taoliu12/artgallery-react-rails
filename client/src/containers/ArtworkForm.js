@@ -55,12 +55,12 @@ export default function ArtworkForm() {
                 type='text'
                 name='author' 
                 {...register("author", { required: true })}
-                cols={40}
+                
                 rows={1}  />
         </div>
         
 
-        <div>
+        {/* <div>
             <p>Description: {errors.description && <span className='formError'>(This field is required)</span>}</p>
            
             <textarea 
@@ -69,7 +69,7 @@ export default function ArtworkForm() {
                 {...register("description", { required: true })}
                 cols={40}
                 rows={10}  />
-        </div>
+        </div> */}
         
 
         <div>
@@ -78,14 +78,14 @@ export default function ArtworkForm() {
                 type='text'
                 name='url' 
                 {...register("url", { required: true })}
-                cols={40}
+                
                 rows={2}  />
         </div>
         
         
         <input type="submit" />
         {isSuccessfullySubmitted && (
-          <div className="success">Form submitted successfully</div>
+          <div className="success">Artwork submitted successfully!</div>
         )}
       </form>
     );
