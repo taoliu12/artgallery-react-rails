@@ -6,7 +6,7 @@ const NavBar = () => {
     <div className="navbar">         
 
         <NavLink to="/artworks"><button>Artworks</button></NavLink>         
-        <NavLink to="/artwork/new"><button>Submit</button></NavLink>
+        <NavLink to="/artwork/new"><button>Submit New Artwork</button></NavLink>
         {/* <span> | </span> */}
         {/* <NavLink to="/about">About</NavLink> */}         
     </div>
