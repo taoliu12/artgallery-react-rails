@@ -23,13 +23,13 @@ export default class ArtworkCard extends Component {
                 <p>{this.state.voteCount}</p> */}
                 <h2>{this.props.artwork.title}</h2>
                 <p>by: {this.props.artwork.author}</p>
-                <p>{this.props.artwork.description}</p>
                 <Link 
                     to={`/artworks/${this.props.artwork.id}`}
                     onClick={() => window.scrollTo(0,0)}
-                >
+                    >
                     <img className='ArtworkImage' src={this.props.artwork.url} />
                 </Link>
+                    
             </div>
         )
     }
