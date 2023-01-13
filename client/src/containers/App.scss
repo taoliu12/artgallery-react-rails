@@ -22,6 +22,12 @@ button {
 
 button:hover {
   background-color: #45a049;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.42);
+}
+
+input:hover {
+
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.12);
 }
 
 .App {
@@ -132,18 +138,22 @@ header {
 //-------------------------------------
 
 .dark-mode {
-  color: white;
+  color: rgb(255, 255, 255);
     
   main {
     background-color: #1a202c;
   }
   
   #toggle {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 
     .toggle-inner {
       background-color: #1a202c;
     }
   }
+}
+
+#toggle:hover {
+  box-shadow: 2px 2px 11px rgba(0,0,0,0.52);
 }
 // Dark Mode Toggle End
