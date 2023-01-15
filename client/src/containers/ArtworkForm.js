@@ -39,8 +39,7 @@ export default function ArtworkForm() {
     return (
       /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
       <form className='artworkForm' onSubmit={handleSubmit(onSubmit)}>
-          <div>
-            
+          <div> 
             <p>Title: {errors.title && <span className='formError'>(This field is required)</span>}</p>
             <input 
                 type='text'
@@ -81,8 +80,7 @@ export default function ArtworkForm() {
                 
                 rows={2}  />
         </div>
-        
-        
+        <br></br>
         <input className='submitBtn' type="submit" />
         {isSuccessfullySubmitted && (
           <div className="success">Artwork submitted successfully!</div>
