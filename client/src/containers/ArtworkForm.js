@@ -38,7 +38,7 @@ export default function ArtworkForm() {
   
     return (
       /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className='artworkForm' onSubmit={handleSubmit(onSubmit)}>
           <div>
             
             <p>Title: {errors.title && <span className='formError'>(This field is required)</span>}</p>
