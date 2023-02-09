@@ -7,8 +7,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import About from '../components/About';
 import ArtworkShow from './ArtworkShow';
-
-import Challenges from './Challenges'; 
+import ArtworkSketch from './ArtworkSketch'; 
 
 function DarkModeButton() {
     const [ darkMode, setDarkMode ] = React.useState(false)
@@ -44,24 +43,7 @@ function DarkModeButton() {
       </div>
     )
   }
-  
-//   function App() {
-//     return (
-//       <main>
-//         <DarkModeButton />
-//         <div id="container">
-//           <h1>Simple React Dark Mode.</h1>
-//           <p>Uses state to set a class on the body if dark mode is enabled.</p>
-//         </div>
-//       </main>
-//     )
-//   }
-  
-//   ReactDOM.render(
-//     <App />,
-//     document.getElementById('app')
-//   )
-  
+
 class App extends Component {
     render() {
          return (
@@ -74,7 +56,7 @@ class App extends Component {
                          <NavBar /><br></br>
                          <Route exact path='/' component={Artworks} />
                          <Route exact path='/artworks' component={Artworks} />
-                         <Route exact path='/artwork/new' component={ArtworkForm} />
+                         <Route exact path='/artwork/new' component={ArtworkSketch} />                          
                          <Route path='/artworks/:id'  component={ArtworkShow} />
                         {/* <Route exact path='/about' component={About} />
                          <Route exact path='/challenges' component={Challenges} /> */}
