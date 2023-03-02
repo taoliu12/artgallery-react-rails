@@ -91,7 +91,8 @@ main {
 }
 
 .site-title {
-  font-size: 2.5em;
+  font-size: 3em;
+  font-family: 'Fredericka the Great', cursive;
 }
 
 header {
@@ -180,6 +181,7 @@ header {
 // Dark Mode styling
 //-------------------------------------
 .dark-mode-div {
+  display: inline;
   float: right;
 }
 

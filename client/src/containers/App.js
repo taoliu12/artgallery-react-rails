@@ -45,7 +45,7 @@ class App extends Component {
             <main>
               <DarkModeButton />
               <div className='App' id="container">                 
-              <h1 className='site-title'>React Art Gallery</h1>
+              <p className='site-title'>React Art Gallery</p>
                  <Router>
                      <React.Fragment>
                          <NavBar /><br></br>
