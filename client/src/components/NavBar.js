@@ -1,29 +1,14 @@
 import React, { useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
+import DarkModeButton from '../components/DarkModeButton';
 
 const NavBar = () => {
-    useEffect(() => {
-        // code to run after render goes here
-        console.log('navBar')
-        let nav = document.querySelector(".navbar");
-        let sticky = nav.offsetTop;
-        window.onscroll = function() {
-            sticker()};
-            
-            function sticker() {
-                console.log(sticky)
-            if (window.pageYOffset >= sticky) {
-                nav.classList.add("sticky")
-            } else {
-              nav.classList.remove("sticky");
-            }
-        }
-    });
 
     return (
-        <div className="navbar">         
-            <NavLink to="/artworks"><button>Artworks</button></NavLink>         
-            <NavLink to="/artwork/new"><button>Submit New Artwork</button></NavLink>   
+        <div className="navbar">
+            <DarkModeButton />
+            <NavLink to="/artworks"><button className='nav-button'>Artworks</button></NavLink>         
+            <NavLink to="/artwork/new"><button className='nav-button'>Submit New Artwork</button></NavLink>   
         </div>
 )}
 

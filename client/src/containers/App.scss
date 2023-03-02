@@ -68,6 +68,7 @@ input:hover {
 //-------------------------------------
 
 body {
+  margin-top: 50px;
   color: #1a202c;
   transition: color 0.2s ease-in;   
 }
@@ -85,7 +86,13 @@ main {
 }
 
 .navbar {
-  button {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #0b1d4e;
+  z-index: 1;
+  .nav-button {
     color: white;
     padding: 5px 20px;
     margin: 8px 11px;
@@ -100,13 +107,12 @@ main {
   }
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  text-align: center;
-  background-color: #0b1d4e;
-  z-index: 1;
+.dark-mode-div {
+  color: white;
+  display: inline;
+  float:right;
+  background-color:transparent;
+  padding-right: 10px;
 }
 
 .site-title {
@@ -115,7 +121,7 @@ main {
   font-family: 'Fredericka the Great', cursive;
   background-color: #00270a;
   border-radius: 4px;
-  padding: 10px;
+  padding: 15px;
 }
 
 header {
@@ -203,10 +209,7 @@ header {
 
 // Dark Mode styling
 //-------------------------------------
-.dark-mode-div {
-  display: inline;
-  float: right;
-}
+
 
 .dark-mode {
   color: rgb(255, 255, 255);
