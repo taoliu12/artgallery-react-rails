@@ -68,7 +68,6 @@ input:hover {
 //-------------------------------------
 
 body {
-  margin-top: 50px;
   color: #1a202c;
   transition: color 0.2s ease-in;   
 }
@@ -79,7 +78,7 @@ body {
 }
 
 main {
-  background-color: #f7fafc;
+  background-color: #e5e6d2;
   width: 100%;
   padding: 20px;
   transition: background-color 0.2s ease-in;
@@ -214,7 +213,7 @@ header {
 .dark-mode {
   color: rgb(255, 255, 255);
     
-  main {
+  main, .artwork-card {
     background-color: #1a202c;
   }
   
