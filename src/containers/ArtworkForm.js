@@ -1,12 +1,9 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { updateArtworkFormData, resetArtworkForm } from '../actions/artworkForm'
-import { createArtwork } from '../actions/artworks'
-// import * as React from "react";
-// import "./styles.css";
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 
 export default function ArtworkForm() {
+    const [artworkId, setArtWorkId] = useState(null)
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
     const [isSuccessfullySubmitted, setIsSuccessfullySubmitted] = React.useState(
         false
@@ -26,6 +23,7 @@ export default function ArtworkForm() {
         .then(artwork =>{
             console.log('response',artwork);
             setIsSuccessfullySubmitted(true);  
+            setArtWorkId(artwork.id)
             reset({
                 title: '', 
                 author: '', 
@@ -70,7 +68,11 @@ export default function ArtworkForm() {
         <br></br>
         <input className='submitBtn' type="submit" />
         {isSuccessfullySubmitted && (
-          <div className="success">Artwork submitted successfully!</div>
+          <div className="success">
+            <br/>
+            <p>Artwork submitted successfully!   </p>
+            <p><NavLink to={`/artworks/${artworkId}`}>View it here</NavLink>. </p>
+          </div>
         )}
       </form>
     );
