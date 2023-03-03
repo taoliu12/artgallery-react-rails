@@ -11,11 +11,11 @@ class ArtworkShow extends Component {
 
     render() { 
         return (
-            
-            <div className='ArtworkShow'>
+            <div className='artwork-show-container'>
                 <h3>{this.props.artwork.title}</h3>
                 <p>by: {this.props.artwork.author}</p>
                 <p>{this.props.artwork.description}</p>
+                <br/>
                 <img src={this.props.artwork.url} />
             </div>
         )

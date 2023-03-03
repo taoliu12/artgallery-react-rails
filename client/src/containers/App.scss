@@ -97,8 +97,6 @@ main {
     margin: 8px 11px;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
-    float: left;  
     font-size: 12px; 
     color: white;
     background-color: #2151d6;
@@ -230,3 +228,7 @@ header {
   box-shadow: 2px 2px 11px rgba(0,0,0,0.52);
 }
 // Dark Mode Toggle End
+
+.artwork-show-container img {
+  max-width: 600px;
+}
