@@ -14,7 +14,7 @@ export default function ArtworkForm() {
 
     const onSubmit = artwork => {
         console.log('submit form data',artwork)
-        fetch(`http://localhost:3001/api/artworks`, {
+        fetch(`http://localhost:3000/api/artworks`, {
             method: 'post',
             headers: {
                 "Content-Type": "application/json"

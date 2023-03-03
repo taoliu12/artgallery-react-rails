@@ -23,7 +23,7 @@ class App extends Component {
     render() {
          return (
             <main> 
-              <Toolbar id="back-to-top-anchor" />
+              <Toolbar id="back-to-top-anchor"/>
               <div className='App' id="container">    
                  <Router>
                      <React.Fragment>
