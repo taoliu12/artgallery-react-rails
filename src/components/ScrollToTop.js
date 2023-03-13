@@ -39,7 +39,7 @@ function ScrollTop(props) {
       <Box
         onClick={handleClick}
         role="presentation"
-        sx={{ position: 'fixed', bottom: 16, right: 16 }}
+        sx={{ position: 'fixed', bottom: '5%', right: '50%' }}
       >
         {children}
       </Box>
@@ -47,10 +47,10 @@ function ScrollTop(props) {
   );
 }
 
-export default function BackToTop(props) {
+export default function ScrollToTop(props) {
   return (
     <React.Fragment>
-          <ScrollTop {...props}>
+      <ScrollTop {...props} >
         <Fab size="small" aria-label="scroll back to top">
           <KeyboardArrowUpIcon />
         </Fab>
