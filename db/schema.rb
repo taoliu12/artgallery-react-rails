@@ -24,26 +24,23 @@ ActiveRecord::Schema.define(version: 2023_03_03_234432) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "games", force: :cascade do |t|
-    t.string "title"
-    t.string "summary"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "genre_id"
-  end
-
-  create_table "genres", force: :cascade do |t|
-    t.string "name"
-  end
-
-  create_table "suggestions", force: :cascade do |t|
+  create_table "comments", force: :cascade do |t|
     t.string "content"
-    t.integer "game_id"
+    t.bigint "post_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.string "body"
+    t.integer "author_id"
+    t.boolean "edited?"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "status", default: 0
-    t.string "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,6 +49,22 @@ ActiveRecord::Schema.define(version: 2023_03_03_234432) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
+    t.string "uid"
+    t.string "provider"
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.integer "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_votes_on_post_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
+  end
+
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "votes", "posts"
+  add_foreign_key "votes", "users"
 end
