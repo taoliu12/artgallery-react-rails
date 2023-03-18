@@ -1,3 +1,17 @@
+.formError {
+  color: gray;
+  font-style: italic;
+}
+
+form {
+  width: 400px
+}
+
+.card-image-div {
+  max-height: 300px;
+  overflow: hidden;
+}
+
 button {
   background-color: hwb(122 30% 31%);
   color: white;
@@ -13,6 +27,11 @@ button {
 
 button:hover {
   background-color: #45a049;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.42);
+}
+
+input:hover {
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.12);
 }
 
 .App {
@@ -55,7 +74,8 @@ button:hover {
 
 body {
   color: #1a202c;
-  transition: color 0.2s ease-in;
+  background-color: #e5e6d2;
+  transition: color 0.2s ease-in;   
 }
 
 #app {
@@ -64,15 +84,78 @@ body {
 }
 
 main {
-  background-color: #f7fafc;
-  height: 100%;
+  background-color: #e5e6d2;
   width: 100%;
   padding: 20px;
   transition: background-color 0.2s ease-in;
 }
 
+.navbar {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #0b1d4e;
+  z-index: 1;
+  .nav-button {
+    color: white;
+    padding: 5px 20px;
+    margin: 8px 11px;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px; 
+    color: white;
+    background-color: #2151d6;
+    font-size: 1.2em;
+  }
+}
+
+.dark-mode-div {
+  color: white;
+  display: inline;
+  float:right;
+  background-color:transparent;
+  padding-right: 10px;
+}
+
+
 header {
-  position: absolute;
+  position: left;
+  align-items: right;
+  padding: 5px;
+}
+
+.artworkForm {
+  margin-top: 20px;
+  min-height: 100vh;
+  font-size: 1.5em;
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 5px 0 11px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 0px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
 }
 
 #toggle {
@@ -104,35 +187,68 @@ header {
   height: 100%;
   width: 100%;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
   
-  h1 {
-    padding: 0;
-    margin: 0 0 10px 0;
-  }
+  flex-direction: column;
   
   p {
     opacity: .8;
   }
 }
 
+.submitBtn {
+  font-size: 1em;
+}
+
+.site-title {
+  color: white;
+  font-size: 3em;
+  font-family: 'Fredericka the Great', cursive;
+  font-weight: 100;
+  background-color: #00270a;
+  border-radius: 4px;
+  padding: 15px;
+}
+
 // Dark Mode styling
 //-------------------------------------
 
+
 .dark-mode {
-  color: white;
-    
-  main {
+  color: rgb(255, 255, 255);
+  background-color: #1a202c;
+  
+  a {
+    color: white;
+  }
+
+  main, .artwork-card {
     background-color: #1a202c;
+  }
+
+  .site-title {
+    color: white;
+    font-size: 3em;
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: 100;
+    background-color: #00438a;
+    border-radius: 4px;
+    padding: 15px;
   }
   
   #toggle {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 
     .toggle-inner {
       background-color: #1a202c;
     }
   }
 }
+
+#toggle:hover {
+  box-shadow: 2px 2px 11px rgba(0,0,0,0.52);
+}
 // Dark Mode Toggle End
+
+.artwork-show-container img {
+  max-width: 600px;
+}

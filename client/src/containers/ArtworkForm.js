@@ -1,88 +1,79 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { updateArtworkFormData, resetArtworkForm } from '../actions/artworkForm'
-import { createArtwork } from '../actions/artworks'
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { useForm } from "react-hook-form";
 
-class ArtworkForm extends Component {
+export default function ArtworkForm() {
+    const [artworkId, setArtWorkId] = useState(null)
+    const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
+    const [isSuccessfullySubmitted, setIsSuccessfullySubmitted] = React.useState(
+        false
+      );
 
-    handleOnChange = (e) => {
-        const name = e.target.name
-        const value = e.target.value
-        const updatedData = Object.assign({}, this.props.artworkFormData, { [name]: value });
-        this.props.updateArtworkFormData(updatedData);
-    }
-
-    handleOnSubmit = (e) => {
-        
-        e.preventDefault();
-        this.props.createArtwork(this.props.artworkFormData);         
-        this.props.resetArtworkForm();
-    }
-
-    render() {
-        return (
-            <div className='submit-artwork-form'>
-                <h3>Submit a new artwork</h3>
-
-                <form onSubmit={this.handleOnSubmit}>
-                    <div>
-                        <p>Title:</p>
-                        <input 
-                            type='text'
-                            name='title' 
-                            value={this.props.artworkFormData.title}
-                            onChange={this.handleOnChange}
-                            />
-                    </div>
-                    <div>
-                        <p>Artist:</p>
-                        <input 
-                            type='text'
-                            name='author' 
-                            value={this.props.artworkFormData.author}
-                            onChange={this.handleOnChange}
-                            cols={40}
-                            rows={1}  />
-                    </div>
-                    <div>
-                        <p>Description: </p>
-                       
-                        <textarea 
-                            type='textarea'
-                            name='description' 
-                            value={this.props.artworkFormData.description}
-                            onChange={this.handleOnChange}
-                            cols={40}
-                            rows={10}  />
-                    </div>
-                    <div>
-                        <p>Image URL:  </p>
-                        <input 
-                            type='text'
-                            name='url' 
-                            value={this.props.artworkFormData.url}
-                            onChange={this.handleOnChange}
-                            cols={40}
-                            rows={2}  />
-                    </div>
-                    <div>
-                        <input type='submit' value='Submit' />
-                    </div>
-                    <br />
-                </form>
-            </div>
+    const onSubmit = artwork => {
+        console.log('submit form data',artwork)
+        fetch(`/api/artworks`, {
+            method: 'post',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(artwork)
+            }
         )
-    }
-}
+        .then(response => response.json())
+        .then(artwork =>{
+            console.log('response',artwork);
+            setIsSuccessfullySubmitted(true);  
+            setArtWorkId(artwork.id)
+            reset({
+                title: '', 
+                author: '', 
+                description: '', 
+                url: '' })           
+        })
+    };
+  
+    // console.log(watch("example")); // watch input value by passing the name of it
+  
+    return (
+      /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
+      <form className='artworkForm' onSubmit={handleSubmit(onSubmit)}>
+          <div> 
+            <p>Title: {errors.title && <span className='formError'>(This field is required)</span>}</p>
+            <input 
+                type='text'
+                name='title' 
+                {...register("title", { required: true })}
+                />
+        </div>
+                             
+        <div>
+            <p>Artist: {errors.author && <span className='formError'>(This field is required)</span>}</p>
+            <input 
+                type='text'
+                name='author' 
+                {...register("author", { required: true })}
+                
+                rows={1}  />
+        </div> 
 
-const mapStateToProps = (state) => ({
-    artworkFormData: state.artworkFormData
-})
-
-export default connect(mapStateToProps, 
-    { 
-        updateArtworkFormData, 
-        createArtwork, 
-        resetArtworkForm 
-    })
-    (ArtworkForm)
+        <div>
+            <p>Image URL: {errors.url && <span className='formError'>(This field is required)</span>}</p>
+            <input 
+                type='text'
+                name='url' 
+                {...register("url", { required: true })}
+                
+                rows={2}  />
+        </div>
+        <br></br>
+        <input className='submitBtn' type="submit" />
+        {isSuccessfullySubmitted && (
+          <div className="success">
+            <br/>
+            <p>Artwork submitted successfully!   </p>
+            <p><NavLink to={`/artworks/${artworkId}`}>View it here</NavLink>. </p>
+          </div>
+        )}
+      </form>
+    );
+  }

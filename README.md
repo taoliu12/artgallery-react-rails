@@ -2,6 +2,8 @@
 
 The project is a react app that allows users to browser images and post them. It features an intuitive UI that is all contained in a single page app.
 
+[Live Demo](https://artgallery-react-rails.onrender.com) - Initial loading can take up to 30 seconds due to render.io's hosting free tier.
+
 ## Installation Instructions
 
 #### Setup Rails API backend

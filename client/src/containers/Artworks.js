@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './Artworks.css';
+import './Artworks.scss';
 import ArtworkCard from "../components/ArtworkCard";
 import { connect } from 'react-redux';
 import { getArtworks } from '../actions/artworks';
+import { NavLink } from 'react-router-dom';
 
 class Artworks extends Component {
     componentDidMount() {
@@ -12,12 +13,14 @@ class Artworks extends Component {
     render() {
         // debugger
         return (
-                <div className='ArtworksContainer'>
+            <div> 
+                <h1 className='site-title'>React Art Gallery</h1>
+                <div className='ArtworksContainer'> 
                     {this.props.artworks.map((artwork) => (
                         <ArtworkCard key={artwork.id} artwork={artwork} />
-                        )
-                    )}
-                </div>             
+                    ))}
+                </div>              
+            </div>  
         )
     }
 }
