@@ -7,6 +7,11 @@ form {
   width: 400px
 }
 
+.card-image-div {
+  max-height: 300px;
+  overflow: hidden;
+}
+
 button {
   background-color: hwb(122 30% 31%);
   color: white;
