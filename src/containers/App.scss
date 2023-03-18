@@ -115,14 +115,6 @@ main {
   padding-right: 10px;
 }
 
-.site-title {
-  color: white;
-  font-size: 3em;
-  font-family: 'Fredericka the Great', cursive;
-  background-color: #00270a;
-  border-radius: 4px;
-  padding: 15px;
-}
 
 header {
   position: left;
@@ -193,11 +185,6 @@ header {
   
   flex-direction: column;
   
-  h1 {
-    padding: 0;
-    margin: 0 0 10px 0;
-  }
-  
   p {
     opacity: .8;
   }
@@ -207,6 +194,16 @@ header {
   font-size: 1em;
 }
 
+.site-title {
+  color: white;
+  font-size: 3em;
+  font-family: 'Fredericka the Great', cursive;
+  font-weight: 100;
+  background-color: #00270a;
+  border-radius: 4px;
+  padding: 15px;
+}
+
 // Dark Mode styling
 //-------------------------------------
 
@@ -214,9 +211,23 @@ header {
 .dark-mode {
   color: rgb(255, 255, 255);
   background-color: #1a202c;
+  
+  a {
+    color: white;
+  }
 
   main, .artwork-card {
     background-color: #1a202c;
+  }
+
+  .site-title {
+    color: white;
+    font-size: 3em;
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: 100;
+    background-color: #00438a;
+    border-radius: 4px;
+    padding: 15px;
   }
   
   #toggle {

@@ -14,7 +14,7 @@ class Artworks extends Component {
         // debugger
         return (
             <div> 
-                <p className='site-title'>React Art Gallery</p>
+                <h1 className='site-title'>React Art Gallery</h1>
                 <div className='ArtworksContainer'> 
                     {this.props.artworks.map((artwork) => (
                         <ArtworkCard key={artwork.id} artwork={artwork} />
