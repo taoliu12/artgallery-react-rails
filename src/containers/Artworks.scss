@@ -24,6 +24,18 @@
   max-height: 433px;
 }
 
+@media (max-device-width: 5in) {
+  .ArtworkCard {
+    width: 100%;
+       margin-block: 10px;
+       margin-inline: 0px;
+  }
+
+  main {
+    padding: 0px;
+  }
+}
+
 .ArtworkCard:hover {
   box-shadow: 5px 5px 5px rgba(0,0,0,0.25);
 }

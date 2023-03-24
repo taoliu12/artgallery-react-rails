@@ -7,7 +7,7 @@ const NavBar = () => {
     return (
         <div className="navbar">
             <NavLink to="/artworks"><button className='nav-button'>Artworks</button></NavLink>         
-            <NavLink to="/artwork/new"><button className='nav-button'>Submit New Artwork</button></NavLink>   
+            <NavLink to="/artwork/new"><button className='nav-button'>Submit Artwork</button></NavLink>   
             <DarkModeButton />
         </div>
 )}
