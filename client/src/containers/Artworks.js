@@ -4,6 +4,7 @@ import ArtworkCard from "../components/ArtworkCard";
 import { connect } from 'react-redux';
 import { getArtworks } from '../actions/artworks';
 import SearchForm from './SearchForm';
+import SearchForm2 from './SearchForm2';
 
 class Artworks extends Component {
     componentDidMount() {
@@ -14,6 +15,7 @@ class Artworks extends Component {
         // debugger
         return (
             <div> 
+                <SearchForm2 />
                 <h1 className='site-title'>React Art Gallery</h1>
                 <SearchForm />
                 <div className='ArtworksContainer'> 
