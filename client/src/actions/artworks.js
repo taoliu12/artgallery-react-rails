@@ -16,10 +16,10 @@ const addArtwork = artwork => ({
     artwork
 })
 
-const searchArtworks = (query) => {
-return {
-    type: 'SEARCH_ARTWORKS',
-    payload: query,
+export const searchArtworks = (query) => {
+    return {
+        type: 'SEARCH_ARTWORKS',
+        payload: query,
     };
 };
 

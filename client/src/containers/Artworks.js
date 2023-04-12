@@ -3,7 +3,7 @@ import './Artworks.scss';
 import ArtworkCard from "../components/ArtworkCard";
 import { connect } from 'react-redux';
 import { getArtworks } from '../actions/artworks';
-import { NavLink } from 'react-router-dom';
+import SearchForm from './SearchForm';
 
 class Artworks extends Component {
     componentDidMount() {
@@ -15,6 +15,7 @@ class Artworks extends Component {
         return (
             <div> 
                 <h1 className='site-title'>React Art Gallery</h1>
+                <SearchForm />
                 <div className='ArtworksContainer'> 
                     {this.props.artworks.map((artwork) => (
                         <ArtworkCard key={artwork.id} artwork={artwork} />
