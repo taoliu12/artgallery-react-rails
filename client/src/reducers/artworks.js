@@ -1,6 +1,6 @@
 const initialState = {
     loading: false,
-    searchResults: [],
+    searchResults: [], 
     artworks: [],
     artwork: {}
 }
@@ -10,7 +10,11 @@ export default (state = initialState, action) => {
         case "LOADING_ARTWORKS":
             return {...state, loading: true}
         case 'GET_ARTWORKS':             
-            return {...state, artworks: action.artworks};
+            return {
+                ...state, 
+                artworks: action.artworks,
+                searchResults: action.artworks
+            };
         case 'GET_ARTWORK_SHOW':
                 return {...state, artwork: action.artwork};
         case 'ADD_ARTWORK':

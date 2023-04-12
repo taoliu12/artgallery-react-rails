@@ -26,7 +26,7 @@ class Artworks extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    artworks: state.artworks.artworks
+    artworks: state.artworks.searchResults
 })
 
 const mapDispatchToProps = ({
