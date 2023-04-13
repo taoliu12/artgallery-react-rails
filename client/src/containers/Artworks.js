@@ -15,9 +15,8 @@ class Artworks extends Component {
         // debugger
         return (
             <div> 
-                <SearchForm2 />
                 <h1 className='site-title'>React Art Gallery</h1>
-                <SearchForm />
+                <SearchForm2 />
                 <div className='ArtworksContainer'> 
                     {this.props.artworks.map((artwork) => (
                         <ArtworkCard key={artwork.id} artwork={artwork} />
