@@ -20,29 +20,34 @@ export default function SearchForm() {
   };
 
   return (
-    <>
     <Box sx={{
-      display: 'flex',
-      boxShadow: 'none',
-      margin: '50px auto',
+      margin: 'auto',
+      mt: '40px',
       width: '444px',
-
     }}>
-        <TextField 
-          sx={{ border: 'none', backgroundColor: 'white', width: '100%'}}
-          placeholder="Search by title or artist"
-          inputProps={{ 'aria-label': 'ex. Vermeer', style: { fontSize: '18px' } }}
-          type="text"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-        <IconButton
-          onClick={handleSearch}
-          sx={{ }} 
-        >
-          <SearchIcon fontSize="large" />
-        </IconButton>
+      <form onSubmit={handleSearch}>
+        <Box sx={{
+          display: 'flex',
+          boxShadow: 'none',
+          margin: 'auto',     
+        }}>
+            <TextField 
+              sx={{ border: 'none', backgroundColor: 'white', width: '100%'}}
+              placeholder="Search by title or artist"
+              inputProps={{ 'aria-label': 'ex. Vermeer', style: { fontSize: '18px' } }}
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <IconButton
+              onClick={handleSearch}
+              sx={{ }} 
+            >
+              <SearchIcon fontSize="large" />
+            </IconButton>
+        </Box>
+      </form>
     </Box>
-    </>
+    
   );
 }
