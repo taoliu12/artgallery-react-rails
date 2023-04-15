@@ -25,6 +25,7 @@ export const searchArtworks = (query) => {
 
 // thunk actions
 export const getArtworks = () => {
+    // alert('getting')
     return dispatch => {
         dispatch({ type: "LOADING_ARTWORKS" });
         return (
@@ -36,6 +37,7 @@ export const getArtworks = () => {
 }
 
 export const getArtwork = (id) => {
+    alert('getting')
     return dispatch => {
         dispatch({ type: "LOADING_ARTWORKS" });
         return (
