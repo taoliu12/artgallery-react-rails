@@ -16,7 +16,6 @@ class Artworks extends Component {
       }
 
     componentDidMount() {
-
         this.props.getArtworks();
     }
 
@@ -26,7 +25,9 @@ class Artworks extends Component {
         const searchParams = new URLSearchParams(search);
         const prevSearchQuery = prevSearchParams.get('search');
         const searchQuery = searchParams.get('search');
-        if (searchQuery !== prevSearchQuery) {
+        if (searchQuery !== prevSearchQuery && searchQuery == null) {
+            this.props.getArtworks(); //refactor into resetArtworks? instead of re-fetching
+        } else if (searchQuery !== prevSearchQuery) {
             this.props.searchArtworks(searchQuery)           
         }
       }
