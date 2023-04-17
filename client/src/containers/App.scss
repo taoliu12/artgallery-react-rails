@@ -30,10 +30,6 @@ button:hover {
   box-shadow: 2px 2px 5px rgba(0,0,0,0.42);
 }
 
-input:hover {
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.12);
-}
-
 .App {
   text-align: center;
 }
@@ -131,6 +127,11 @@ header {
   margin-top: 20px;
   min-height: 100vh;
   font-size: 1.5em;
+
+  input:hover {
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.12);
+  }
+  
   input[type=text], select {
     width: 100%;
     padding: 12px 20px;

@@ -16,9 +16,15 @@ const addArtwork = artwork => ({
     artwork
 })
 
+export const searchArtworks = (query) => {
+    return {
+        type: 'SEARCH_ARTWORKS',
+        payload: query,
+    };
+};
+
 // thunk actions
-export const getArtworks = () => {
-//    debugger
+export const getArtworks = () => {     
     return dispatch => {
         dispatch({ type: "LOADING_ARTWORKS" });
         return (
@@ -44,9 +50,7 @@ export const getArtwork = (id) => {
 }
 
 export const createArtwork = (artwork) => {
-
     return dispatch => {
-        
         return (
             fetch(`/api/artworks`, {
                 method: 'post',

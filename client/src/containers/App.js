@@ -10,7 +10,7 @@ import { StyledEngineProvider } from '@mui/material/styles';
 
 import './App.scss';
 import Artworks from './Artworks';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import Toolbar from '@mui/material/Toolbar';
 import About from '../components/About';
@@ -28,7 +28,7 @@ class App extends Component {
                  <Router>
                      <React.Fragment>
                          <NavBar /><br></br>
-                         <Route exact path='/' component={Artworks} />
+                         <Route exact path='/' render={() => <Redirect to="/artworks" />} />
                          <Route exact path='/artworks' component={Artworks} />
                          <Route exact path='/artwork/new' component={ArtworkForm} />                          
                          <Route path='/artworks/:id'  component={ArtworkShow} />
