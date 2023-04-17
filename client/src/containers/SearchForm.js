@@ -36,12 +36,14 @@ export default function SearchForm() {
   return (
     <Box sx={{
       margin: 'auto',
-      mt: '40px',
+      marginY: '40px',
       minWidth: '344px',
-      maxWidth: '444px',
-      display: 'flex'
+      maxWidth: '400px',
     }}>
-
+      <form onSubmit={handleSearch} >
+        <Box sx={{
+          display: 'flex'
+        }}>
           <TextField 
             fullWidth
             placeholder="Search by title or artist"
@@ -54,7 +56,8 @@ export default function SearchForm() {
           <CustomIconButton onClick={handleSearch}>
             <SearchIcon fontSize="large" />
           </CustomIconButton>
-
+        </Box>
+      </form>
     </Box>
     
   );
