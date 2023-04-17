@@ -4,12 +4,23 @@ import { searchArtworks } from '../actions/artworks';
 import MenuItem from '@mui/material/MenuItem';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import { styled } from '@mui/system';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import IconButton from '@mui/material/IconButton';
 
 import { useHistory } from 'react-router-dom';
+
+const Button = styled('button')({
+  color: 'white',
+  backgroundColor: 'blue',
+  padding: '10px 20px',
+  borderRadius: '5px',
+  cursor: 'pointer',
+  '&:hover': {
+    backgroundColor: 'darkblue',
+  },
+});
 
 export default function SearchForm() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -31,6 +42,9 @@ export default function SearchForm() {
       mt: '40px',
       width: '444px',
     }}>
+      <div>
+        <Button>Click me!</Button>
+      </div>
       <form onSubmit={handleSearch}>
         <Box sx={{
           display: 'flex',
