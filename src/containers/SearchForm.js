@@ -4,12 +4,19 @@ import { searchArtworks } from '../actions/artworks';
 import MenuItem from '@mui/material/MenuItem';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import TextField from '@mui/material/TextField';
+import { styled } from '@mui/system';
+import { Grid, TextField, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import IconButton from '@mui/material/IconButton';
-
 import { useHistory } from 'react-router-dom';
+
+const CustomIconButton = styled(IconButton)({
+  alignSelf: 'center',
+  marginLeft: '-60px',
+  borderRadius: '50%',
+  '&:hover': {
+    backgroundColor: '#f2f2f2',
+  },
+});
 
 export default function SearchForm() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -28,32 +35,28 @@ export default function SearchForm() {
   return (
     <Box sx={{
       margin: 'auto',
-      mt: '40px',
-      width: '444px',
+      marginY: '40px',
+      minWidth: '344px',
+      maxWidth: '400px',
     }}>
-      <form onSubmit={handleSearch}>
+      <form onSubmit={handleSearch} >
         <Box sx={{
-          display: 'flex',
-          boxShadow: 'none',
-          margin: 'auto',     
+          display: 'flex'
         }}>
-            <TextField 
-              sx={{ border: 'none', backgroundColor: 'white', width: '100%'}}
-              placeholder="Search by title or artist"
-              inputProps={{ 'aria-label': 'ex. Vermeer', style: { fontSize: '18px' } }}
-              type="text"
-              value={searchQuery}
-              onChange={handleSearchInputChange}
-            />
-            <IconButton
-              onClick={handleSearch}
-              sx={{ }} 
-            >
-              <SearchIcon fontSize="large" />
-            </IconButton>
+          <TextField 
+            fullWidth
+            placeholder="Search by title or artist"
+            inputProps={{ 'aria-label': 'ex. Vermeer', style: { fontSize: '18px' } }}
+            type="text"
+            value={searchQuery}
+            onChange={handleSearchInputChange}
+            sx={{ border: 'none', backgroundColor: 'white', borderRadius: '4px' }}
+          />
+          <CustomIconButton onClick={handleSearch}>
+            <SearchIcon fontSize="large" />
+          </CustomIconButton>
         </Box>
       </form>
     </Box>
-    
   );
 }
