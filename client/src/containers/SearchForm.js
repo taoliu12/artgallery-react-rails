@@ -7,7 +7,6 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/system';
 import { Grid, TextField, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-
 import { useHistory } from 'react-router-dom';
 
 const CustomIconButton = styled(IconButton)({
@@ -59,6 +58,5 @@ export default function SearchForm() {
         </Box>
       </form>
     </Box>
-    
   );
 }
