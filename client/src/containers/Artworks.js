@@ -1,11 +1,59 @@
 import React, { Component } from 'react';
 import './Artworks.scss';
 import ArtworkCard from "../components/ArtworkCard";
+import SearchForm from './SearchForm';
+
+import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getArtworks, searchArtworks } from '../actions/artworks';
-import SearchForm from './SearchForm';
-import { withRouter } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
+function Artworks({ artworks, getArtworks, searchArtworks }) {
+  const [searchQuery, setSearchQuery] = useState('');
+  const location = useLocation();
+
+  useEffect(() => {
+    getArtworks();
+  }, [getArtworks]);
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const query = searchParams.get('search');
+    if (query === null) {
+      searchArtworks('');
+      setSearchQuery('');
+    } else {
+      searchArtworks(query);
+      setSearchQuery(query);
+    }
+  }, [location.search, searchArtworks]);
+
+  return (
+    <div>
+      <h1 className='site-title'>React Art Gallery</h1>
+      <SearchForm />
+      <div className='ArtworksContainer'>
+        {artworks.map((artwork) => (
+          <ArtworkCard key={artwork.id} artwork={artwork} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const mapStateToProps = (state) => ({
+  artworks: state.artworks.searchResults,
+});
+
+const mapDispatchToProps = {
+  getArtworks,
+  searchArtworks,
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Artworks));
+
+
+/*
 class Artworks extends Component {
     constructor(props) {
         super(props);
@@ -59,3 +107,4 @@ const mapDispatchToProps = ({
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Artworks));
+*/
