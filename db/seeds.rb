@@ -13,7 +13,7 @@ artworksArray.each do |obj|
         technique = obj['technique']
         url = obj['images']['web']['url']
         
-        Artwork.create(title: title, author: artist,  description: technique, url: url)
+        Artwork.create(title: title, artist: artist,  description: technique, url: url)
     end
 end
 

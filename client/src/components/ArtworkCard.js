@@ -22,7 +22,7 @@ export default class ArtworkCard extends Component {
                 {/* <button onClick={this.handleClick}>Vote</button>
                 <p>{this.state.voteCount}</p> */}
                 <h3>{this.props.artwork.title}</h3>
-                <p>{this.props.artwork.author}</p>
+                <p>{this.props.artwork.artist}</p>
                 <div className='card-image-div'>
                     <Link 
                         to={`/artworks/${this.props.artwork.id}`}

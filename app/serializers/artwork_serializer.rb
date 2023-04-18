@@ -1,3 +1,3 @@
 class ArtworkSerializer < ActiveModel::Serializer
-  attributes :id, :title, :author,  :description, :url
+  attributes :id, :title, :artist,  :description, :url
 end

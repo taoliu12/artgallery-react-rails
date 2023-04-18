@@ -13,7 +13,7 @@ class ArtworkShow extends Component {
         return (
             <div className='artwork-show-container'>
                 <h2>{this.props.artwork.title}</h2>
-                <p>{this.props.artwork.author}</p>
+                <p>{this.props.artwork.artist}</p>
                 <p>{this.props.artwork.description}</p>
                 <br/>
                 <img src={this.props.artwork.url} alt="artwork" />
