@@ -7,7 +7,7 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/system';
 import { Grid, TextField, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const CustomIconButton = styled(IconButton)({
   alignSelf: 'center',
@@ -20,7 +20,7 @@ const CustomIconButton = styled(IconButton)({
 
 export default function SearchForm() {
   const [searchQuery, setSearchQuery] = useState('');
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleSearch = (e) => {
     e.preventDefault();

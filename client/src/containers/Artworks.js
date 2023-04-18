@@ -50,7 +50,7 @@ const mapDispatchToProps = {
   searchArtworks,
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Artworks));
+export default connect(mapStateToProps, mapDispatchToProps)(Artworks);
 
 
 /*
