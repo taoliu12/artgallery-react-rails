@@ -3,9 +3,7 @@ artworksArray = JSON.parse(response.body)["data"]
 
 Artwork.destroy_all
 
-artworksArray.each do |obj|
-    
-    
+artworksArray.each do |obj| 
     if obj['images'] && obj['images']['web'] && obj['images']['web']['url']
         title = obj['title']
         creation_date = obj['creation_date']
