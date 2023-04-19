@@ -11,6 +11,7 @@ gem 'pg'
 gem 'faker'
 gem 'httparty'
 gem 'dotenv'
+gem 'fast_jsonapi'
 
 # Use Puma as the app server
 gem 'puma', '~> 4.3'

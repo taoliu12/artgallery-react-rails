@@ -18,9 +18,9 @@ import { textShadow } from '@mui/system';
 import NavbarButton from './NavbarButton';
 
 const pages = [
-  { title: 'All Posts', route: '/posts' },
-  { title: 'My Posts', route: '/myposts' },
-  { title: 'Create Post', route: '/posts/new' }
+  { title: 'Artworks', route: '/artworks' },
+  { title: 'My Favorites', route: '/favorite_artworks' },
+  { title: 'Submit Artwork', route: '/artworks/new' }
 ];
 
 const settings = [
@@ -75,7 +75,7 @@ function ResponsiveAppBar({loggedInUser, handleLogout}) {
               textDecoration: 'none',
             }}
           >
-            Talky
+            Art Gallery
           </Typography>
           {/*hamburger*/}
           <Box id="test" sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}>

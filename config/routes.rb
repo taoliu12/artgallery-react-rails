@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-
-  namespace :api do
-    resources :artworks, :except => [:new, :edit]  
-  end
-  
+ 
+  resources :artworks, :except => [:new, :edit]  
   post '/signup', to: 'users#create'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'  
