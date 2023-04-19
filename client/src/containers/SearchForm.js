@@ -20,12 +20,12 @@ const CustomIconButton = styled(IconButton)({
 
 export default function SearchForm() {
   const [searchQuery, setSearchQuery] = useState('');
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleSearch = (e) => {
     e.preventDefault();
     // dispatch(searchArtworks(searchQuery));
-    history.push(`/artworks?search=${searchQuery}`);
+    navigate(`/artworks?search=${searchQuery}`);
   };
 
   const handleSearchInputChange = (event) => {
