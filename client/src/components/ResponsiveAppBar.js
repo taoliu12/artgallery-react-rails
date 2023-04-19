@@ -8,19 +8,21 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
+import ColorLensIcon from '@mui/icons-material/ColorLens';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem'; 
-import ForumIcon from '@mui/icons-material/Forum';
 import { textShadow } from '@mui/system';
 import NavbarButton from './NavbarButton';
 
 const pages = [
-  { title: 'Artworks', route: '/artworks' },
-  { title: 'My Favorites', route: '/favorite_artworks' },
-  { title: 'Submit Artwork', route: '/artworks/new' }
+  { title: 'Artworks', route: '/artworks', reqLogin: false, alwaysShow: true},
+  { title: 'My Favorites', route: '/favorite_artworks', reqLogin: true },
+  { title: 'Submit Artwork', route: '/artworks/new', reqLogin: true },
+  { title: 'Signup', route: '/signup', reqLogin: false },
+  { title: 'Login', route: '/login', reqLogin: false },
 ];
 
 const settings = [
@@ -57,7 +59,7 @@ function ResponsiveAppBar({loggedInUser, handleLogout}) {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link to='/posts'> 
-            <ForumIcon sx={{ display: { color: 'white',
+            <ColorLensIcon sx={{ display: { color: 'white',
             fontSize: '33px',xs: 'none', sm: 'flex' }, mr: 1 }} />
           </Link>
           <Typography 
@@ -109,48 +111,29 @@ function ResponsiveAppBar({loggedInUser, handleLogout}) {
             >
                 <Link to='/posts'>
                   <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">All Posts</Typography>
+                    <Typography textAlign="center">Artworks</Typography>
                   </MenuItem>
                 </Link>
-                { loggedInUser ? 
-                [
-                  <Link to='/myposts'>
-                    <MenuItem onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">My Posts</Typography>
-                    </MenuItem>
-                  </Link> ,          
-                  <Link to='/posts/new'>
-                    <MenuItem onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">Create Post</Typography>
-                    </MenuItem>
-                  </Link> 
-                ] : [
-                  <Link to='/signup'>
-                    <MenuItem onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">Sign Up</Typography>
-                    </MenuItem>
-                  </Link> ,          
-                  <Link to='/login'>
-                    <MenuItem onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">Login</Typography>
-                    </MenuItem>
-                  </Link>           
-                                
-                ] }
+                {pages.map(page =>
+                  page.reqLogin && loggedInUser && (
+                    <Link to={page.route} key={page.title}>
+                      <MenuItem onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">{page.title}</Typography>
+                      </MenuItem>
+                    </Link>
+                  )
+                )} 
             </Menu>
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex', md: 'flex' } }}> 
-              <NavbarButton item='All Posts' route='/posts'/>      
-              { loggedInUser ? 
-              <>
-                <NavbarButton item='My Posts' route='/myposts'/>
-                <NavbarButton item='Create Post' route='/posts/new'/>               
-              </> : <>
-                <NavbarButton item='Login' route='/login'/>               
-                <NavbarButton item='Sign Up' route='/signup'/>               
-              </> }
-              {/* <NavbarButton item='About' route='/about'/>       */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex', md: 'flex' } }}>                
+              {pages.map(page =>
+                page.alwaysShow || 
+                (!page.reqLogin && !loggedInUser) || 
+                (page.reqLogin && loggedInUser) ? (
+                  <NavbarButton item={page.title} route={page.route} key={page.title} />
+                ) : null
+              )}
           </Box>
           <DarkModeButton />
 
