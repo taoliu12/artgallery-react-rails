@@ -20,6 +20,7 @@ import ArtworkForm from './ArtworkForm';
 import ScrollToTop from '../components/ScrollToTop';
 import SignupForm from './SignupForm'
 import LoginForm from './LoginForm'
+import ResponsiveAppBar from '../components/ResponsiveAppBar'; 
 
 function App() {
     const [ loggedInUser , setLoggedInUser ] = useState( null )
@@ -32,11 +33,19 @@ function App() {
         setLoggedInUser(userAlreadyLoggedIn.data.attributes) 
       })
     }, [])
-    
+
+    const handleLogout = ()=>{
+        fetch(  "/logout" , { method: "DELETE" }  )
+        .then( r => r.json() )
+        .then( json =>{       
+          setLoggedInUser( null )       
+        })
+    }
     console.log('App  loggedInUser', loggedInUser)
 
     return (
         <main> 
+            <ResponsiveAppBar loggedInUser={loggedInUser} handleLogout={handleLogout}/>
             <Toolbar id="back-to-top-anchor"/>
             <div className='App' id="container">    
                 <NavBar /><br></br>
