@@ -34,7 +34,7 @@ function App() {
                 <Routes>
                         <Route path='/signup' element={<SignupForm setLoggedInUser={setLoggedInUser}/>}/>  
                         <Route path='/' render={() => <Navigate to="/artworks" />} />
-                        <Route path='/artworks' element={Artworks} />
+                        <Route path='/artworks' element={<Artworks/>} />
                         <Route path='/artwork/new' element={ArtworkForm} />                          
                         <Route path='/artworks/:id'  element={ArtworkShow} />
                 </Routes>
