@@ -10,7 +10,7 @@ import { StyledEngineProvider } from '@mui/material/styles';
 
 import './App.scss';
 import Artworks from './Artworks';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import Toolbar from '@mui/material/Toolbar';
 import About from '../components/About';
@@ -26,17 +26,17 @@ function App() {
     
     return (
         <main> 
+            'test'
             <Toolbar id="back-to-top-anchor"/>
             <div className='App' id="container">    
+
                 <NavBar /><br></br>
                 <Routes>
-                    <React.Fragment>
                         <Route path='/signup' element={<SignupForm setLoggedInUser={setLoggedInUser}/>}/>  
-                        <Route exact path='/' render={() => <Navigate to="/artworks" />} />
-                        <Route exact path='/artworks' component={Artworks} />
-                        <Route exact path='/artwork/new' component={ArtworkForm} />                          
-                        <Route path='/artworks/:id'  component={ArtworkShow} />
-                    </React.Fragment>
+                        <Route path='/' render={() => <Navigate to="/artworks" />} />
+                        <Route path='/artworks' element={Artworks} />
+                        <Route path='/artwork/new' element={ArtworkForm} />                          
+                        <Route path='/artworks/:id'  element={ArtworkShow} />
                 </Routes>
                 <ScrollToTop />
             </div>

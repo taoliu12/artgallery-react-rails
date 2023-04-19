@@ -13,8 +13,9 @@ function Artworks({ artworks, getArtworks, searchArtworks }) {
   const location = useLocation();
 
   useEffect(() => {
+    console.log('getartworks')
     getArtworks();
-  }, [getArtworks]);
+  }, []);
 
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
@@ -51,60 +52,3 @@ const mapDispatchToProps = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Artworks);
-
-
-/*
-class Artworks extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          searchQuery: '',
-          // other state variables
-        };
-      }
-
-    componentDidMount() {
-        this.props.getArtworks();
-    }
-
-    componentDidUpdate(prevProps) {
-        const { search } = this.props.location;
-        const prevSearchParams = new URLSearchParams(prevProps.location.search);
-        const searchParams = new URLSearchParams(search);
-        const prevSearchQuery = prevSearchParams.get('search');
-        const searchQuery = searchParams.get('search');
-        if (searchQuery !== prevSearchQuery && searchQuery == null) {
-            this.props.searchArtworks('')   
-        } else if (searchQuery !== prevSearchQuery) {
-            this.props.searchArtworks(searchQuery)           
-        }
-      }
-    
-
-    render() {
-        // debugger
-        return (
-            <div> 
-                <h1 className='site-title'>React Art Gallery</h1>
-                <SearchForm/>
-                <div className='ArtworksContainer'> 
-                    {this.props.artworks.map((artwork) => (
-                        <ArtworkCard key={artwork.id} artwork={artwork} />
-                    ))}
-                </div>              
-            </div>  
-        )
-    }
-}
-
-const mapStateToProps = (state) => ({
-    artworks: state.artworks.searchResults
-})
-
-const mapDispatchToProps = ({
-    getArtworks,
-    searchArtworks
-})
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Artworks));
-*/
