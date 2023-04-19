@@ -26,10 +26,8 @@ function App() {
     
     return (
         <main> 
-            'test'
             <Toolbar id="back-to-top-anchor"/>
             <div className='App' id="container">    
-
                 <NavBar /><br></br>
                 <Routes>
                         <Route path='/signup' element={<SignupForm setLoggedInUser={setLoggedInUser}/>}/>  

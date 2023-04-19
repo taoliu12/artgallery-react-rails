@@ -8,7 +8,7 @@ export default function SignupForm({setLoggedInUser}) {
     const [customError, setCustomError] = useState('')
     const navigate = useNavigate();
     
-      const handleLoginSubmit = ( userToLogin ) =>{ 
+      const handleLoginSubmit = ( userToLogin ) =>{          
         fetch( "/signup", 
           {
             method: "POST",

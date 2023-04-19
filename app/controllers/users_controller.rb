@@ -5,7 +5,7 @@ class UsersController < ApplicationController
         # byebug
         if @user.save
             session[:user_id] = @user.id 
-            render json: @user
+            render json: UserSerializer.new(@user)
         else
             # byebug
             render json: { error: "Invalid username or password" }, status: :unauthorized
