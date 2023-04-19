@@ -20,7 +20,7 @@ export default function SignupForm({setLoggedInUser}) {
         .then( user => {              
             if (!user.error) {
                 setLoggedInUser( user ) 
-                navigate("/posts")     
+                navigate("/artworks")     
             } else {
                 setLoggedInUser( null ); 
                 setCustomError("Invalid username or password")

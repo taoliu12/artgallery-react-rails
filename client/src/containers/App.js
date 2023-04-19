@@ -19,11 +19,22 @@ import ArtworkShow from './ArtworkShow';
 import ArtworkForm from './ArtworkForm'; 
 import ScrollToTop from '../components/ScrollToTop';
 import SignupForm from './SignupForm'
-
+import LoginForm from './LoginForm'
 
 function App() {
     const [ loggedInUser , setLoggedInUser ] = useState( null )
+
+    useEffect(() => {
+      fetch( "/userInSession" )
+      .then( r => r.json() )
+      .then( userAlreadyLoggedIn => { 
+        userAlreadyLoggedIn.data &&
+        setLoggedInUser(userAlreadyLoggedIn.data.attributes) 
+      })
+    }, [])
     
+    console.log('App  loggedInUser', loggedInUser)
+
     return (
         <main> 
             <Toolbar id="back-to-top-anchor"/>
@@ -31,6 +42,7 @@ function App() {
                 <NavBar /><br></br>
                 <Routes>
                         <Route path='/signup' element={<SignupForm setLoggedInUser={setLoggedInUser}/>}/>  
+                        <Route path='/login' element={<LoginForm setLoggedInUser={setLoggedInUser}/>}/>  
                         <Route path='/' render={() => <Navigate to="/artworks" />} />
                         <Route path='/artwork/new' element={<ArtworkForm/>} />                          
                         <Route path='/artworks/:id'  element={<ArtworkShow/>} />

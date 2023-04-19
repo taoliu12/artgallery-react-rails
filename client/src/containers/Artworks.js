@@ -34,7 +34,7 @@ function Artworks({ artworks, getArtworks, searchArtworks }) {
       <h1 className='site-title'>React Art Gallery</h1>
       <SearchForm />
       <div className='ArtworksContainer'>
-        {artworks.map((artwork) => (
+        {artworks?.map((artwork) => (
           <ArtworkCard key={artwork.id} artwork={artwork} />
         ))}
       </div>
