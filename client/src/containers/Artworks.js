@@ -30,8 +30,7 @@ function Artworks({ artworks, getArtworks, searchArtworks }) {
   }, [location.search, searchArtworks]);
 
   return (
-    <div>
-      <h1 className='site-title'>React Art Gallery</h1>
+    <div>       
       <SearchForm />
       <div className='ArtworksContainer'>
         {artworks?.map((artwork) => (

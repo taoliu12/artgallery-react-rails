@@ -52,7 +52,7 @@ function ResponsiveAppBar({loggedInUser, handleLogout}) {
     <AppBar position="static" sx={{
       color: 'white',
       position: `fixed !important`,
-      backgroundColor: 'light blue',
+      backgroundColor: '#00438A',
       textShadow: '0px 0px 3px #00000',
       zIndex: '11',
     }}>
@@ -127,13 +127,13 @@ function ResponsiveAppBar({loggedInUser, handleLogout}) {
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex', md: 'flex' } }}>                
-              {pages.map(page =>
-                page.alwaysShow || 
-                (!page.reqLogin && !loggedInUser) || 
-                (page.reqLogin && loggedInUser) ? (
-                  <NavbarButton item={page.title} route={page.route} key={page.title} />
-                ) : null
-              )}
+            {pages.filter(page => 
+              page.alwaysShow || 
+              (!page.reqLogin && !loggedInUser) || 
+              (page.reqLogin && loggedInUser)
+            ).map(page => (
+              <NavbarButton item={page.title} route={page.route} key={page.title} />
+            ))}
           </Box>
           <DarkModeButton />
 
