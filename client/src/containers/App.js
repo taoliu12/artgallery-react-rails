@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import { StyledEngineProvider } from '@mui/material/styles';
 
 import './App.scss';
-import Artworks from './Artworks-new';
+import Artworks from './Artworks-inf-scroll';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import Toolbar from '@mui/material/Toolbar';

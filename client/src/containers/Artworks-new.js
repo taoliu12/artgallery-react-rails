@@ -18,6 +18,7 @@ const Artworks = () => {
   }, []);
 
   useEffect(() => {
+    console.log(page)
     if (!isLoading) return;
 
     if (observer.current) {
@@ -49,12 +50,14 @@ const Artworks = () => {
     <div>       
         <SearchForm />
         <div className='ArtworksContainer'>
-        {artworks?.map((artwork) => (
-            <ArtworkCard key={artwork.id} artwork={artwork} />
-        ))}
+            {artworks?.map((artwork) => (
+                <ArtworkCard key={artwork.id} artwork={artwork} />
+            ))}
+
+            <div ref={loader} />
+            {isLoading && <div>Loading...</div>}
+
         </div>
-        {isLoading && <div>Loading...</div>}
-        <div ref={loader} />
     </div>
   );
 };
