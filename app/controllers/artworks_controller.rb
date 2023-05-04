@@ -1,4 +1,4 @@
-class Api::ArtworksController < ApplicationController
+class ArtworksController < ApplicationController
     def index
         @artworks = Artwork.newest_to_oldest         
         render json: @artworks

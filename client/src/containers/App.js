@@ -10,7 +10,7 @@ import { StyledEngineProvider } from '@mui/material/styles';
 
 import './App.scss';
 import Artworks from './Artworks';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import Toolbar from '@mui/material/Toolbar';
 import About from '../components/About';
@@ -18,33 +18,49 @@ import About from '../components/About';
 import ArtworkShow from './ArtworkShow';
 import ArtworkForm from './ArtworkForm'; 
 import ScrollToTop from '../components/ScrollToTop';
+import SignupForm from './SignupForm'
+import LoginForm from './LoginForm'
+import ResponsiveAppBar from '../components/ResponsiveAppBar'; 
 
-class App extends Component {
-    render() {
-         return (
-            <main> 
-              <Toolbar id="back-to-top-anchor"/>
-              <div className='App' id="container">    
-                 <Router>
-                     <React.Fragment>
-                         <NavBar /><br></br>
-                         <Route exact path='/' render={() => <Redirect to="/artworks" />} />
-                         <Route exact path='/artworks' component={Artworks} />
-                         <Route exact path='/artwork/new' component={ArtworkForm} />                          
-                         <Route path='/artworks/:id'  component={ArtworkShow} />
-                        {/* <Route exact path='/about' component={About} />
-                         <Route exact path='/challenges' component={Challenges} /> */}
-                     </React.Fragment>
-                 </Router>
-               
- 
-                 <ScrollToTop />
-      
-               
-             </div>
-            </main>
-        )
+function App() {
+    const [ loggedInUser , setLoggedInUser ] = useState( null )
+
+    useEffect(() => {
+      fetch( "/userInSession" )
+      .then( r => r.json() )
+      .then( userAlreadyLoggedIn => { 
+        userAlreadyLoggedIn.data &&
+        setLoggedInUser(userAlreadyLoggedIn.data.attributes) 
+      })
+    }, [])
+
+    const handleLogout = ()=>{
+        fetch(  "/logout" , { method: "DELETE" }  )
+        .then( r => r.json() )
+        .then( json =>{       
+          setLoggedInUser( null )       
+        })
     }
+    console.log('App  loggedInUser', loggedInUser)
+
+    return (
+        <main> 
+            <ResponsiveAppBar loggedInUser={loggedInUser} handleLogout={handleLogout}/>
+            <Toolbar id="back-to-top-anchor"/>
+            <div className='App' id="container">    
+                <NavBar /><br></br>
+                <Routes>
+                        <Route path='/signup' element={<SignupForm setLoggedInUser={setLoggedInUser}/>}/>  
+                        <Route path='/login' element={<LoginForm setLoggedInUser={setLoggedInUser}/>}/>  
+                        <Route path='/' render={() => <Navigate to="/artworks" />} />
+                        <Route path='/artwork/new' element={<ArtworkForm/>} />                          
+                        <Route path='/artworks/:id'  element={<ArtworkShow/>} />
+                        <Route path='/artworks' element={<Artworks/>} />
+                </Routes>
+                <ScrollToTop />
+            </div>
+        </main>
+    )
 }
 
 export default App;

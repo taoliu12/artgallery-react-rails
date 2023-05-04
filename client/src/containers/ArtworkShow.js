@@ -1,25 +1,24 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getArtwork } from '../actions/artworks';
+import { useParams } from 'react-router-dom';
 
-class ArtworkShow extends Component {
-    id = this.props.match.params.id
+const ArtworkShow = ({ artwork, getArtwork }) => {
+    const { id } = useParams();
 
-    componentDidMount() {
-        this.props.getArtwork(this.id);
-    }
+    useEffect(() => {
+        getArtwork(id);
+    }, [getArtwork, id]);
 
-    render() { 
-        return (
-            <div className='artwork-show-container'>
-                <h2>{this.props.artwork.title}</h2>
-                <p>{this.props.artwork.author}</p>
-                <p>{this.props.artwork.description}</p>
-                <br/>
-                <img src={this.props.artwork.url} alt="artwork" />
-            </div>
-        )
-    }
+    return (
+        <div className='artwork-show-container'>
+            <h2>{artwork.title}</h2>
+            <p>{artwork.author}</p>
+            <p>{artwork.description}</p>
+            <br/>
+            <img src={artwork.url} alt="artwork" />
+        </div>
+    )
 }
 
 const mapStateToProps = (state) => ({
@@ -32,3 +31,4 @@ const mapDispatchToProps = ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArtworkShow);
+

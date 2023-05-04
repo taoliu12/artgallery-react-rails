@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-
-  namespace :api do
-    resources :artworks, :except => [:new, :edit] #no need for new and edit routes, because react renders the respective forms
-  end
-
+ 
+  resources :artworks, :except => [:new, :edit]  
+  post '/signup', to: 'users#create'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'  
+  get "/userInSession", to:"sessions#get_logged_in_user"
 end
