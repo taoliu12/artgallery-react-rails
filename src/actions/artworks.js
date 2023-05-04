@@ -28,7 +28,7 @@ export const getArtworks = () => {
     return dispatch => {
         dispatch({ type: "LOADING_ARTWORKS" });
         return (
-            fetch(`/api/artworks`)             
+            fetch(`/artworks`)             
             .then(response => response.json())             
             .then(artworks => dispatch(displayArtworks(artworks)))
         )
@@ -39,7 +39,7 @@ export const getArtwork = (id) => {
     return dispatch => {
         dispatch({ type: "LOADING_ARTWORKS" });
         return (
-            fetch(`/api/artworks/${id}`)
+            fetch(`/artworks/${id}`)
             .then(response => response.json())
             .then(artwork => {
                 dispatch(displayArtwork(artwork))
@@ -52,7 +52,7 @@ export const getArtwork = (id) => {
 export const createArtwork = (artwork) => {
     return dispatch => {
         return (
-            fetch(`/api/artworks`, {
+            fetch(`/artworks`, {
                 method: 'post',
                 headers: {
                     "Content-Type": "application/json"
