@@ -52,7 +52,7 @@ function App() {
                 <Routes>
                         <Route path='/signup' element={<SignupForm setLoggedInUser={setLoggedInUser}/>}/>  
                         <Route path='/login' element={<LoginForm setLoggedInUser={setLoggedInUser}/>}/>  
-                        <Route path='/' render={() => <Navigate to="/artworks" />} />
+                        <Route path="/" element={ <Navigate to="/artworks" replace /> }  />
                         <Route path='/artwork/new' element={<ArtworkForm/>} />                          
                         <Route path='/artworks/:id'  element={<ArtworkShow/>} />
                         <Route path='/artworks' element={<Artworks/>} />
