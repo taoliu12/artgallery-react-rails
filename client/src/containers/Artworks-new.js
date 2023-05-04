@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import './Artworks.scss';
 import ArtworkCard from '../components/ArtworkCard';
+import SearchForm from './SearchForm';
 
 const Artworks = () => {
   const [artworks, setArtworks] = useState([]);
@@ -36,7 +38,7 @@ const Artworks = () => {
     try {
       setIsLoading(true);
       const response = await axios.get(`/artworks?page=${page}`);
-      setArtworks((prevArtworks) => [...prevArtworks, ...response.data.data]);
+      setArtworks((prevArtworks) => [...prevArtworks, ...response.data]);
       setIsLoading(false);
     } catch (error) {
       console.log(error);
@@ -44,12 +46,15 @@ const Artworks = () => {
   };
 
   return (
-    <div className="artwork-gallery">
-      {artworks.map((artwork) => (
-        <ArtworkCard key={artwork.id} artwork={artwork} />
-      ))}
-      {isLoading && <div>Loading...</div>}
-      <div ref={loader} />
+    <div>       
+        <SearchForm />
+        <div className='ArtworksContainer'>
+        {artworks?.map((artwork) => (
+            <ArtworkCard key={artwork.id} artwork={artwork} />
+        ))}
+        </div>
+        {isLoading && <div>Loading...</div>}
+        <div ref={loader} />
     </div>
   );
 };

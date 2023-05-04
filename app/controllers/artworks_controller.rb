@@ -1,9 +1,9 @@
 class ArtworksController < ApplicationController
     include Pagy::Backend
-    
+
     def index
         # @artworks = Artwork.newest_to_oldest    
-        @pagy, @artworks = pagy(Artwork.all, items: 30, page: params[:page])     
+        @pagy, @artworks = pagy(Artwork.all, items: 5, page: params[:page])     
         render json: @artworks
     end
 
