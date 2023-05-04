@@ -58,7 +58,7 @@ function ResponsiveAppBar({loggedInUser, handleLogout}) {
     }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Link to='/posts'> 
+          <Link to='/'> 
             <ColorLensIcon sx={{ display: { color: 'white',
             fontSize: '33px',xs: 'none', sm: 'flex' }, mr: 1 }} />
           </Link>
@@ -109,7 +109,7 @@ function ResponsiveAppBar({loggedInUser, handleLogout}) {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-                <Link to='/posts'>
+                <Link to='/artworks'>
                   <MenuItem onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">Artworks</Typography>
                   </MenuItem>
