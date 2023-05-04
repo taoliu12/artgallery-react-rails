@@ -3,7 +3,7 @@ class ArtworksController < ApplicationController
 
     def index
         # @artworks = Artwork.newest_to_oldest    
-        @pagy, @artworks = pagy(Artwork.all, items: 2, page: params[:page])     
+        @pagy, @artworks = pagy(Artwork.all, items: 20, page: params[:page])     
         render json: @artworks
     end
 

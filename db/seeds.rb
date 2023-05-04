@@ -1,18 +1,16 @@
-response = HTTParty.get('https://openaccess-api.clevelandart.org/api/artworks?limit=35')
+response = HTTParty.get('https://openaccess-api.clevelandart.org/api/artworks?limit=535')
 artworksArray = JSON.parse(response.body)["data"]
 
 Artwork.destroy_all
 
 artworksArray.each do |obj| 
-    if obj['images'] && obj['images']['web'] && obj['images']['web']['url']
-        title = obj['title']
-        creation_date = obj['creation_date']
-        artist = obj['creators'][0]['description']
-        technique = obj['technique']
-        url = obj['images']['web']['url']
+    title = obj['title']
+    creation_date = obj['creation_date']
+    artist = obj['creators']&.first&.dig('description')
+    technique = obj['technique']
+    url = obj['images']&.dig('web', 'url')
         
-        Artwork.create(title: title, author: artist,  description: technique, url: url)
-    end
+    Artwork.create(title: title, author: artist,  description: technique, url: url)
 end
 
 

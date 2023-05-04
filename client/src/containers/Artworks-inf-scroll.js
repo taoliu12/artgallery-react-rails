@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import ArtworkCard from '../components/ArtworkCard';
+import SearchForm from './SearchForm';
+import './Artworks.scss';
 
 function ArtworkGallery() {
   const [artworks, setArtworks] = useState([]);
@@ -27,17 +29,22 @@ function ArtworkGallery() {
     setPage(page + 1);
   };
 
-  return (
-    <InfiniteScroll
-      dataLength={artworks.length}
-      next={loadArtworks}
-      hasMore={hasMore}
-      loader={<div>Loading...</div>}
-    >
-      {artworks.map((artwork) => (
-        <ArtworkCard key={artwork.id} artwork={artwork} />
-      ))}
-    </InfiniteScroll>
+  return (    
+    <div>       
+        <SearchForm />
+            <InfiniteScroll
+            dataLength={artworks.length}
+            next={loadArtworks}
+            hasMore={hasMore}
+            loader={<div>Loading...</div>}
+            >
+                <div className='ArtworksContainer'>
+            {artworks.map((artwork) => (
+                <ArtworkCard key={artwork.id} artwork={artwork} />
+                ))}
+        </div>
+            </InfiniteScroll>
+    </div>
   );
 }
 
