@@ -7,6 +7,7 @@ import './Artworks.scss';
 function ArtworkGallery() {
   const [artworks, setArtworks] = useState([]);
   const [hasMore, setHasMore] = useState(true);
+  const [searchParam, setSearchParam] = useState('');
   const [page, setPage] = useState(1);
 
   useEffect(() => {
@@ -31,19 +32,19 @@ function ArtworkGallery() {
 
   return (    
     <div>       
-        <SearchForm />
-            <InfiniteScroll
-            dataLength={artworks.length}
-            next={loadArtworks}
-            hasMore={hasMore}
-            loader={<div>Loading...</div>}
-            >
-                <div className='ArtworksContainer'>
+        <SearchForm setSearchParam={setSearchParam} searchParam={searchParam} />
+        <InfiniteScroll
+        dataLength={artworks.length}
+        next={loadArtworks}
+        hasMore={hasMore}
+        loader={<div>Loading...</div>}
+        >
+          <div className='ArtworksContainer'>
             {artworks.map((artwork) => (
                 <ArtworkCard key={artwork.id} artwork={artwork} />
                 ))}
-        </div>
-            </InfiniteScroll>
+          </div>
+        </InfiniteScroll>
     </div>
   );
 }
