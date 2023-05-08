@@ -18,14 +18,16 @@ const CustomIconButton = styled(IconButton)({
   },
 });
 
-export default function SearchForm() {
+export default function SearchForm({searchParam, setSearchParam}) {
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
   const handleSearch = (e) => {
     e.preventDefault();
     // dispatch(searchArtworks(searchQuery));
-    navigate(`/artworks?search=${searchQuery}`);
+    // navigate(`/artworks?search=${searchQuery}`);
+    setSearchParam(searchQuery);
+    
   };
 
   const handleSearchInputChange = (event) => {

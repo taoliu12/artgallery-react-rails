@@ -10,6 +10,8 @@ function ArtworkGallery() {
   const [searchParam, setSearchParam] = useState('');
   const [page, setPage] = useState(1);
 
+  console.log(searchParam)
+
   useEffect(() => {
     loadArtworks();
   }, []);
