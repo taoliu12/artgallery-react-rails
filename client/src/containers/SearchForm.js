@@ -24,15 +24,13 @@ export default function SearchForm({searchParam, setSearchParam, searchArtworks,
 
   const handleSearch = (e) => {
     e.preventDefault();
-    // dispatch(searchArtworks(searchQuery));
-    // navigate(`/artworks?search=${searchQuery}`);
-    setSearchParam(searchQuery);
     setPage(1)
     searchArtworks();
   };
 
   const handleSearchInputChange = (event) => {
     setSearchQuery(event.target.value);
+    setSearchParam(event.target.value);
   }
 
   return (
