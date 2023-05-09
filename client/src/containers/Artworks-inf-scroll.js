@@ -50,13 +50,14 @@ function ArtworkGallery() {
 
 
   console.log('search new artworks state', searchArtworksResult.length);
+  console.log('normal artworks state', artworks.length);
 
   return (    
     <div> 
         <SearchForm setSearchParam={setSearchParam} searchParam={searchParam} searchArtworks={searchArtworks} setPage={setPage}/>
         {searchArtworksResult.length}
         <div className='ArtworksContainer'>
-          {searchArtworksResult.length > 0 ? (
+          {/* {searchArtworksResult.length > 0 ? (
             <>
               {  console.log('search new artworks state in component', searchArtworksResult.length)}
               {searchArtworksResult.map((artwork) => (
@@ -71,11 +72,10 @@ function ArtworkGallery() {
               ))}
             </>
           )}
-
-              {/* {artworks.map((artwork) => (
+     */}
+            {searchArtworksResult.map((artwork) => (
                 <ArtworkCard key={artwork.id} artwork={artwork} />
-              ))} */}
-    
+            ))}
 
         </div>
         <InfiniteScroll
