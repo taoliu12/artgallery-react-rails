@@ -13,6 +13,12 @@ function ArtworkGallery() {
   console.log(searchParam)
 
   useEffect(() => {
+    // The component will re-render after the state is updated
+    console.log('artworks', artworks);
+    
+  }, [artworks]);
+
+  useEffect(() => {
     loadArtworks();
   }, []);
 
@@ -20,7 +26,8 @@ function ArtworkGallery() {
     try {
       const response = await fetch(`/artworks?search=${searchParam}&page=${pageNum}`);
       const data = await response.json();
-      setArtworks((prevArtworks) => prevArtworks.concat(data));
+      setArtworks((prevArtworks) => [...prevArtworks, ...data]);
+      // setArtworks((prevArtworks) => prevArtworks.concat(data));
       setHasMore(data.length > 0);
       console.log('normal fetch', data);
     } catch (error) {
@@ -33,14 +40,18 @@ function ArtworkGallery() {
     try {
       const response = await fetch(`/artworks?search=${searchParam}&page=${pageNum}`);
       const data = await response.json();
-      setArtworks([...data]);
+      setArtworks((prevArtworks) => [...data]);
+      // setArtworks([...data]);
       setHasMore(data.length > 0);
       console.log('search response', data);
       console.log('search new artworks state', artworks);
+
     } catch (error) {
       console.error(error);
     }
   };
+
+
 
   const loadArtworks = () => {
     console.log('page', page)
@@ -49,12 +60,12 @@ function ArtworkGallery() {
   };
 
   const searchArtworks = () => {
-    console.log('page', page)
+    // console.log('searchArtworks page', page)
     fetchSearchedArtworks(searchParam, 1);
   };
 
   return (    
-    <div>       
+    <div> 
         <SearchForm setSearchParam={setSearchParam} searchParam={searchParam} searchArtworks={searchArtworks} setPage={setPage}/>
         <InfiniteScroll
         dataLength={artworks.length}
@@ -62,12 +73,13 @@ function ArtworkGallery() {
         hasMore={hasMore}
         loader={<div>Loading...</div>}
         >
-          <div className='ArtworksContainer'>
-            {artworks.map((artwork) => (
-                <ArtworkCard key={artwork.id} artwork={artwork} />
-                ))}
-          </div>
+        <div className='ArtworksContainer'>
+          {artworks.map((artwork) => (
+              <ArtworkCard key={artwork.id} artwork={artwork} />
+              ))}
+        </div>
         </InfiniteScroll>
+
     </div>
   );
 }
