@@ -4,6 +4,8 @@ import ArtworkCard from '../components/ArtworkCard';
 import SearchForm from './SearchForm';
 import './Artworks.scss';
 
+const infiniteScrollHasMoreThreshold = 19; // number of items to load after scrolling minus 1
+
 function ArtworkGallery() {   
   const [searchArtworksResult, setSearchArtworksResult] = useState([]);
   const [hasMore, setHasMore] = useState(true);
@@ -20,7 +22,7 @@ function ArtworkGallery() {
       const response = await fetch(`/artworks?search=${searchParam}&page=${pageNum}`);
       const data = await response.json();       
       setSearchArtworksResult((prevArtworks) => prevArtworks.concat(data));
-      setHasMore(data.length > 20);       
+      setHasMore(data.length > infiniteScrollHasMoreThreshold);       
     } catch (error) {
       console.error(error);
     }
@@ -32,7 +34,7 @@ function ArtworkGallery() {
       const data = await response.json();
       console.log('setSearchArtworksResult', data)       
       setSearchArtworksResult([...data]);
-      setHasMore(data.length > 20);       
+      setHasMore(data.length > infiniteScrollHasMoreThreshold);       
     } catch (error) {
       console.error(error);
     }
