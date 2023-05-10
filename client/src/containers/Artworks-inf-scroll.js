@@ -5,13 +5,14 @@ import SearchForm from './SearchForm';
 import './Artworks.scss';
 
 function ArtworkGallery() {
-  const [artworks, setArtworks] = useState([]);
+  // const [artworks, setArtworks] = useState([]);
   const [searchArtworksResult, setSearchArtworksResult] = useState([]);
   const [hasMore, setHasMore] = useState(true);
   const [searchParam, setSearchParam] = useState('');
   const [page, setPage] = useState(1);
 
   useEffect(() => {
+    console.log('useEffect loadArtworks');
     loadArtworks();
   }, []);
 
@@ -19,7 +20,9 @@ function ArtworkGallery() {
     try {
       const response = await fetch(`/artworks?search=${searchParam}&page=${pageNum}`);
       const data = await response.json();       
-      setArtworks((prevArtworks) => prevArtworks.concat(data));
+      setSearchArtworksResult((prevArtworks) => prevArtworks.concat(data));
+      // debugger
+      console.log('fetchArtworks', data)
       setHasMore(data.length > 0);       
     } catch (error) {
       console.error(error);
@@ -29,7 +32,8 @@ function ArtworkGallery() {
   const fetchSearchedArtworks = async (searchParam, pageNum) => {
     try {
       const response = await fetch(`/artworks?search=${searchParam}&page=${pageNum}`);
-      const data = await response.json();       
+      const data = await response.json();
+      console.log('setSearchArtworksResult', data)       
       setSearchArtworksResult([...data]);
       setHasMore(data.length > 0);       
     } catch (error) {
@@ -39,7 +43,7 @@ function ArtworkGallery() {
 
   const loadArtworks = () => {
     console.log('page', page)
-    fetchSearchedArtworks(searchParam, page + 1);
+    fetchArtworks(searchParam, page + 1);
     setPage(page + 1);
   };
 
@@ -49,33 +53,15 @@ function ArtworkGallery() {
 
 
   console.log('search new artworks state', searchArtworksResult.length);
-  console.log('normal artworks state', artworks.length);
 
   return (    
     <div> 
         <SearchForm setSearchParam={setSearchParam} searchParam={searchParam} searchArtworks={searchArtworks} setPage={setPage}/>
         searchArtworksResult.length - {searchArtworksResult.length}
-        <div className='ArtworksContainer'>
-          {/* {searchArtworksResult.length > 0 ? (
-            <>
-              {  console.log('search new artworks state in component', searchArtworksResult.length)}
-              {searchArtworksResult.map((artwork) => (
-                <ArtworkCard key={artwork.id} artwork={artwork} />
-              ))}
-            </>
-          ) : (
-            <>
-            {  console.log('normal artworks state in component', artworks.length)}
-              {artworks.map((artwork) => (
-                <ArtworkCard key={artwork.id} artwork={artwork} />
-              ))}
-            </>
-          )}
-     */}
+        <div className='ArtworksContainer'> 
             {searchArtworksResult.map((artwork) => (
                 <ArtworkCard key={artwork.id} artwork={artwork} />
             ))}
-
         </div>
         <InfiniteScroll
         dataLength={searchArtworksResult.length}
