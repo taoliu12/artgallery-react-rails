@@ -4,8 +4,7 @@ import ArtworkCard from '../components/ArtworkCard';
 import SearchForm from './SearchForm';
 import './Artworks.scss';
 
-function ArtworkGallery() {
-  // const [artworks, setArtworks] = useState([]);
+function ArtworkGallery() {   
   const [searchArtworksResult, setSearchArtworksResult] = useState([]);
   const [hasMore, setHasMore] = useState(true);
   const [searchParam, setSearchParam] = useState('');
@@ -21,9 +20,7 @@ function ArtworkGallery() {
       const response = await fetch(`/artworks?search=${searchParam}&page=${pageNum}`);
       const data = await response.json();       
       setSearchArtworksResult((prevArtworks) => prevArtworks.concat(data));
-      //  debugger
-      console.log('fetchArtworks', data)
-      setHasMore(data.length > 0);       
+      setHasMore(data.length > 20);       
     } catch (error) {
       console.error(error);
     }
@@ -35,7 +32,7 @@ function ArtworkGallery() {
       const data = await response.json();
       console.log('setSearchArtworksResult', data)       
       setSearchArtworksResult([...data]);
-      setHasMore(data.length > 0);       
+      setHasMore(data.length > 20);       
     } catch (error) {
       console.error(error);
     }
@@ -56,15 +53,14 @@ function ArtworkGallery() {
 
   return (    
     <div> 
-        <SearchForm setSearchParam={setSearchParam} searchParam={searchParam} searchArtworks={searchArtworks} setPage={setPage}/>
-        searchArtworksResult.length - {searchArtworksResult.length}
+        <SearchForm setSearchParam={setSearchParam} searchParam={searchParam} searchArtworks={searchArtworks} setPage={setPage}/>  
+
         <div className='ArtworksContainer'> 
           {searchArtworksResult.map((artwork) => {
             console.log(artwork);
             return <ArtworkCard key={`${artwork.id}-${Date.now()}`} artwork={artwork} />;
           })}
         </div>
-
         <InfiniteScroll
         dataLength={searchArtworksResult.length}
         next={loadArtworks}
@@ -72,7 +68,6 @@ function ArtworkGallery() {
         loader={<div>Loading...</div>}
         >
         </InfiniteScroll>
-
     </div>
   );
 }
