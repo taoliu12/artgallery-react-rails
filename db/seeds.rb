@@ -1,4 +1,4 @@
-response = HTTParty.get('https://openaccess-api.clevelandart.org/api/artworks?limit=535')
+response = HTTParty.get('https://openaccess-api.clevelandart.org/api/artworks?limit=1000')
 artworksArray = JSON.parse(response.body)["data"]
 
 Artwork.destroy_all
