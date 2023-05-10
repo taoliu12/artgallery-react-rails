@@ -21,7 +21,7 @@ function ArtworkGallery() {
       const response = await fetch(`/artworks?search=${searchParam}&page=${pageNum}`);
       const data = await response.json();       
       setSearchArtworksResult((prevArtworks) => prevArtworks.concat(data));
-      // debugger
+      //  debugger
       console.log('fetchArtworks', data)
       setHasMore(data.length > 0);       
     } catch (error) {
@@ -59,10 +59,12 @@ function ArtworkGallery() {
         <SearchForm setSearchParam={setSearchParam} searchParam={searchParam} searchArtworks={searchArtworks} setPage={setPage}/>
         searchArtworksResult.length - {searchArtworksResult.length}
         <div className='ArtworksContainer'> 
-            {searchArtworksResult.map((artwork) => (
-                <ArtworkCard key={artwork.id} artwork={artwork} />
-            ))}
+          {searchArtworksResult.map((artwork) => {
+            console.log(artwork);
+            return <ArtworkCard key={`${artwork.id}-${Date.now()}`} artwork={artwork} />;
+          })}
         </div>
+
         <InfiniteScroll
         dataLength={searchArtworksResult.length}
         next={loadArtworks}
