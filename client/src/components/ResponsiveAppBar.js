@@ -18,7 +18,7 @@ import { textShadow } from '@mui/system';
 import NavbarButton from './NavbarButton';
 
 const pages = [
-  { title: 'Artworks', route: '/artworks', reqLogin: false, alwaysShow: true},
+  { title: 'Artworks', route: '/', reqLogin: false, alwaysShow: true},
   { title: 'My Favorites', route: '/favorite_artworks', reqLogin: true },
   { title: 'Submit Artwork', route: '/artworks/new', reqLogin: true },
   { title: 'Signup', route: '/signup', reqLogin: false },

@@ -8,16 +8,19 @@
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "latest",
     "@mui/material": "^5.11.10",
+    "axios": "^1.4.0",
     "node-sass": "^8.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-hook-form": "^7.41.5",
+    "react-infinite-scroll-component": "^6.1.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.0",
     "react-scripts": "5.0.0",
     "redux": "^4.2.1",
     "redux-thunk": "^2.3.0",
-    "sass": "^1.57.1"
+    "sass": "^1.57.1",
+    "uuid": "^9.0.0"
   },
   "scripts": {
     "start": "PORT=3001 react-scripts start",
