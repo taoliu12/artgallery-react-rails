@@ -1,3 +1,4 @@
+.byebug_history
 db/development.sqlite3
 tmp/
 log/
