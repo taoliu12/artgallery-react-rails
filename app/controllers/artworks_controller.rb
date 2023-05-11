@@ -6,7 +6,10 @@ class ArtworksController < ApplicationController
       if params[:search].blank?
         @artworks = Artwork.all
       else
-        @artworks = Artwork.where("title LIKE ?", "%#{params[:search]}%")
+        # @artworks = Artwork.where("title LIKE ?", "%#{params[:search]}%")
+        @artworks = Artwork.where("lower(title) LIKE ? OR lower(author) LIKE ?", "%#{params[:search].downcase.strip}%", "%#{params[:search].downcase.strip}%")
+
+
         # byebug
       end
     #   byebug 
