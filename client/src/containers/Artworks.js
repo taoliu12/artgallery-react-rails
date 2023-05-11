@@ -1,3 +1,4 @@
+import { v4 as rand } from 'uuid';
 import React, { useState, useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import ArtworkCard from '../components/ArtworkCard';
@@ -60,7 +61,7 @@ function ArtworkGallery() {
         <div className='ArtworksContainer'> 
           {searchArtworksResult.map((artwork) => {
             console.log(artwork);
-            return <ArtworkCard key={`${artwork.id}-${Date.now()}`} artwork={artwork} />;
+            return <ArtworkCard key={`${artwork.id}-${rand()}`} artwork={artwork} />;
           })}
         </div>
         <InfiniteScroll
