@@ -2,17 +2,12 @@ class ArtworksController < ApplicationController
     include Pagy::Backend
 
     def index
-        # @artworks = Artwork.newest_to_oldest    
       if params[:search].blank?
-        @artworks = Artwork.all
-      else
-        # @artworks = Artwork.where("title LIKE ?", "%#{params[:search]}%")
+        # @artworks = Artwork.newest_to_oldest             
+        @artworks = Artwork.all            
+      else         
         @artworks = Artwork.where("lower(title) LIKE ? OR lower(author) LIKE ?", "%#{params[:search].downcase.strip}%", "%#{params[:search].downcase.strip}%")
-
-
-        # byebug
       end
-    #   byebug 
         @pagy, @pagy_artworks = pagy(@artworks, items: [@artworks.count, 20].min, page: params[:page])    
         render json: @pagy_artworks
     end
