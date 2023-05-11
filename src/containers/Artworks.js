@@ -1,53 +1,78 @@
-import React, { Component } from 'react';
-import './Artworks.scss';
-import ArtworkCard from "../components/ArtworkCard";
+import { v4 as rand } from 'uuid';
+import React, { useState, useEffect } from 'react';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import ArtworkCard from '../components/ArtworkCard';
 import SearchForm from './SearchForm';
+import './Artworks.scss';
 
-import { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import { getArtworks, searchArtworks } from '../actions/artworks';
-import { useLocation } from 'react-router-dom';
+const infiniteScrollHasMoreThreshold = 19; // number of items to load after scrolling minus 1
 
-function Artworks({ artworks, getArtworks, searchArtworks }) {
-  const [searchQuery, setSearchQuery] = useState('');
-  const location = useLocation();
+function ArtworkGallery() {   
+  const [searchArtworksResult, setSearchArtworksResult] = useState([]);
+  const [hasMore, setHasMore] = useState(true);
+  const [searchParam, setSearchParam] = useState('');
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    console.log('getartworks')
-    getArtworks();
+    console.log('useEffect loadArtworks');
+    loadArtworks();
   }, []);
 
-  useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-    const query = searchParams.get('search');
-    if (query === null) {
-      searchArtworks('');
-      setSearchQuery('');
-    } else {
-      searchArtworks(query);
-      setSearchQuery(query);
+  const fetchArtworks = async (searchParam, pageNum) => {
+    try {
+      const response = await fetch(`/artworks?search=${searchParam}&page=${pageNum}`);
+      const data = await response.json();       
+      setSearchArtworksResult((prevArtworks) => prevArtworks.concat(data));
+      setHasMore(data.length > infiniteScrollHasMoreThreshold);       
+    } catch (error) {
+      console.error(error);
     }
-  }, [location.search, searchArtworks]);
+  };
 
-  return (
-    <div>       
-      <SearchForm />
-      <div className='ArtworksContainer'>
-        {artworks?.map((artwork) => (
-          <ArtworkCard key={artwork.id} artwork={artwork} />
-        ))}
-      </div>
+  const fetchSearchedArtworks = async (searchParam, pageNum) => {
+    try {
+      const response = await fetch(`/artworks?search=${searchParam}&page=${pageNum}`);
+      const data = await response.json();
+      console.log('setSearchArtworksResult', data)       
+      setSearchArtworksResult([...data]);
+      setHasMore(data.length > infiniteScrollHasMoreThreshold);       
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const loadArtworks = () => {
+    console.log('page', page)
+    fetchArtworks(searchParam, page + 1);
+    setPage(page + 1);
+  };
+
+  const searchArtworks = () => {     
+    fetchSearchedArtworks(searchParam, 1);
+  };
+
+
+  console.log('search new artworks state', searchArtworksResult.length);
+
+  return (    
+    <div> 
+        <SearchForm setSearchParam={setSearchParam} searchParam={searchParam} searchArtworks={searchArtworks} setPage={setPage}/>  
+
+        <div className='ArtworksContainer'> 
+          {searchArtworksResult.map((artwork) => {
+            console.log(artwork);
+            return <ArtworkCard key={`${artwork.id}-${rand()}`} artwork={artwork} />;
+          })}
+        </div>
+        <InfiniteScroll
+        dataLength={searchArtworksResult.length}
+        next={loadArtworks}
+        hasMore={hasMore}
+        loader={<div>Loading...</div>}
+        >
+        </InfiniteScroll>
     </div>
   );
 }
 
-const mapStateToProps = (state) => ({
-  artworks: state.artworks.searchResults,
-});
-
-const mapDispatchToProps = {
-  getArtworks,
-  searchArtworks,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Artworks);
+export default ArtworkGallery;
