@@ -5,3 +5,4 @@ log/
 client/package-lock.json
 config/master.key
 /config/master.key
+.byebug_history
