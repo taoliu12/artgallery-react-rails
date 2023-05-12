@@ -1,6 +1,6 @@
-class CreateArtworks < ActiveRecord::Migration[5.2]
+class CreateArtworks < ActiveRecord::Migration[6.1]
   def change
-    create_table :artworks do |t|
+    create_table :artworks, if_not_exists: true do |t|
       t.string :title 
       t.string :author
       t.string :description
