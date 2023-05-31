@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2023_05_05_025958) do
     t.string "author"
     t.string "description"
     t.string "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "shouts", force: :cascade do |t|
