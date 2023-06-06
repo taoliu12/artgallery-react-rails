@@ -26,7 +26,7 @@ export default function ArtworkForm() {
             setArtWorkId(artwork.id)
             reset({
                 title: '', 
-                author: '', 
+                artist: '', 
                 description: '', 
                 url: '' })           
         })
@@ -47,11 +47,11 @@ export default function ArtworkForm() {
         </div>
                              
         <div>
-            <p>Artist: {errors.author && <span className='formError'>(This field is required)</span>}</p>
+            <p>Artist: {errors.artist && <span className='formError'>(This field is required)</span>}</p>
             <input 
                 type='text'
-                name='author' 
-                {...register("author", { required: true })}
+                name='artist' 
+                {...register("artist", { required: true })}
                 
                 rows={1}  />
         </div> 

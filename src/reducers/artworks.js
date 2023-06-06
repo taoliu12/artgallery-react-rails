@@ -23,7 +23,7 @@ export default (state = initialState, action) => {
         case 'SEARCH_ARTWORKS':
             const query = action.payload.toLowerCase();
             const searchResults = state.artworks.filter(
-                (artwork) => artwork.title?.toLowerCase().includes(query) || artwork.author?.toLowerCase().includes(query)
+                (artwork) => artwork.title?.toLowerCase().includes(query) || artwork.artist?.toLowerCase().includes(query)
             );
             return {
                 ...state,

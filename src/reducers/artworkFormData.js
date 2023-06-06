@@ -2,7 +2,7 @@ export default (state = {
     description: '',
     id: null,
     title: '',
-    author: '',
+    artist: '',
     url: '',
 }, action) => {
     switch(action.type) {
@@ -16,7 +16,7 @@ export default (state = {
                 description: '',
                 id: null,
                 title: '',
-                author: '',
+                artist: '',
                 url: '',
             }
 
