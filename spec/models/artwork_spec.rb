@@ -6,7 +6,7 @@ RSpec.describe Artwork, type: :model do
   it "is valid with valid attributes" do
     artwork = Artwork.new(
       title: "Sample Title",
-      author: "Sample Author",
+      artist: "Sample artist",
       description: "Sample Description",
       url: "http://example.com"
     )
@@ -18,8 +18,8 @@ RSpec.describe Artwork, type: :model do
   #   expect(artwork).to_not be_valid
   # end
 
-  # it "is not valid without an author" do
-  #   artwork = Artwork.new(author: nil)
+  # it "is not valid without an artist" do
+  #   artwork = Artwork.new(artist: nil)
   #   expect(artwork).to_not be_valid
   # end
 

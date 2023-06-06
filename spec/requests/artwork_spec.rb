@@ -5,7 +5,7 @@ RSpec.describe "API Artworks", type: 'request' do
       it "Creates post request" do
         post '/artworks', params: { artwork: { 
             title: 'Hello, world! rspec',
-            author: 'Hello, world! rspec',
+            artist: 'Hello, world! rspec',
             description: 'Hello, world! rspec',
             url: 'Hello, world! rspec',
              } }

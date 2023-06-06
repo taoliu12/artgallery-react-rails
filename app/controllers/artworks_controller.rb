@@ -6,7 +6,7 @@ class ArtworksController < ApplicationController
         # @artworks = Artwork.newest_to_oldest             
         @artworks = Artwork.all            
       else         
-        @artworks = Artwork.where("lower(title) LIKE ? OR lower(author) LIKE ?", "%#{params[:search].downcase.strip}%", "%#{params[:search].downcase.strip}%")
+        @artworks = Artwork.where("lower(title) LIKE ? OR lower(artist) LIKE ?", "%#{params[:search].downcase.strip}%", "%#{params[:search].downcase.strip}%")
       end
         @pagy, @pagy_artworks = pagy(@artworks, items: [@artworks.count, 20].min, page: params[:page])    
         render json: @pagy_artworks
@@ -47,6 +47,6 @@ class ArtworksController < ApplicationController
     private
 
     def artwork_params
-        params.require(:artwork).permit(:title, :author, :description, :url)
+        params.require(:artwork).permit(:title, :artist, :description, :url)
     end
 end

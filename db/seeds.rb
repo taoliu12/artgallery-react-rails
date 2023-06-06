@@ -10,7 +10,7 @@ artworksArray.each do |obj|
     technique = obj['technique']
     url = obj['images']&.dig('web', 'url')
         
-    Artwork.create(title: title, author: artist,  description: technique, url: url) if url
+    Artwork.create(title: title, artist: artist,  description: technique, url: url) if url
 end
 
 
