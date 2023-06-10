@@ -13,6 +13,8 @@ gem 'httparty'
 gem 'dotenv'
 gem 'fast_jsonapi'
 gem 'pagy'
+gem 'delayed_job'
+gem 'delayed_job_active_record'
 
 # Use Puma as the app server
 gem 'puma', '~> 4.3'
