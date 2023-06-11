@@ -4,10 +4,10 @@
   "private": true,
   "proxy": "http://localhost:3000",
   "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "latest",
-    "@mui/material": "^5.11.10",
+    "@mui/material": "^5.13.4",
     "axios": "^1.4.0",
     "node-sass": "^8.0.0",
     "react": "^18.1.0",

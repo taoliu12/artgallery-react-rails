@@ -76,7 +76,7 @@ function ArtworkGallery() {
             return (
               <div key={artwork.id}>
                 <ArtworkCard artwork={artwork} onClick={() => handleOpenModal(artwork)} />
-                <Modal open={selectedArtwork} onClose={handleCloseModal} onHide={handleCloseModal}>
+                <Modal open={selectedArtwork !== null} onClose={handleCloseModal} onHide={handleCloseModal}>
                   <Modal.Header closeButton>
                     <Modal.Title>Artwork Details</Modal.Title>
                   </Modal.Header>
