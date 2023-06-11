@@ -15,8 +15,7 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 400,
-  // bgcolor: 'rgba(0, 0, 0, 0.5)', // Transparent black with 50% opacity
-  background: 'rgba(0, 0, 0, 0.5)', // Transparent black with 50% opacity
+  bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
@@ -89,10 +88,9 @@ function ArtworkGallery() {
         <SearchForm setSearchParam={setSearchParam} searchParam={searchParam} searchArtworks={searchArtworks} setPage={setPage}/> 
 
     <div className='ArtworksContainer'> 
-      {searchArtworksResult.map((artwork) => {
-            console.log(artwork);
+      {searchArtworksResult.map((artwork) => {             
             return (
-              <div key={artwork.id}> 
+              <div key={`${artwork.id}-${rand()}`}> 
                 <Button onClick={() => handleOpenModal(artwork)} >
                   <ArtworkCard artwork={artwork}  />
                 </Button>
