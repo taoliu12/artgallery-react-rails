@@ -83,14 +83,18 @@ function ArtworkGallery() {
   const handleOpen = () => setOpen(true);
   // const handleClose = () => setOpen(false);
 
-  return (
+  return (   
+    <div> 
+        <SearchForm setSearchParam={setSearchParam} searchParam={searchParam} searchArtworks={searchArtworks} setPage={setPage}/> 
+
     <div className='ArtworksContainer'> 
       {searchArtworksResult.map((artwork) => {
             console.log(artwork);
             return (
-              <div key={artwork.id}>
-                <ArtworkCard artwork={artwork} onClick={() => handleOpenModal(artwork)} />
-                <Button onClick={handleOpen}>Open modal</Button>
+              <div key={artwork.id}> 
+                <Button onClick={() => handleOpenModal(artwork)} >
+                  <ArtworkCard artwork={artwork}  />
+                </Button>
                 <Modal
                   open={selectedArtwork !== null} 
                   onClose={handleCloseModal}
@@ -110,6 +114,14 @@ function ArtworkGallery() {
             );
           })}
         </div>
+        <InfiniteScroll
+        dataLength={searchArtworksResult.length}
+        next={loadArtworks}
+        hasMore={hasMore}
+        loader={<div>Loading...</div>}
+        >
+        </InfiniteScroll>
+    </div>
   );
 }
 
