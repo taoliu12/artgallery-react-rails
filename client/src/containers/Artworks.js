@@ -20,8 +20,8 @@ const style = {
   p: 4,
   maxHeight: '100vh', // Set the maximum height to 90% of the viewport height
   overflowY: 'auto', // Enable vertical scrolling if content overflows
-  alignItems: 'center',
-  justifyContent: 'center',
+  margin: 'auto',
+  textAlign: 'center'
 };
 
 const infiniteScrollHasMoreThreshold = 19; // number of items to load after scrolling minus 1
@@ -90,7 +90,16 @@ function ArtworkGallery() {
       {searchArtworksResult.map((artwork) => {             
             return (
               <div key={`${artwork.id}-${rand()}`}> 
-                <Button onClick={() => handleOpenModal(artwork)} >
+                <Button onClick={() => handleOpenModal(artwork)} 
+                  sx={{
+                    color: 'black',
+                    '&:hover': {
+                      border: 'none',
+                      boxShadow: 'none',
+                      bgcolor: '#e5e6d2',
+                    },
+                  }}
+                >
                   <ArtworkCard artwork={artwork}  />
                 </Button>
               </div>
@@ -105,7 +114,7 @@ function ArtworkGallery() {
                 >
                   <Box className='artwork-show-container ' sx={style}>                   
                     <h2>{selectedArtwork?.title}</h2>
-                    <p>{selectedArtwork?.author}</p>
+                    <p>{selectedArtwork?.artist}</p>
                     <p>{selectedArtwork?.description}</p>
                     <br/>
                     <img src={selectedArtwork?.url} alt="artwork" />                   
