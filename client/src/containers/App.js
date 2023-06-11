@@ -50,13 +50,14 @@ function App() {
             <Toolbar id="back-to-top-anchor"/>
             <div className='App' id="container">    
                 <NavBar /><br></br>
+                <Demo />
                 <Routes>
                         <Route path='/signup' element={<SignupForm setLoggedInUser={setLoggedInUser}/>}/>  
                         <Route path='/login' element={<LoginForm setLoggedInUser={setLoggedInUser}/>}/>  
                         <Route path="/" element={ <Navigate to="/artworks" replace /> }  />
                         <Route path='/artwork/new' element={<ArtworkForm/>} />                          
                         <Route path='/artworks/:id'  element={<ArtworkShow/>} />
-                        <Route path='/artworks' element={<Artworks/>} />
+                        <Route path='/artworks' element={<Artworks/>} />                         
                 </Routes>
                 <ScrollToTop />
             </div>

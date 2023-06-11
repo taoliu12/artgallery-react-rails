@@ -15,7 +15,8 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 400,
-  bgcolor: 'background.paper',
+  // bgcolor: 'rgba(0, 0, 0, 0.5)', // Transparent black with 50% opacity
+  background: 'rgba(0, 0, 0, 0.5)', // Transparent black with 50% opacity
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
