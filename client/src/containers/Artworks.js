@@ -9,16 +9,19 @@ import './Artworks.scss';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
+
 const style = {
   position: 'absolute',
   top: '50%',
   left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  transform: 'translate(-50%, -50%)',   
+  bgcolor: '#e5e6d2',
   boxShadow: 24,
   p: 4,
+  maxHeight: '100vh', // Set the maximum height to 90% of the viewport height
+  overflowY: 'auto', // Enable vertical scrolling if content overflows
+  alignItems: 'center',
+  justifyContent: 'center',
 };
 
 const infiniteScrollHasMoreThreshold = 19; // number of items to load after scrolling minus 1
@@ -100,14 +103,12 @@ function ArtworkGallery() {
                   aria-labelledby="modal-modal-title"
                   aria-describedby="modal-modal-description"
                 >
-                  <Box sx={style}>
-                  <div className='artwork-show-container'>
+                  <Box className='artwork-show-container ' sx={style}>                   
                     <h2>{selectedArtwork?.title}</h2>
                     <p>{selectedArtwork?.author}</p>
                     <p>{selectedArtwork?.description}</p>
                     <br/>
-                    <img src={selectedArtwork?.url} alt="artwork" />
-                  </div>
+                    <img src={selectedArtwork?.url} alt="artwork" />                   
                   </Box>
                 </Modal>
         <InfiniteScroll
