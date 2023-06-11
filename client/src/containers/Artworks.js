@@ -79,10 +79,6 @@ function ArtworkGallery() {
 
   console.log('search new artworks state', searchArtworksResult.length);
 
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  // const handleClose = () => setOpen(false);
-
   return (   
     <div> 
         <SearchForm setSearchParam={setSearchParam} searchParam={searchParam} searchArtworks={searchArtworks} setPage={setPage}/> 
@@ -94,6 +90,10 @@ function ArtworkGallery() {
                 <Button onClick={() => handleOpenModal(artwork)} >
                   <ArtworkCard artwork={artwork}  />
                 </Button>
+              </div>
+            );
+          })}
+        </div>
                 <Modal
                   open={selectedArtwork !== null} 
                   onClose={handleCloseModal}
@@ -101,18 +101,15 @@ function ArtworkGallery() {
                   aria-describedby="modal-modal-description"
                 >
                   <Box sx={style}>
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
-                      Text in a modal
-                    </Typography>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                      Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                    </Typography>
+                  <div className='artwork-show-container'>
+                    <h2>{selectedArtwork?.title}</h2>
+                    <p>{selectedArtwork?.author}</p>
+                    <p>{selectedArtwork?.description}</p>
+                    <br/>
+                    <img src={selectedArtwork?.url} alt="artwork" />
+                  </div>
                   </Box>
                 </Modal>
-              </div>
-            );
-          })}
-        </div>
         <InfiniteScroll
         dataLength={searchArtworksResult.length}
         next={loadArtworks}
