@@ -7,6 +7,7 @@ import store from './store'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom';
 import { StyledEngineProvider } from '@mui/material/styles';
+import Demo from './demo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +15,7 @@ root.render(
     <React.StrictMode>
       <StyledEngineProvider injectFirst>
         <Provider store={store}>
+          {/* <Demo /> */}
           <App />
         </Provider>
       </StyledEngineProvider>

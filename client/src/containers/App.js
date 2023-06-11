@@ -21,6 +21,8 @@ import LoginForm from './LoginForm'
 import About from '../components/About';
 import './App.scss';
 
+import Demo from '../demo';
+
 function App() {
     const [ loggedInUser , setLoggedInUser ] = useState( null )
 
