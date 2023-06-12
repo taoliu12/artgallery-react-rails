@@ -92,11 +92,10 @@ function ArtworkGallery() {
               <div key={`${artwork.id}-${rand()}`}> 
                 <Button onClick={() => handleOpenModal(artwork)} 
                   sx={{
-                    color: 'black',
                     '&:hover': {
                       border: 'none',
                       boxShadow: 'none',
-                      bgcolor: '#e5e6d2',
+                      bgcolor: 'inherit',
                     },
                   }}
                 >
@@ -112,7 +111,7 @@ function ArtworkGallery() {
                   aria-labelledby="modal-modal-title"
                   aria-describedby="modal-modal-description"
                 >
-                  <Box className='artwork-show-container ' sx={style}>                   
+                  <Box className='artwork-modal' sx={style}>                   
                     <h2>{selectedArtwork?.title}</h2>
                     <p>{selectedArtwork?.artist}</p>
                     <p>{selectedArtwork?.description}</p>
