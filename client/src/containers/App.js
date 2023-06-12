@@ -19,9 +19,7 @@ import ScrollToTop from '../components/ScrollToTop';
 import SignupForm from './SignupForm'
 import LoginForm from './LoginForm'
 import About from '../components/About';
-import './App.scss';
-
-import Demo from '../demo';
+import './App.scss'; 
 
 function App() {
     const [ loggedInUser , setLoggedInUser ] = useState( null )
@@ -49,8 +47,7 @@ function App() {
             <ResponsiveAppBar loggedInUser={loggedInUser} handleLogout={handleLogout}/>
             <Toolbar id="back-to-top-anchor"/>
             <div className='App' id="container">    
-                <NavBar /><br></br>
-                <Demo />
+                <NavBar /><br></br>                 
                 <Routes>
                         <Route path='/signup' element={<SignupForm setLoggedInUser={setLoggedInUser}/>}/>  
                         <Route path='/login' element={<LoginForm setLoggedInUser={setLoggedInUser}/>}/>  
