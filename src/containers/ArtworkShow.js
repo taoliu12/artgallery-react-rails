@@ -11,9 +11,9 @@ const ArtworkShow = ({ artwork, getArtwork }) => {
     }, [getArtwork, id]);
 
     return (
-        <div className='artwork-show-container'>
+        <div className='artwork-modal'>
             <h2>{artwork.title}</h2>
-            <p>{artwork.author}</p>
+            <p>{artwork.artist}</p>
             <p>{artwork.description}</p>
             <br/>
             <img src={artwork.url} alt="artwork" />
