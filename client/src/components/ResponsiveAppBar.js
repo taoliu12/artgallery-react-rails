@@ -58,10 +58,6 @@ function ResponsiveAppBar({loggedInUser, handleLogout}) {
     }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Link to='/'> 
-            <ColorLensIcon sx={{ display: { color: 'white',
-            fontSize: '33px',xs: 'none', sm: 'flex' }, mr: 1 }} />
-          </Link>
           <Typography 
             noWrap
             component="a"
@@ -69,15 +65,15 @@ function ResponsiveAppBar({loggedInUser, handleLogout}) {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'Fredoka One',
-              fontWeight: 500,
-              fontSize: '25px',
-              letterSpacing: '.3rem',
+              fontFamily: 'Georgia, serif',
+              fontWeight: 300,
+              fontSize: '35px',
+              letterSpacing: '0px',
               color: 'inherit',
               textDecoration: 'none',
             }}
           >
-            Art Gallery
+            Seattle Art Gallery
           </Typography>
           {/*hamburger*/}
           <Box id="test" sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}>
