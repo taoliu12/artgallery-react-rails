@@ -1,5 +1,6 @@
 import Box from "@mui/material/Box";
 import HomeBanner from "./HomeBanner";
+import PostCard from "./PostCard";
 
 const styles = { width: "100%" };
 
@@ -25,6 +26,7 @@ const Home = () => {
           <h4>Admission to the museum is always FREE.</h4>
         </Box>
       </Box>
+      <PostCard />
     </Box>
   );
 };
