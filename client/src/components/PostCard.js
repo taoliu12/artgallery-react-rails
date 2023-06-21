@@ -7,12 +7,16 @@ const styles = {
   color: "white",
 };
 
+const colors = ['orange', 'blue', 'green', 'purple'];
+
 const PostCard = ({ index = 0 }) => {
   const isEven = index % 2 === 0;
+  const getColor = () => colors[index % colors.length];
+
   const textBox = (
     <Box sx={{
       width: '600px',
-      backgroundColor: "red",
+      backgroundColor: getColor(),
       pX: 12,
       pY: 13,
     }}>
