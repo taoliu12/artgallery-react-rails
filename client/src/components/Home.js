@@ -26,7 +26,10 @@ const Home = () => {
           <h4>Admission to the museum is always FREE.</h4>
         </Box>
       </Box>
-      <PostCard />
+      <PostCard index={0} />
+      <PostCard index={1} />
+      <PostCard index={2} />
+      <PostCard index={3} />
     </Box>
   );
 };

@@ -1,11 +1,11 @@
-import * as React from 'react';
+import React from 'react';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@mui/styles';
 import { Grid } from '@mui/material';
 
-import type { Theme } from '@mui/material/styles';
+import { Theme } from '@mui/material/styles';
 
-const instructionStyles = makeStyles<Theme, InstructionProps>((theme: Theme) => ({
+const instructionStyles = makeStyles((theme) => ({
   gridBoxes: {
     '& > div': {
       width: '100%',
@@ -27,15 +27,11 @@ const instructionStyles = makeStyles<Theme, InstructionProps>((theme: Theme) => 
   },
 }));
 
-type InstructionProps = {
-  instructionList: { title: string; body: string; image: string }[];
-};
-
-function InstructionGrid(props: InstructionProps) {
-  const classes = instructionStyles(props);
+function InstructionGrid(props) {
+  const style = instructionStyles(props);
 
   return (
-    <Grid container justifyContent="space-between" className={`${classes.gridBoxes}`}>
+    <Grid container justifyContent="space-between" className={`${style.gridBoxes}`}>
       {props.instructionList.map((instructionItem, index) => {
         var text = <GridText title={instructionItem.title} body={instructionItem.body} />;
         var image = <GridImage image={instructionItem.image} />;
@@ -53,11 +49,7 @@ function InstructionGrid(props: InstructionProps) {
 
 // SUB-COMPONENT GridImage
 
-type ImageProps = {
-  image: string;
-};
-
-function GridImage(props: ImageProps) {
+function GridImage(props) {
   return (
     <Grid item sm={6} xs={12}>
       <img src={props.image} alt="placeholder"></img>
@@ -67,12 +59,7 @@ function GridImage(props: ImageProps) {
 
 // SUB-COMPONENT GridText
 
-type TextProps = {
-  title: string;
-  body: string;
-};
-
-function GridText(props: TextProps) {
+function GridText(props) {
   return (
     <Grid item sm={6} xs={12}>
       <Typography variant="h3" component="h3" align="left">
