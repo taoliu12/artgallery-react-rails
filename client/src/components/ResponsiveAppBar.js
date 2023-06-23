@@ -57,7 +57,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
       sx={{
         color: "white",
         position: `fixed !important`,
-        backgroundColor: "#00438A",
+        backgroundColor: "#00438A",         
         textShadow: "0px 0px 3px #00000",
         zIndex: "11",
       }}
@@ -74,13 +74,13 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
                 display: { xs: "none", md: "flex" },
                 fontFamily: "Georgia, serif",
                 fontWeight: 300,
-                fontSize: "35px",
+                fontSize: "40px",
                 letterSpacing: "0px",
                 color: "inherit",
                 textDecoration: "none",
               }}
             >
-              Fine Art Gallery
+              React Art Gallery
             </Typography>
           </Box>
           <Box

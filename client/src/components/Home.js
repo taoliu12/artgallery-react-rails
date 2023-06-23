@@ -13,6 +13,7 @@ const Home = () => {
           display: "flex",
           justifyContent: "space-between",
           color: "white",
+          // backgroundColor: "#00438A",
           backgroundColor: "#3c3f42",
           px: 3,
           py: 2
