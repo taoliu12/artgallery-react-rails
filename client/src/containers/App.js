@@ -19,6 +19,7 @@ import ArtworkForm from "./ArtworkForm";
 import ScrollToTop from "../components/ScrollToTop";
 import SignupForm from "./SignupForm";
 import LoginForm from "./LoginForm";
+import Footer from "../components/Footer";
 import About from "../components/About";
 import "./App.scss";
 
@@ -44,32 +45,35 @@ function App() {
   console.log("App  loggedInUser", loggedInUser);
 
   return (
-    <main>
-      <ResponsiveAppBar
-        loggedInUser={loggedInUser}
-        handleLogout={handleLogout}
-      />
-      <Toolbar id="back-to-top-anchor" />
-      <div className="App" id="container">
-        <NavBar />
-        <br></br>
-        <Routes>
-          <Route
-            path="/signup"
-            element={<SignupForm setLoggedInUser={setLoggedInUser} />}
-          />
-          <Route
-            path="/login"
-            element={<LoginForm setLoggedInUser={setLoggedInUser} />}
-          />
-          <Route path="/" element={<Home />} />
-          <Route path="/artwork/new" element={<ArtworkForm />} />
-          <Route path="/artworks/:id" element={<ArtworkShow />} />
-          <Route path="/artworks" element={<Artworks />} />
-        </Routes>
-        <ScrollToTop />
-      </div>
-    </main>
+    <>
+      <main>
+        <ResponsiveAppBar
+          loggedInUser={loggedInUser}
+          handleLogout={handleLogout}
+        />
+        <Toolbar id="back-to-top-anchor" />
+        <div className="App" id="container">
+          <NavBar />
+          <br></br>
+          <Routes>
+            <Route
+              path="/signup"
+              element={<SignupForm setLoggedInUser={setLoggedInUser} />}
+            />
+            <Route
+              path="/login"
+              element={<LoginForm setLoggedInUser={setLoggedInUser} />}
+            />
+            <Route path="/" element={<Home />} />
+            <Route path="/artwork/new" element={<ArtworkForm />} />
+            <Route path="/artworks/:id" element={<ArtworkShow />} />
+            <Route path="/artworks" element={<Artworks />} />
+          </Routes>
+          <ScrollToTop />
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }
 
