@@ -60,7 +60,7 @@ const Footer = () => {
               marginBottom: 2,
             }}
           >
-            React Art Gallery
+            Tao Art Gallery
           </Typography>
           <List
             sx={{

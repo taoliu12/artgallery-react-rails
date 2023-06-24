@@ -107,7 +107,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
                 transition: "font-size 0.3s ease, margin-top 0.3s ease",
               }}
             >
-              React Art Gallery
+              Tao Art Gallery
             </Typography>
           </Box>
           <Box
