@@ -17,7 +17,7 @@ const styles = {
   justifyContent: "center",
   paddingY: 8,
   socialMediaIcon: {
-    fontSize: '3rem',
+    fontSize: '2rem',
     marginRight: 2,
     color: "gray",
   },

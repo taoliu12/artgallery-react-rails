@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
-import DarkModeButton from "./DarkModeButton";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -16,7 +15,6 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { textShadow } from "@mui/system";
 import NavbarButton from "./NavbarButton";
-
 
 const pages = [
   { title: "Artworks", route: "/artworks", reqLogin: false, alwaysShow: true },
@@ -38,13 +36,14 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
       setIsScrolled(scrollTop > 0);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -68,13 +67,14 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
 
   return (
     <AppBar
-      className={isScrolled ? '' : 'transparentAppBar'}
+      className={isScrolled ? "" : "transparentAppBar"}
       position="static"
       sx={{
         color: "white",
         position: `fixed !important`,
-        backgroundColor: isScrolled ? "#00438A" : 'transparent',
-        transition: 'background-color 0.3s ease',     
+        backgroundColor: isScrolled ? "#00438A" : "transparent",
+        boxShadow: isScrolled ? "0 2px 4px rgba(0, 0, 0, 0.4)" : "none",
+        transition: "background-color 0.3s ease, box-shadow 0.3s ease",
         textShadow: "0px 0px 3px #00000",
         zIndex: "11",
       }}
@@ -123,8 +123,6 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
                 />
               ))}
           </Box>
-
-          <DarkModeButton />
 
           {loggedInUser && (
             <Box sx={{ flexGrow: 0 }}>
