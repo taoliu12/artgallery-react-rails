@@ -47,14 +47,12 @@ function App() {
   return (
     <>
       <main>
+        <div id='back-to-top-anchor'></div>
         <ResponsiveAppBar
           loggedInUser={loggedInUser}
           handleLogout={handleLogout}
         />
-        <Toolbar id="back-to-top-anchor" />
         <div className="App" id="container">
-          <NavBar />
-          <br></br>
           <Routes>
             <Route
               path="/signup"
