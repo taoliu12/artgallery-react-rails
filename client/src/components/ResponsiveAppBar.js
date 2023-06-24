@@ -77,6 +77,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
         transition: "background-color 0.3s ease, box-shadow 0.3s ease",
         textShadow: "0px 0px 3px #00000",
         zIndex: "11",
+        height: '75px'
       }}
     >
       <Container maxWidth="xl">
@@ -85,6 +86,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
           sx={{
             paddingTop: isScrolled ? 0 : 3,
             transition: "padding-top 0.3s ease",
+            height: '50px'
           }}
         >
           <Box id="logo-title">
