@@ -3,6 +3,10 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { Typography } from "@mui/material";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 
 const styles = {
   width: "100%",
@@ -35,24 +39,24 @@ const Footer = () => {
         }}
       >
         <Box>
-        <Typography
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "Georgia, serif",
-                fontWeight: 300,
-                fontSize: "35px",
-                letterSpacing: "0px",
-                color: "inherit",
-                textDecoration: "none",
-                marginBottom: 2
-              }}
-            >
-              React Art Gallery
-            </Typography>
+          <Typography
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              display: { xs: "none", md: "flex" },
+              fontFamily: "Georgia, serif",
+              fontWeight: 300,
+              fontSize: "35px",
+              letterSpacing: "0px",
+              color: "inherit",
+              textDecoration: "none",
+              marginBottom: 2,
+            }}
+          >
+            React Art Gallery
+          </Typography>
           <List
             sx={{
               display: "flex",
@@ -72,12 +76,13 @@ const Footer = () => {
               </ListItem>
             ))}
           </List>
-          <p>
-            React Drive, Mui Park, Seattle, WA 55555-1380 | 555.555.5555
-          </p>
+          <p>React Drive, Ruby Park, Seattle, WA 55555-1380 | 555.555.5555</p>
         </Box>
-        <Box>
-          <h4>Social media icons</h4>
+        <Box sx={{ color: "gray" }}>
+          <FacebookIcon sx={{ fontSize: 44 }} />
+          <InstagramIcon sx={{ fontSize: 44 }} />
+          <TwitterIcon sx={{ fontSize: 44 }} />
+          <YouTubeIcon sx={{ fontSize: 44 }} />
         </Box>
       </Box>
     </Box>
