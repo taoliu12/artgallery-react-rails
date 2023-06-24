@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from "react-router-dom";
 import DarkModeButton from "./DarkModeButton";
 import AppBar from "@mui/material/AppBar";
@@ -17,6 +17,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { textShadow } from "@mui/system";
 import NavbarButton from "./NavbarButton";
 
+
 const pages = [
   { title: "Artworks", route: "/artworks", reqLogin: false, alwaysShow: true },
   // { title: "Articles", route: "/articles", reqLogin: false, alwaysShow: true },
@@ -33,6 +34,20 @@ const settings = [
 ];
 
 function ResponsiveAppBar({ loggedInUser, handleLogout }) {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      setIsScrolled(scrollTop > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -53,11 +68,13 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
 
   return (
     <AppBar
+      className={isScrolled ? '' : 'transparentAppBar'}
       position="static"
       sx={{
         color: "white",
         position: `fixed !important`,
-        backgroundColor: "#00438A",         
+        backgroundColor: isScrolled ? "#00438A" : 'transparent',
+        transition: 'background-color 0.3s ease',     
         textShadow: "0px 0px 3px #00000",
         zIndex: "11",
       }}
