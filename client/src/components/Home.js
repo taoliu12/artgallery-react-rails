@@ -10,21 +10,29 @@ const Home = () => {
       <HomeBanner />
       <Box
         sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          color: "white",
-          // backgroundColor: "#00438A",
+          display: 'flex',
           backgroundColor: "#3c3f42",
-          px: 3,
-          py: 2
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
-        <Box>
-          <h4>HOURS:</h4>
-          <i>Weekdays at 10am - 7pm, Weekends at 10am - 7pm</i>
-        </Box>
-        <Box>
-          <h4>Admission to the museum is always FREE.</h4>
+        <Box
+          sx={{
+            display: "flex",
+            maxWidth: "1000px",
+            width: "100%",
+            justifyContent: "space-between",
+            color: "white",                          
+            py: 3,
+          }}
+        >
+          <Box>
+            <h4>HOURS:</h4>
+            <i>Weekdays at 10am - 7pm, Weekends at 10am - 7pm</i>
+          </Box>
+          <Box>
+            <h4>Admission to the museum is always FREE.</h4>
+          </Box>
         </Box>
       </Box>
       <PostCard index={0} />

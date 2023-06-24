@@ -80,7 +80,13 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
       }}
     >
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar
+          disableGutters
+          sx={{
+            paddingTop: isScrolled ? 0 : 3,
+            transition: "padding-top 0.3s ease",
+          }}
+        >
           <Box id="logo-title">
             <Typography
               noWrap
@@ -88,13 +94,15 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
               href="/"
               sx={{
                 mr: 2,
+                marginTop: isScrolled ? 0 : 0,
                 display: { xs: "none", md: "flex" },
                 fontFamily: "Georgia, serif",
                 fontWeight: 300,
-                fontSize: "40px",
+                fontSize: isScrolled ? "30px" : "50px",
                 letterSpacing: "0px",
                 color: "inherit",
                 textDecoration: "none",
+                transition: "font-size 0.3s ease, margin-top 0.3s ease",
               }}
             >
               React Art Gallery
