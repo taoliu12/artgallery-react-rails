@@ -16,6 +16,11 @@ const styles = {
   display: "flex",
   justifyContent: "center",
   paddingY: 8,
+  socialMediaIcon: {
+    fontSize: '3rem',
+    marginRight: 2,
+    color: "gray",
+  },
 };
 
 const Footer = () => {
@@ -69,7 +74,7 @@ const Footer = () => {
                 <ListItemText
                   primary={item}
                   sx={{
-                    paddingRight: 3,
+                    marginRight: 3,
                     whiteSpace: "nowrap",
                   }}
                 />
@@ -78,11 +83,11 @@ const Footer = () => {
           </List>
           <p>React Drive, Ruby Park, Seattle, WA 55555-1380 | 555.555.5555</p>
         </Box>
-        <Box sx={{ color: "gray" }}>
-          <FacebookIcon sx={{ fontSize: 44 }} />
-          <InstagramIcon sx={{ fontSize: 44 }} />
-          <TwitterIcon sx={{ fontSize: 44 }} />
-          <YouTubeIcon sx={{ fontSize: 44 }} />
+        <Box>
+          <FacebookIcon sx={styles.socialMediaIcon} />
+          <InstagramIcon sx={styles.socialMediaIcon} />
+          <TwitterIcon sx={styles.socialMediaIcon} />
+          <YouTubeIcon sx={styles.socialMediaIcon} />
         </Box>
       </Box>
     </Box>
