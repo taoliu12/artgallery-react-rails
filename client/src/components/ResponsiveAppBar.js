@@ -77,7 +77,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
         transition: "background-color 0.3s ease, box-shadow 0.3s ease",
         textShadow: "0px 0px 3px #00000",
         zIndex: "11",
-        height: '75px'
+        height: '60px'
       }}
     >
       <Container maxWidth="xl">
@@ -86,7 +86,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
           sx={{
             paddingTop: isScrolled ? 0 : 3,
             transition: "padding-top 0.3s ease",
-            height: '50px'
+            height: '45px'
           }}
         >
           <Box id="logo-title">
@@ -96,7 +96,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
               href="/"
               sx={{
                 mr: 2,
-                marginTop: isScrolled ? 0 : 0,
+                marginTop: isScrolled ? -1 : 0,
                 display: { xs: "none", md: "flex" },
                 fontFamily: "Georgia, serif",
                 fontWeight: 300,
