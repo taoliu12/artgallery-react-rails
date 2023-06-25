@@ -15,6 +15,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { textShadow } from "@mui/system";
 import NavbarButton from "./NavbarButton";
+import { useLocation } from 'react-router-dom';
 
 const pages = [
   { title: "Artworks", route: "/artworks", reqLogin: false, alwaysShow: true },
@@ -32,6 +33,8 @@ const settings = [
 ];
 
 function ResponsiveAppBar({ loggedInUser, handleLogout }) {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -67,24 +70,24 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
 
   return (
     <AppBar
-      className={isScrolled ? "" : "transparentAppBar"}
+      className={isScrolled || !isHomePage ? "" : "transparentAppBar"}
       position="static"
       sx={{
         color: "white",
-        position: `fixed !important`,
-        backgroundColor: isScrolled ? "#00438A" : "transparent",
-        boxShadow: isScrolled ? "0 2px 4px rgba(0, 0, 0, 0.4)" : "none",
+        position: `fixed !important`,         
+        backgroundColor: isScrolled || !isHomePage ? "#00438A" : "transparent",
+        boxShadow: isScrolled || !isHomePage ? "0 2px 4px rgba(0, 0, 0, 0.4)" : "none",
         transition: "background-color 0.3s ease, box-shadow 0.3s ease",
         textShadow: "0px 0px 3px #00000",
         zIndex: "11",
-        height: '60px'
+        height: '65px'
       }}
     >
       <Container maxWidth="xl">
         <Toolbar
           disableGutters
           sx={{
-            paddingTop: isScrolled ? 0 : 3,
+            paddingTop: isScrolled || !isHomePage ? 0 : 3,
             transition: "padding-top 0.3s ease",
             height: '45px'
           }}
@@ -96,11 +99,11 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
               href="/"
               sx={{
                 mr: 2,
-                marginTop: isScrolled ? -1 : 0,
+                marginTop: isScrolled || !isHomePage ? -1 : 0,
                 display: { xs: "none", md: "flex" },
                 fontFamily: "Georgia, serif",
                 fontWeight: 300,
-                fontSize: isScrolled ? "30px" : "50px",
+                fontSize: isScrolled || !isHomePage ? "30px" : "50px",
                 letterSpacing: "0px",
                 color: "inherit",
                 textDecoration: "none",
