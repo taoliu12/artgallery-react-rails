@@ -1,9 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 
-const EventIndex = ({ events }) => {
+const Events = () => {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {     
+    fetch("api/events")
+      .then((response) => response.json())
+      // .then((data) => setEvents(data))
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
     <div>
+      <h1>Events</h1>
       {events.map((event) => (
         <Link
           to={{
@@ -22,4 +32,4 @@ const EventIndex = ({ events }) => {
   );
 };
 
-export default EventIndex;
+export default Events;

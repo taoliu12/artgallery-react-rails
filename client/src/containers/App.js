@@ -13,6 +13,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Home from "../components/Home";
 import NavBar from "../components/NavBar";
 import ResponsiveAppBar from "../components/ResponsiveAppBar";
+import Events from "../components/Events";
 import Artworks from "./Artworks";
 import ArtworkShow from "./ArtworkShow";
 import ArtworkForm from "./ArtworkForm";
@@ -66,6 +67,7 @@ function App() {
             <Route path="/artwork/new" element={<ArtworkForm />} />
             <Route path="/artworks/:id" element={<ArtworkShow />} />
             <Route path="/artworks" element={<Artworks />} />
+            <Route path="/events" element={<Events />} />
           </Routes>
           <ScrollToTop />
         </div>
