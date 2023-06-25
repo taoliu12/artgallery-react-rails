@@ -23,7 +23,7 @@ const Home = () => {
             width: "100%",
             justifyContent: "space-between",
             color: "white",                          
-            py: 3,
+            py: 2.2,
           }}
         >
           <Box>

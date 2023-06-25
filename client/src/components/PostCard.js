@@ -7,6 +7,9 @@ const styles = {
   display: "flex",
   color: "white",
   alignItems: "center",
+  backgroundImage: 'url("https://petapixel.com/assets/uploads/2022/08/fdfs11-800x533.jpg")',
+  backgroundSize: "cover",
+  backgroundPosition: "fit",
 };
 
 const colors = ['rgb(255, 143, 28)', '#003E85', '#00502B', '#ab1b1e'];
@@ -20,7 +23,8 @@ const PostCard = ({ index = 0 }) => {
       sx={{
         width: "740px",
         height: "100%",
-        backgroundColor: getColor(),
+        backgroundColor: "transparent",
+        
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -28,7 +32,11 @@ const PostCard = ({ index = 0 }) => {
         paddingY: 3,
         alignItems: 'flex-start',
         fontWeight: 800,
-        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)',
+        textShadow: '2px 2px 8px rgba(0, 0, 0, 1)',
+        "&:hover": {
+          backgroundColor: getColor(),
+        },
+        transition: "transform 0.3s ease, background-color 0.3s ease",
       }}
       >
       <Typography
@@ -58,10 +66,13 @@ const PostCard = ({ index = 0 }) => {
       sx={{
         flex: 1,
         height: "100%",
-        backgroundImage:
-          'url("https://petapixel.com/assets/uploads/2022/08/fdfs11-800x533.jpg")',                      
+        // backgroundImage: 'url("https://petapixel.com/assets/uploads/2022/08/fdfs11-800x533.jpg")',
         backgroundSize: "cover",
         backgroundPosition: "fit",
+        transition: "transform 0.3s ease, background-size 0.3s ease",
+        "&:hover": {
+          transform: "scale(1.05)",
+        },
       }}
     ></Box>
   );

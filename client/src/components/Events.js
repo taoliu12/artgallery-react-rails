@@ -1,10 +1,11 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Box } from "@mui/material";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
 
-  useEffect(() => {     
+  useEffect(() => {
     fetch("api/events")
       .then((response) => response.json())
       // .then((data) => setEvents(data))
@@ -13,6 +14,7 @@ const Events = () => {
 
   return (
     <div>
+      <Box sx={{ height: 80 }}>a</Box>
       <h1>Events</h1>
       {events.map((event) => (
         <Link
