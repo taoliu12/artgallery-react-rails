@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 
@@ -7,12 +8,13 @@ const styles = {
   display: "flex",
   color: "white",
   alignItems: "center",
-  backgroundImage: 'url("https://petapixel.com/assets/uploads/2022/08/fdfs11-800x533.jpg")',
+  backgroundImage:
+    'url("https://petapixel.com/assets/uploads/2022/08/fdfs11-800x533.jpg")',
   backgroundSize: "cover",
   backgroundPosition: "fit",
 };
 
-const colors = ['rgb(255, 143, 28)', '#003E85', '#00502B', '#ab1b1e'];
+const colors = ["rgb(255, 143, 28)", "#003E85", "#00502B", "#ab1b1e"];
 
 const PostCard = ({ event, index = 0 }) => {
   const isEven = index % 2 === 0;
@@ -24,27 +26,27 @@ const PostCard = ({ event, index = 0 }) => {
         width: "740px",
         height: "100%",
         backgroundColor: "transparent",
-        
+
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
         paddingX: 6,
         paddingY: 3,
-        alignItems: 'flex-start',
+        alignItems: "flex-start",
         fontWeight: 800,
-        textShadow: '2px 2px 8px rgba(0, 0, 0, 1)',
+        textShadow: "2px 2px 8px rgba(0, 0, 0, 1)",
         "&:hover": {
           backgroundColor: getColor(),
         },
         transition: "transform 0.3s ease, background-color 0.3s ease",
       }}
-      >
+    >
       <Typography
         sx={{
-          textAlign: 'left',
+          textAlign: "left",
           fontFamily: "Georgia, serif",
           fontSize: 55,
-          letterSpacing: '-1px',
+          letterSpacing: "-1px",
         }}
       >
         {event.attributes.title}
@@ -78,19 +80,27 @@ const PostCard = ({ event, index = 0 }) => {
   );
 
   return (
-    <Box sx={styles}>
-      {isEven ? (
-        <>
-          {imageBox}
-          {textBox}
-        </>
-      ) : (
-        <>
-          {textBox}
-          {imageBox}
-        </>
-      )}
-    </Box>
+    <Link
+      to={{
+        pathname: `/events/${event.id}`,
+        state: { event }, // Pass the event object as state
+      }}
+      key={event.id}
+    >
+      <Box sx={styles}>
+        {isEven ? (
+          <>
+            {imageBox}
+            {textBox}
+          </>
+        ) : (
+          <>
+            {textBox}
+            {imageBox}
+          </>
+        )}
+      </Box>
+    </Link>
   );
 };
 

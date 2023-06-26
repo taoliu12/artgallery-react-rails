@@ -21,21 +21,9 @@ const Events = () => {
 
   return (
     <Box sx={styles}>
-      <Box height={90}></Box>
-      <h1>Events</h1>
-
+      <Box height={60}></Box>
       {events?.map((event, index) => (
-        <Link
-          to={{
-            pathname: `/events/${event.id}`,
-            state: { event }, // Pass the event object as state
-          }}
-          key={event.id}
-        >
-          <div>             
-            <PostCard index={index} event={event}/>
-          </div>
-        </Link>
+        <PostCard index={index} event={event} />
       ))}
     </Box>
   );

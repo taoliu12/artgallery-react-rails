@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import HomeBanner from "./HomeBanner";
 import PostCard from "./PostCard";
@@ -5,6 +6,17 @@ import PostCard from "./PostCard";
 const styles = { width: "100%" };
 
 const Home = () => {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    fetch("events")
+      .then((response) => response.json())
+      .then(({ data }) => {
+        setEvents(data);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
     <Box sx={styles}>
       <HomeBanner />
@@ -35,10 +47,7 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
-      <PostCard index={0} />
-      <PostCard index={1} />
-      <PostCard index={2} />
-      <PostCard index={3} />
+      
     </Box>
   );
 };
