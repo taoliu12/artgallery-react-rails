@@ -1,7 +1,25 @@
 response = HTTParty.get('https://openaccess-api.clevelandart.org/api/artworks?limit=1000')
 artworksArray = JSON.parse(response.body)["data"]
 
+def generate_essay(words)
+  essay = []
+  
+  while essay.size < words
+    paragraph = Faker::Lorem.paragraphs.join(' ')
+    words_remaining = words - essay.size
+    
+    if paragraph.split.size <= words_remaining
+      essay << paragraph
+    else
+      essay << paragraph.split[0...words_remaining].join(' ')
+    end
+  end
+  
+  essay.join(' ')
+end
+
 Artwork.destroy_all
+Event.destroy_all
 
 artworksArray.each do |obj| 
     title = obj['title']
@@ -21,3 +39,14 @@ Event.create(
   date: Date.new(2023, 6, 15),
   time: Time.new(2023, 6, 15, 19, 30)
 )
+
+20.times do
+  Event.create(
+    title: Faker::Lorem.sentence,
+    event_type: Faker::Lorem.word,
+    summary: Faker::Lorem.sentence,
+    description: generate_essay(1000),
+    date: Faker::Date.between(from: Date.today, to: 1.month.from_now),
+    time: Faker::Time.between(from: Time.now.beginning_of_day, to: Time.now.end_of_day)
+  )
+end

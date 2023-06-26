@@ -6,16 +6,22 @@ const Events = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    fetch("api/events")
+    fetch("events")
       .then((response) => response.json())
-      // .then((data) => setEvents(data))
+      .then(({ data }) => {
+        setEvents(data);
+      })
       .catch((error) => console.error(error));
-  }, []);
+    }, []);
+    
+    
+    console.log("Events", events[0]);
 
   return (
     <div>
+      <Box height={90}></Box>
       <h1>Events</h1>
-      {events.map((event) => (
+      {events?.map((event) => (
         <Link
           to={{
             pathname: `/events/${event.id}`,
@@ -23,8 +29,8 @@ const Events = () => {
           }}
           key={event.id}
         >
-          <div>
-            <h3>{event.title}</h3>
+          <div>             
+            <h3>{event.attributes.title}</h3>
             {/* Render other event card details */}
           </div>
         </Link>
