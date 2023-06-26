@@ -99,8 +99,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
               href="/"
               sx={{
                 mr: 2,
-                marginTop: isScrolled || !isHomePage ? -1 : 0,
-                display: { xs: "none", md: "flex" },
+                marginTop: isScrolled || !isHomePage ? -1 : 0,                 
                 fontFamily: "Georgia, serif",
                 fontWeight: 300,
                 fontSize: isScrolled || !isHomePage ? "30px" : "50px",
