@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Box } from "@mui/material";
+import PostCard from "./PostCard";
+
+const styles = { width: "100%" };
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -12,16 +15,16 @@ const Events = () => {
         setEvents(data);
       })
       .catch((error) => console.error(error));
-    }, []);
-    
-    
-    console.log("Events", events[0]);
+  }, []);
+
+  console.log("Events", events[0]);
 
   return (
-    <div>
+    <Box sx={styles}>
       <Box height={90}></Box>
       <h1>Events</h1>
-      {events?.map((event) => (
+
+      {events?.map((event, index) => (
         <Link
           to={{
             pathname: `/events/${event.id}`,
@@ -30,12 +33,11 @@ const Events = () => {
           key={event.id}
         >
           <div>             
-            <h3>{event.attributes.title}</h3>
-            {/* Render other event card details */}
+            <PostCard index={index} event={event}/>
           </div>
         </Link>
       ))}
-    </div>
+    </Box>
   );
 };
 

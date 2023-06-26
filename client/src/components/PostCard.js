@@ -14,7 +14,7 @@ const styles = {
 
 const colors = ['rgb(255, 143, 28)', '#003E85', '#00502B', '#ab1b1e'];
 
-const PostCard = ({ index = 0 }) => {
+const PostCard = ({ event, index = 0 }) => {
   const isEven = index % 2 === 0;
   const getColor = () => colors[index % colors.length];
 
@@ -47,7 +47,7 @@ const PostCard = ({ index = 0 }) => {
           letterSpacing: '-1px',
         }}
       >
-        Rosetta: Double Life of Veronique
+        {event.attributes.title}
       </Typography>
 
       <Typography
