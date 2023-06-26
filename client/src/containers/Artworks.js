@@ -88,6 +88,7 @@ function ArtworkGallery() {
 
   return (
     <div>
+      <Box height={60}></Box>
       <SearchForm
         setSearchParam={setSearchParam}
         searchParam={searchParam}

@@ -27,11 +27,11 @@ const Home = () => {
           }}
         >
           <Box>
-            <h4>HOURS:</h4>
+            <h3>HOURS:</h3>
             <i>Weekdays at 10am - 7pm, Weekends at 10am - 7pm</i>
           </Box>
           <Box>
-            <h4>Admission to the museum is always FREE.</h4>
+            <h3>Admission to the gallery is always FREE.</h3>
           </Box>
         </Box>
       </Box>
