@@ -7,13 +7,13 @@ const EventCard = ({ event }) => {
     <Box
       sx={{
         display: "flex",
-        paddingTop: "20px",
-        paddingBottom: "20px",
+        paddingTop: "30px",
+        paddingBottom: "30px",
         justifyContent: "space-between",
         flexGrow: 0,
         flexShrink: 1,
         flexBasis: "auto",
-        lineHeight: "33px",
+        // lineHeight: "33px",
         textAlign: "left",
         width: "100%",
       }}
@@ -24,38 +24,67 @@ const EventCard = ({ event }) => {
           maxWidth: "777px",
         }}
       >
-        <Typography
-          component="div"
-          sx={{
-            order: 0,
-            flexGrow: 0,
-            flexShrink: 1,
-            flexBasis: "auto",
-            fontFamily: "Georgia",
-            fontSize: "2.2rem",
-          }}
-        >
-          Jul 08
-        </Typography>
-        <Link
-          to={{
-            pathname: `/events/${event.id}`,
-            state: { event }, // Pass the event object as state
-          }}
-          key={event.id}
-        >
+        <Box sx={{
+          mr: 5
+        }}>
           <Typography
             sx={{
+              display: 'block',
+              paddingBottom: "9px",
+              fontSize: "20px",
+              fontWeight: "bold",
+              fontFamily: "Helvetica",
+              color: "gray",
+              textAlign: "center",
+            }}
+          >
+            Jun
+          </Typography>
+          <Typography
+            sx={{
+              fontFamily: "Georgia",
+              fontSize: "2.2rem",
+              lineHeight: "2rem",
+              textAlign: "center",
+            }}
+          >
+            08
+          </Typography>
+        </Box>
+        <Box>
+          <Box
+            sx={{
+              textDecoration: "none",
               textAlign: "left",
               fontFamily: "Georgia",
               fontSize: "2.2rem",
+              lineHeight: "2rem",
             }}
           >
-            Drop-in Collection Tour: Art and the Written Word
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to={{
+                pathname: `/events/${event.id}`,
+                state: { event }, // Pass the event object as state
+              }}
+              key={event.id}
+            >
+              {event.attributes.title}
+            </Link>
+          </Box>
+          <Typography
+            sx={{
+              pt: 1.2,
+              textAlign: "left",
+              fontFamily: "arial",
+              fontSize: 20,
+            }}
+          >
+            1 - 2pm
           </Typography>
-        </Link>
+        </Box>
       </Box>
-      <Box
+      {/* <Box
         sx={{
           width: "auto",
           paddingTop: "0px",
@@ -70,7 +99,7 @@ const EventCard = ({ event }) => {
         }}
       >
         <h3>image</h3>
-      </Box>
+      </Box> */}
     </Box>
   );
 };

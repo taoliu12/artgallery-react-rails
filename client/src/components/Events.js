@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import EventCard from "./EventCard";
 
 const styles = { maxWidth: "1111px" };
@@ -21,9 +21,28 @@ const Events = () => {
 
   return (
     <Box sx={styles}>
-      <Box height={60}></Box>
+      <Box height={80}></Box>
+      <Typography
+        sx={{
+          textAlign: "left",
+          fontFamily: "Georgia",
+          fontSize: "2.2rem",
+          mb: 4,
+        }}
+      >
+        Events
+      </Typography>
       {events?.map((event, index) => (
-        <EventCard event={event} />
+        <>
+          {/* <Box
+            sx={{
+              height: "2px",
+              backgroundColor: "#E8E8E8",
+            }}
+          >             
+          </Box> */}
+          <EventCard event={event} />
+        </>
       ))}
     </Box>
   );
