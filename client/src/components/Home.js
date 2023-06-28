@@ -17,6 +17,7 @@ const Home = () => {
       .catch((error) => console.error(error));
   }, []);
 
+  console.log(events[0])
   return (
     <Box sx={styles}>
       <HomeBanner />
@@ -47,10 +48,18 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
-      <PostCard index={0} />
-      <PostCard index={1} />
-      <PostCard index={2} />
-      <PostCard index={3} />
+      {events?.map((event, index) => (
+        <>
+          {/* <Box
+            sx={{
+              height: "2px",
+              backgroundColor: "#E8E8E8",
+            }}
+          >             
+          </Box> */}
+          <PostCard index={index}  event={event} />
+        </>
+      ))}
     </Box>
   );
 };

@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 
 const styles = {
   width: "100%",
-  height: "380px",
+  height: "350px",
   display: "flex",
   color: "white",
   alignItems: "center",
@@ -11,9 +11,11 @@ const styles = {
 
 const colors = ['rgb(255, 143, 28)', '#003E85', '#00502B', '#ab1b1e'];
 
-const PostCard = ({ index = 0 }) => {
+const PostCard = ({ event, index = 0 }) => {
   const isEven = index % 2 === 0;
   const getColor = () => colors[index % colors.length];
+  const formattedTime = new Date(event.attributes.time).toLocaleString();
+
 
   const textBox = (
     <Box
@@ -25,7 +27,8 @@ const PostCard = ({ index = 0 }) => {
         flexDirection: "column",
         justifyContent: "space-between",
         paddingX: 6,
-        paddingY: 3,
+        pt: 4,
+        pb: 5,
         alignItems: 'flex-start',
         fontWeight: 800,
         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)',
@@ -39,16 +42,24 @@ const PostCard = ({ index = 0 }) => {
           letterSpacing: '-1px',
         }}
       >
-        Rosetta: Double Life of Veronique
+        {event.attributes.title}
       </Typography>
 
+      {/* <Typography
+        sx={{
+          fontFamily: "Georgia, serif",
+          fontSize: 25,
+        }}
+      >
+        {formattedTime}
+      </Typography> */}
       <Typography
         sx={{
           fontFamily: "Georgia, serif",
           fontSize: 25,
         }}
       >
-        Film Screening
+        {event.attributes.event_type}
       </Typography>
     </Box>
   );
