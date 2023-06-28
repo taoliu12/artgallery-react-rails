@@ -22,10 +22,10 @@ const Home = () => {
       <HomeBanner />
       <Box
         sx={{
-          display: 'flex',
+          display: "flex",
           backgroundColor: "#3c3f42",
-          justifyContent: 'center',
-          alignItems: 'center',
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <Box
@@ -34,7 +34,7 @@ const Home = () => {
             maxWidth: "1000px",
             width: "100%",
             justifyContent: "space-between",
-            color: "white",                          
+            color: "white",
             py: 2.2,
           }}
         >
@@ -46,9 +46,11 @@ const Home = () => {
             <h3>Admission to the gallery is always FREE.</h3>
           </Box>
         </Box>
-        
       </Box>
-      
+      <PostCard index={0} />
+      <PostCard index={1} />
+      <PostCard index={2} />
+      <PostCard index={3} />
     </Box>
   );
 };
