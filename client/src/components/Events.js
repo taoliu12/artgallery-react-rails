@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Box } from "@mui/material";
-import PostCard from "./PostCard";
+import EventCard from "./EventCard";
 
-const styles = { width: "100%" };
+const styles = { maxWidth: "1111px" };
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -23,7 +23,7 @@ const Events = () => {
     <Box sx={styles}>
       <Box height={60}></Box>
       {events?.map((event, index) => (
-        <PostCard index={index} event={event} />
+        <EventCard event={event} />
       ))}
     </Box>
   );
