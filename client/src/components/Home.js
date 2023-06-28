@@ -46,6 +46,7 @@ const Home = () => {
             <h3>Admission to the gallery is always FREE.</h3>
           </Box>
         </Box>
+        
       </Box>
       
     </Box>

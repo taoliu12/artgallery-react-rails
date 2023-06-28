@@ -48,7 +48,7 @@ const EventCard = ({ event }) => {
               textAlign: "center",
             }}
           >
-            08
+            {event.attributes.date}
           </Typography>
         </Box>
         <Box>
@@ -80,7 +80,7 @@ const EventCard = ({ event }) => {
               fontSize: 20,
             }}
           >
-            1 - 2pm
+            {event.attributes.time}
           </Typography>
         </Box>
       </Box>
