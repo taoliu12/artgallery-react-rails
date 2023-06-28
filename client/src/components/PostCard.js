@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 
@@ -8,15 +7,11 @@ const styles = {
   display: "flex",
   color: "white",
   alignItems: "center",
-  backgroundImage:
-    'url("https://petapixel.com/assets/uploads/2022/08/fdfs11-800x533.jpg")',
-  backgroundSize: "cover",
-  backgroundPosition: "fit",
 };
 
-const colors = ["rgb(255, 143, 28)", "#003E85", "#00502B", "#ab1b1e"];
+const colors = ['rgb(255, 143, 28)', '#003E85', '#00502B', '#ab1b1e'];
 
-const PostCard = ({ event, index = 0 }) => {
+const PostCard = ({ index = 0 }) => {
   const isEven = index % 2 === 0;
   const getColor = () => colors[index % colors.length];
 
@@ -25,31 +20,26 @@ const PostCard = ({ event, index = 0 }) => {
       sx={{
         width: "740px",
         height: "100%",
-        backgroundColor: "transparent",
-
+        backgroundColor: getColor(),
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
         paddingX: 6,
         paddingY: 3,
-        alignItems: "flex-start",
+        alignItems: 'flex-start',
         fontWeight: 800,
-        textShadow: "2px 2px 8px rgba(0, 0, 0, 1)",
-        "&:hover": {
-          backgroundColor: getColor(),
-        },
-        transition: "transform 0.3s ease, background-color 0.3s ease",
+        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)',
       }}
-    >
+      >
       <Typography
         sx={{
-          textAlign: "left",
+          textAlign: 'left',
           fontFamily: "Georgia, serif",
           fontSize: 55,
-          letterSpacing: "-1px",
+          letterSpacing: '-1px',
         }}
       >
-        {event.attributes.title}
+        Rosetta: Double Life of Veronique
       </Typography>
 
       <Typography
@@ -68,39 +58,28 @@ const PostCard = ({ event, index = 0 }) => {
       sx={{
         flex: 1,
         height: "100%",
-        // backgroundImage: 'url("https://petapixel.com/assets/uploads/2022/08/fdfs11-800x533.jpg")',
+        backgroundImage:
+          'url("https://petapixel.com/assets/uploads/2022/08/fdfs11-800x533.jpg")',                      
         backgroundSize: "cover",
         backgroundPosition: "fit",
-        transition: "transform 0.3s ease, background-size 0.3s ease",
-        "&:hover": {
-          transform: "scale(1.05)",
-        },
       }}
     ></Box>
   );
 
   return (
-    <Link
-      to={{
-        pathname: `/events/${event.id}`,
-        state: { event }, // Pass the event object as state
-      }}
-      key={event.id}
-    >
-      <Box sx={styles}>
-        {isEven ? (
-          <>
-            {imageBox}
-            {textBox}
-          </>
-        ) : (
-          <>
-            {textBox}
-            {imageBox}
-          </>
-        )}
-      </Box>
-    </Link>
+    <Box sx={styles}>
+      {isEven ? (
+        <>
+          {imageBox}
+          {textBox}
+        </>
+      ) : (
+        <>
+          {textBox}
+          {imageBox}
+        </>
+      )}
+    </Box>
   );
 };
 
