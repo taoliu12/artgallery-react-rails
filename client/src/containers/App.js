@@ -69,7 +69,7 @@ function App() {
             <Route path="/artwork/new" element={<ArtworkForm />} />
             <Route path="/artworks/:id" element={<ArtworkShow />} />
             <Route path="/artworks" element={<Artworks />} />
-            <Route path="/events/:id" element={<EventShow />} />
+            <Route path="/events/:eventId" element={<EventShow />} />
             <Route path="/events" element={<Events />} />
 
           </Routes>

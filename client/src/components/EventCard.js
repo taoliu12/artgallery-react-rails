@@ -65,7 +65,7 @@ const EventCard = ({ event }) => {
               style={{ textDecoration: "none", color: "black" }}
               to={{
                 pathname: `/events/${event.id}`,
-                state: { event }, // Pass the event object as state
+                // state: { event }, // Pass the event object as state
               }}
               key={event.id}
             >

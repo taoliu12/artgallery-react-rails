@@ -1,5 +1,5 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom"; 
 import { Box,Typography } from '@mui/material';
 import { styled } from '@mui/system';
 
@@ -22,32 +22,30 @@ const Date = styled(Typography)({
   fontSize: '3rem', // Adjust the size as per your preference
 });
 
-const EventShow = ( { event }) => {
-  const location = useLocation(); // Access the location object
+const EventShow = () => {
+  const { eventId } = useParams();
+  const [event, setEvent] = useState(null);
 
-  // Retrieve the event object from the location state
-  // const event = location.state?.event;
-  // const event = {
-  //   title: 'Monet/Mitchell: Painting the French Landscape',
-  //   date: 'March 25–June 25 2023',
-  //   time: 'All opening hours',
-  //   summary: 'Painting the French Landscape',
-  //   description: 'The exhibition explores the ways in which Monet and Mitchell engaged with the French landscape. Monet spent his final decades in rural Giverny, some 50 miles to the northwest of Paris, while, from 1968 until 1992, Mitchell lived at nearby Vétheuil, overlooking a house once inhabited by the French painter. Both artists addressed similar themes of trees, earth, water, and flowers as well as the inspiration of their own gardens. The exhibition explores the connections, both in subject matter and technique, that Mitchell shared with Monet. It also shows how her compositional formats, vibrant color, and gestural brushwork offer fascinating parallels with Monet’s.'
-  // }
+  useEffect(() => {
+    fetch(`/events/${eventId}`)
+      .then((response) => response.json())
+      .then((data) => setEvent(data))
+      .catch((error) => console.error(error));
+  }, [eventId]);
 
   if (!event) {
-    return <div>No event found.</div>;
+    return <div>Loading event...</div>;
   }
 
+  console.log(event);
   return (
     <div>
-      <Box height={95}></Box>
-      <Heading variant="h1" component="h1">
-        {event.title}
-      </Heading>
-      <Date>{event.date}</Date>
-      <p>{event.summary}</p>
+            <Box height={80}></Box>
+      <h1>{event.title}</h1>
       <p>{event.description}</p>
+      <p>Date: {event.date}</p>
+      <p>Time: {event.time}</p>
+      {/* Render other event details */}
     </div>
   );
 };
