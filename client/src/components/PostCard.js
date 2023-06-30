@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import { Typography } from "@mui/material";
+
 import Box from "@mui/material/Box";
 
 const colors = ["rgb(255, 143, 28)", "#003E85", "#00502B", "#ab1b1e"];
@@ -12,7 +14,7 @@ const PostCard = ({ event, index = 0 }) => {
     width: "100%",
     height: "350px",
     display: "flex",
-    color: "white",     
+    color: "white",
     justifyContent: "center",
     backgroundColor: getColor(),
   };
@@ -31,8 +33,8 @@ const PostCard = ({ event, index = 0 }) => {
           height: "100%",
           backgroundColor: getColor(),
           display: "flex",
-          flexDirection: "column", 
-          justifyContent: 'flex-start',
+          flexDirection: "column",
+          justifyContent: "flex-start",
           // justifyContent: 'space-between',
           paddingX: 5,
           pt: 4,
@@ -48,19 +50,29 @@ const PostCard = ({ event, index = 0 }) => {
             fontFamily: "Georgia, serif",
             fontSize: 45,
             letterSpacing: "-1px",
+            lineHeight: 1,
           }}
         >
-          {event.attributes.title}
+          <Link
+            style={{ textDecoration: "none", color: "white" }}
+            to={{
+              pathname: `/events/${event.id}`,
+              // state: { event }, // Pass the event object as state
+            }}
+            key={event.id}
+          >
+            {event.attributes.title}
+          </Link>
         </Typography>
 
-        {/* <Typography
-        sx={{
-          fontFamily: "Georgia, serif",
-          fontSize: 25,
-        }}
-      >
-        {formattedTime}
-      </Typography> */}
+        <Typography
+          sx={{
+            fontFamily: "Georgia, serif",
+            fontSize: 25,
+          }}
+        >
+          {event.attributes.date}
+        </Typography>
         <Typography
           sx={{
             fontFamily: "Georgia, serif",
