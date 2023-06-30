@@ -1,6 +1,6 @@
 # spec/models/artwork_spec.rb
 
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Artwork, type: :model do
   it "is valid with valid attributes" do
