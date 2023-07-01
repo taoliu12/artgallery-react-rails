@@ -15,7 +15,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { textShadow } from "@mui/system";
 import NavbarButton from "./NavbarButton";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 const pages = [
   { title: "Artworks", route: "/artworks", reqLogin: false, alwaysShow: true },
@@ -34,7 +34,7 @@ const settings = [
 
 function ResponsiveAppBar({ loggedInUser, handleLogout }) {
   const location = useLocation();
-  const isHomePage = location.pathname === '/';
+  const isHomePage = location.pathname === "/";
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -74,13 +74,14 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
       position="static"
       sx={{
         color: "white",
-        position: `fixed !important`,         
+        position: `fixed !important`,
         backgroundColor: isScrolled || !isHomePage ? "#00438A" : "transparent",
-        boxShadow: isScrolled || !isHomePage ? "0 2px 4px rgba(0, 0, 0, 0.4)" : "none",
+        boxShadow:
+          isScrolled || !isHomePage ? "0 2px 4px rgba(0, 0, 0, 0.4)" : "none",
         transition: "background-color 0.3s ease, box-shadow 0.3s ease",
         textShadow: "0px 0px 3px #00000",
         zIndex: "11",
-        height: '65px'
+        height: "65px",
       }}
     >
       <Container maxWidth="xl">
@@ -89,28 +90,27 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
           sx={{
             paddingTop: isScrolled || !isHomePage ? 0 : 3,
             transition: "padding-top 0.3s ease",
-            height: '45px'
+            height: "45px",
           }}
         >
           <Box id="logo-title">
-            <Typography
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                marginTop: isScrolled || !isHomePage ? -1 : 0,                 
-                fontFamily: "Georgia, serif",
-                fontWeight: 300,
-                fontSize: isScrolled || !isHomePage ? "30px" : "50px",
-                letterSpacing: "0px",
-                color: "inherit",
-                textDecoration: "none",
-                transition: "font-size 0.3s ease, margin-top 0.3s ease",
-              }}
-            >
-              Tao Art Gallery
-            </Typography>
+            <Link to="/"  style={{ textDecoration: "none", color: "white" }}>
+              <Typography
+                sx={{
+                  mr: 2,
+                  marginTop: isScrolled || !isHomePage ? -1 : 0,
+                  fontFamily: "Georgia, serif",
+                  fontWeight: 300,
+                  fontSize: isScrolled || !isHomePage ? "30px" : "50px",
+                  letterSpacing: "0px",
+                  color: "inherit",
+                  textDecoration: "none",
+                  transition: "font-size 0.3s ease, margin-top 0.3s ease",
+                }}
+              >
+                Tao Art Gallery
+              </Typography>
+            </Link>
           </Box>
           <Box
             sx={{
