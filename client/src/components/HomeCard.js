@@ -25,7 +25,7 @@ const HomeCard = ({ event, index = 0 }) => {
         width: "750px",
         display: "flex",
         justifyContent: isEven ? "left" : "right",
-        
+
       }}
     >
       <Link
@@ -91,19 +91,19 @@ const HomeCard = ({ event, index = 0 }) => {
             <Typography
               sx={{
                 fontFamily: "Georgia, serif",
+                fontSize: 25,
+              }}
+            >
+              {event.attributes.event_type}
+            </Typography>
+            <Typography
+              sx={{
+                fontFamily: "Georgia, serif",
                 fontSize: 30,
                 mb: 1,
               }}
             >
               {event.attributes.date}
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: "Georgia, serif",
-                fontSize: 25,
-              }}
-            >
-              {event.attributes.event_type}
             </Typography>
           </Box>
         </Box>
@@ -117,16 +117,17 @@ const HomeCard = ({ event, index = 0 }) => {
         // flex: 1,
         width: "1200px",
         height: "100%",
-        backgroundImage:
-          'url("https://petapixel.com/assets/uploads/2022/08/fdfs11-800x533.jpg")',
+        backgroundImage: `url(${event.attributes.banner_image})`,         
         backgroundSize: "cover",
         backgroundPosition: "fit",
       }}
     ></Box>
   );
-
+console.log(event.attributes.banner_image);
+debugger
   return (
     <Box sx={styles}>
+      
       {isEven ? (
         <>
           {imageBox}
