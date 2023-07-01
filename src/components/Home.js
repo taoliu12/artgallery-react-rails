@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import HomeBanner from "./HomeBanner";
 import PostCard from "./PostCard";
@@ -5,15 +6,27 @@ import PostCard from "./PostCard";
 const styles = { width: "100%" };
 
 const Home = () => {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    fetch("events")
+      .then((response) => response.json())
+      .then(({ data }) => {
+        setEvents(data);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+
+  console.log(events[0])
   return (
     <Box sx={styles}>
       <HomeBanner />
       <Box
         sx={{
-          display: 'flex',
+          display: "flex",
           backgroundColor: "#3c3f42",
-          justifyContent: 'center',
-          alignItems: 'center',
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <Box
@@ -22,23 +35,31 @@ const Home = () => {
             maxWidth: "1000px",
             width: "100%",
             justifyContent: "space-between",
-            color: "white",                          
-            py: 3,
+            color: "white",
+            py: 2.2,
           }}
         >
           <Box>
-            <h4>HOURS:</h4>
+            <h3>HOURS:</h3>
             <i>Weekdays at 10am - 7pm, Weekends at 10am - 7pm</i>
           </Box>
           <Box>
-            <h4>Admission to the museum is always FREE.</h4>
+            <h3>Admission to the gallery is always FREE.</h3>
           </Box>
         </Box>
       </Box>
-      <PostCard index={0} />
-      <PostCard index={1} />
-      <PostCard index={2} />
-      <PostCard index={3} />
+      {events?.map((event, index) => (
+        <>
+          {/* <Box
+            sx={{
+              height: "2px",
+              backgroundColor: "#E8E8E8",
+            }}
+          >             
+          </Box> */}
+          <PostCard index={index}  event={event} />
+        </>
+      ))}
     </Box>
   );
 };
