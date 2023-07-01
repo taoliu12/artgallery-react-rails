@@ -1,6 +1,6 @@
 # Art Gallery
 
-The project is a react app that mimics a website for an art gallery or museum. It allows users to browser images and events.
+The project is a react app website for an art gallery or museum. It allows users to browser images and events.
 
 [Live Demo](https://artgallery-react-rails.onrender.com) - Initial loading can take up to 30 seconds due to render.io's hosting free tier.
 
