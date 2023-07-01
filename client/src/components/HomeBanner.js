@@ -10,43 +10,48 @@ const styles = {
   width: "100%",
   display: "flex",
   flexDirection: "column",
-  justifyContent: "flex-end",
+  justifyContent: "space-between",
   alignItems: "bottom",
 };
 
 const HomeBanner = () => {
   return (
-
-      <Box sx={styles}>
+    <Box sx={styles}>
+      <div
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent)",
+          height: "150px", // Set the desired height for the div
+        }}
+      ></div>
+      <Box
+        sx={{
+          display: "flex",
+          backgroundColor: "#3c3f42",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <Box
           sx={{
             display: "flex",
-            backgroundColor: "#3c3f42",
-            justifyContent: "center",
-            alignItems: "center",
+            maxWidth: "1000px",
+            width: "100%",
+            justifyContent: "space-between",
+            color: "white",
+            py: 2.2,
           }}
         >
-          <Box
-            sx={{
-              display: "flex",
-              maxWidth: "1000px",
-              width: "100%",
-              justifyContent: "space-between",
-              color: "white",
-              py: 2.2,
-            }}
-          >
-            <Box>
-              <h3>HOURS:</h3>
-              <i>Weekdays at 10am - 7pm, Weekends at 10am - 5pm</i>
-            </Box>
-            <Box>
-              <h3>Admission to the gallery is always FREE.</h3>
-            </Box>
+          <Box>
+            <h3>HOURS:</h3>
+            <i>Weekdays at 10am - 7pm, Weekends at 10am - 5pm</i>
+          </Box>
+          <Box>
+            <h3>Admission to the gallery is always FREE.</h3>
           </Box>
         </Box>
       </Box>
-
+    </Box>
   );
 };
 
