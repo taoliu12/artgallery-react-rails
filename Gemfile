@@ -13,6 +13,7 @@ gem "httparty"
 gem "dotenv"
 gem "fast_jsonapi"
 gem "pagy"
+gem "bundler-audit"
 
 # Use Puma as the app server
 gem "puma", "~> 4.3"
@@ -40,6 +41,7 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "rspec-rails", "~> 5.0"
   gem "standard"
+  gem "rubocop"
 end
 
 group :development do

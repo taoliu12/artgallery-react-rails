@@ -4,6 +4,7 @@ class EventsController < ApplicationController
     render json: EventSerializer.new(events).serialized_json
   end
 
+  
   def show
     @event = Event.find(params[:id])
     render json: @event
