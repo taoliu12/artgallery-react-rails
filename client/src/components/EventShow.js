@@ -3,23 +3,20 @@ import { useParams } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 
-const RootComponent = styled("div")({
-  backgroundColor: "primary.main",
-  color: "white",
-  "& .nestedElement": {
-    fontSize: "16px",
-    fontWeight: "bold",
-  },
+const Container = styled("div")({
+  maxWidth: "750px",
+  textAlign: "left",
+  marginTop: 30,
 });
 
 const Heading = styled(Typography)({
   fontFamily: "Georgia, serif",
-  fontSize: "4rem", // Adjust the size as per your preference
+  fontSize: "3rem",
 });
 
 const Date = styled(Typography)({
   fontFamily: "Georgia, serif",
-  fontSize: "3rem", // Adjust the size as per your preference
+  fontSize: "2rem",
 });
 
 const EventShow = () => {
@@ -39,14 +36,14 @@ const EventShow = () => {
 
   console.log(event);
   return (
-    <div>
+    <Container>
       <Box height={80}></Box>
       <Heading>{event.title}</Heading>
       <Date>{event.date}</Date>
-      <p>{event.time}</p>
-      <p style={{ whiteSpace: 'pre-line' }}>{event.description}</p>
-      {/* Render other event details */}
-    </div>
+      <Typography sx={{ whiteSpace: "pre-line", mt: 4, mb: 8 }}>
+        {event.description}
+      </Typography>
+    </Container>
   );
 };
 
