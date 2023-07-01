@@ -25,7 +25,6 @@ const HomeCard = ({ event, index = 0 }) => {
         width: "750px",
         display: "flex",
         justifyContent: isEven ? "left" : "right",
-
       }}
     >
       <Link
@@ -117,17 +116,15 @@ const HomeCard = ({ event, index = 0 }) => {
         // flex: 1,
         width: "1200px",
         height: "100%",
-        backgroundImage: `url(${event.attributes.banner_image})`,         
+        backgroundImage: `url(${event.attributes.banner_image})`,
         backgroundSize: "cover",
         backgroundPosition: "fit",
       }}
     ></Box>
   );
-console.log(event.attributes.banner_image);
-debugger
+
   return (
     <Box sx={styles}>
-      
       {isEven ? (
         <>
           {imageBox}
