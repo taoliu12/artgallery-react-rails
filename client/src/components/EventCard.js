@@ -3,6 +3,15 @@ import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 
 const EventCard = ({ event }) => {
+  const dateString = event.attributes.time;
+  const date = new Date(dateString);
+
+  const formattedTime = {
+    shortMonth: date.toLocaleDateString('en-US', { month: 'short' }),
+    dayOfMonth: date.toLocaleDateString('en-US', { day: 'numeric' }),
+    startHour: date.toLocaleTimeString('en-US', { hour: 'numeric' }),
+  };
+
   return (
     <Box
       sx={{
@@ -24,12 +33,14 @@ const EventCard = ({ event }) => {
           maxWidth: "777px",
         }}
       >
-        <Box sx={{
-          mr: 5
-        }}>
+        <Box
+          sx={{
+            mr: 5,
+          }}
+        >
           <Typography
             sx={{
-              display: 'block',
+              display: "block",
               paddingBottom: "9px",
               fontSize: "20px",
               fontWeight: "bold",
@@ -38,7 +49,7 @@ const EventCard = ({ event }) => {
               textAlign: "center",
             }}
           >
-            Jun
+           {formattedTime.shortMonth}
           </Typography>
           <Typography
             sx={{
@@ -48,7 +59,7 @@ const EventCard = ({ event }) => {
               textAlign: "center",
             }}
           >
-            {event.attributes.date}
+            {formattedTime.dayOfMonth}
           </Typography>
         </Box>
         <Box>
@@ -80,7 +91,7 @@ const EventCard = ({ event }) => {
               fontSize: 20,
             }}
           >
-            {event.attributes.time}
+            {formattedTime.startHour}
           </Typography>
         </Box>
       </Box>
