@@ -1,16 +1,10 @@
 import { Link } from "react-router-dom";
 import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
+import {createDateTimeObj} from '../utils/formatTime'
 
-const EventCard = ({ event }) => {
-  const dateString = event.attributes.time;
-  const date = new Date(dateString);
-
-  const formattedTime = {
-    shortMonth: date.toLocaleDateString('en-US', { month: 'short' }),
-    dayOfMonth: date.toLocaleDateString('en-US', { day: 'numeric' }),
-    startHour: date.toLocaleTimeString('en-US', { hour: 'numeric' }),
-  };
+const EventCard = ({ event }) => {   
+  const dateTimeObj = createDateTimeObj(event.attributes.time);
 
   return (
     <Box
@@ -49,7 +43,7 @@ const EventCard = ({ event }) => {
               textAlign: "center",
             }}
           >
-           {formattedTime.shortMonth}
+            {dateTimeObj.shortMonth}
           </Typography>
           <Typography
             sx={{
@@ -59,7 +53,7 @@ const EventCard = ({ event }) => {
               textAlign: "center",
             }}
           >
-            {formattedTime.dayOfMonth}
+            {dateTimeObj.dayOfMonth}
           </Typography>
         </Box>
         <Box>
@@ -91,7 +85,7 @@ const EventCard = ({ event }) => {
               fontSize: 20,
             }}
           >
-            {formattedTime.startHour}
+            {dateTimeObj.startHour}
           </Typography>
         </Box>
       </Box>
