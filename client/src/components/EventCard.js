@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import {createDateTimeObj} from '../utils/formatTime'
 
 const EventCard = ({ event }) => {   
-  const dateTimeObj = createDateTimeObj(event.attributes.time);
+  const dateTimeObj = createDateTimeObj(event.attributes.date);
 
   return (
     <Box
@@ -35,7 +35,7 @@ const EventCard = ({ event }) => {
           <Typography
             sx={{
               display: "block",
-              paddingBottom: "9px",
+              paddingBottom: "12px",
               fontSize: "20px",
               fontWeight: "bold",
               fontFamily: "Helvetica",
@@ -48,8 +48,8 @@ const EventCard = ({ event }) => {
           <Typography
             sx={{
               fontFamily: "Georgia",
-              fontSize: "2.2rem",
-              lineHeight: "2rem",
+              fontSize: "3rem",
+              lineHeight: "1rem",
               textAlign: "center",
             }}
           >
@@ -76,7 +76,16 @@ const EventCard = ({ event }) => {
             >
               {event.attributes.title}
             </Link>
-          </Box>
+          <Typography
+            sx={{
+              pt: 1.2,
+              textAlign: "left",
+              fontFamily: "arial",
+              fontSize: 16,
+            }}
+          >
+            {event.attributes.summary}
+          </Typography>
           <Typography
             sx={{
               pt: 1.2,
@@ -87,6 +96,8 @@ const EventCard = ({ event }) => {
           >
             {dateTimeObj.startHour}
           </Typography>
+
+          </Box>
         </Box>
       </Box>
       {/* <Box

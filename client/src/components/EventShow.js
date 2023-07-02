@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
-import {createDateTimeObj} from '../utils/formatTime'
+import { createDateTimeObj, formatDate } from "../utils/formatTime";
 
 const Container = styled("div")({
   maxWidth: "750px",
@@ -22,7 +22,7 @@ const Date = styled(Typography)({
 
 const EventShow = () => {
   const { eventId } = useParams();
-  const [event, setEvent] = useState(null);   
+  const [event, setEvent] = useState(null);
 
   useEffect(() => {
     fetch(`/events/${eventId}`)
@@ -34,14 +34,17 @@ const EventShow = () => {
   if (!event) {
     return <div>Loading event...</div>;
   }
-
-  console.log(event);
   return (
     <Container>
       <Box height={80}></Box>
       <Heading>{event.title}</Heading>
-      <Date>{event.date}</Date>
-      <Typography sx={{ whiteSpace: "pre-line", mt: 4, mb: 8 }}>
+      <Date>{formatDate(event.date)}</Date>
+      <Typography
+        sx={{ fontWeight: "bold", whiteSpace: "pre-line", mt: 5, mb: 4 }}
+      >
+        {event.summary}
+      </Typography>
+      <Typography sx={{ whiteSpace: "pre-line" }}>
         {event.description}
       </Typography>
     </Container>

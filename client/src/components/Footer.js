@@ -16,6 +16,7 @@ const styles = {
   display: "flex",
   justifyContent: "center",
   paddingY: 8,
+  mt: 8,
   socialMediaIcon: {
     fontSize: '2rem',
     marginRight: 2,
