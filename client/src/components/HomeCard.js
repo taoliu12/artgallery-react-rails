@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Typography } from "@mui/material";
-
 import Box from "@mui/material/Box";
+import { formatDate } from "../utils/formatTime";
 
 const colors = ["rgb(255, 143, 28)", "#003E85", "#00502B", "#ab1b1e"];
 
@@ -25,7 +25,6 @@ const HomeCard = ({ event, index = 0 }) => {
         width: "750px",
         display: "flex",
         justifyContent: isEven ? "left" : "right",
-
       }}
     >
       <Link
@@ -99,11 +98,19 @@ const HomeCard = ({ event, index = 0 }) => {
             <Typography
               sx={{
                 fontFamily: "Georgia, serif",
-                fontSize: 30,
+                fontSize: 20,
+              }}
+            >
+              {formatDate(event.attributes?.date)}
+            </Typography>
+            <Typography
+              sx={{
+                fontFamily: "Georgia, serif",
+                fontSize: 20,
                 mb: 1,
               }}
             >
-              {event.attributes.date}
+              {event.attributes.formatted_time_range}
             </Typography>
           </Box>
         </Box>
@@ -117,17 +124,15 @@ const HomeCard = ({ event, index = 0 }) => {
         // flex: 1,
         width: "1200px",
         height: "100%",
-        backgroundImage: `url(${event.attributes.banner_image})`,         
+        backgroundImage: `url(${event.attributes.banner_image})`,
         backgroundSize: "cover",
         backgroundPosition: "fit",
       }}
     ></Box>
   );
-console.log(event.attributes.banner_image);
-debugger
+
   return (
     <Box sx={styles}>
-      
       {isEven ? (
         <>
           {imageBox}

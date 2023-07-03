@@ -44,8 +44,7 @@ function App() {
       .then((json) => {
         setLoggedInUser(null);
       });
-  };
-  console.log("App  loggedInUser", loggedInUser);
+  };   
 
   return (
     <>
