@@ -34,9 +34,7 @@ const EventShow = () => {
   if (!event) {
     return <div>Loading event...</div>;
   }
-  console.log(event);
-  console.log(event.attributes);
-  console.log(event.attributes?.title);
+
   return (
     <Container>
       <Box height={80}></Box>
@@ -51,6 +49,7 @@ const EventShow = () => {
       <Typography sx={{ whiteSpace: "pre-line" }}>
         {event.attributes?.description}
       </Typography>
+      <Box height={80}></Box>
     </Container>
   );
 };
