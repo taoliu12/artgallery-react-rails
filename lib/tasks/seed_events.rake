@@ -9,7 +9,7 @@ def generate_article(paragraphs, words_per_paragraph)
   article.join("\n")
 end
 
-#rake db:seed_events
+# rake db:seed_events
 namespace :db do
   desc "Seed only events table"
   task seed_events: :environment do
@@ -27,7 +27,9 @@ namespace :db do
       As you explore the exhibition, you will gain a deeper understanding of the cultural significance of animals in Russian folklore. Discover the parallels between the animal kingdom and human nature, as well as the values and lessons imparted through these timeless tales.",
       banner_image: "https://eternamenta.files.wordpress.com/2019/02/d182d0b5d180d0b5d0bcd0bed0ba.jpg",
       date: Date.new(2023, 4, 19),
-      time: Time.new(2023, 6, 15, 19, 30)
+      start_time: Faker::Time.between(from: DateTime.now.beginning_of_day + 11.hours, to: DateTime.now.beginning_of_day + 17.hours),
+      end_time: Faker::Time.between(from: DateTime.now.beginning_of_day + 9.hours, to: DateTime.now.beginning_of_day + 17.hours) +
+      2.hours
     )
     Event.create(
       title: "Sculptures of Spain",

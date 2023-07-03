@@ -25,5 +25,22 @@ export const formatDate = (dateString) => {
     hour12: true,
   });
 
-  return `${formattedDate}, ${formattedTime}`;
+  return `${formattedDate}`;
+};
+
+export const formatTimeRange = (startTime, endTime) => {
+  startTime = new Date(startTime);
+  endTime = new Date(endTime);
+
+  const formattedStartTime = startTime.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    hour12: true,
+  });
+
+  const formattedEndTime = endTime.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    hour12: true,
+  });
+
+  return `${formattedStartTime} to ${formattedEndTime}`;
 };

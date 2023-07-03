@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
-import { createDateTimeObj, formatDate } from "../utils/formatTime";
+import { createDateTimeObj, formatDate, formatTimeRange } from "../utils/formatTime";
 
 const Container = styled("div")({
   maxWidth: "750px",
@@ -39,6 +39,7 @@ const EventShow = () => {
       <Box height={80}></Box>
       <Heading>{event.title}</Heading>
       <Date>{formatDate(event.date)}</Date>
+      <Date>{formatTimeRange(event.start_time, event.end_time)}</Date>
       <Typography
         sx={{ fontWeight: "bold", whiteSpace: "pre-line", mt: 5, mb: 4 }}
       >
