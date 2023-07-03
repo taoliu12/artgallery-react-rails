@@ -16,8 +16,7 @@ const Home = () => {
       })
       .catch((error) => console.error(error));
   }, []);
-
-  console.log(events[0]);
+   
   return (
     <Box sx={styles}>
       <HomeBanner />

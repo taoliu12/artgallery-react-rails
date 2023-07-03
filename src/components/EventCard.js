@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
+import { createDateTimeObj, formatDate } from "../utils/formatTime";
 
 const EventCard = ({ event }) => {
+  const dateTimeObj = createDateTimeObj(event.attributes.date);
+
   return (
     <Box
       sx={{
@@ -24,13 +27,15 @@ const EventCard = ({ event }) => {
           maxWidth: "777px",
         }}
       >
-        <Box sx={{
-          mr: 5
-        }}>
+        <Box
+          sx={{
+            mr: 5,
+          }}
+        >
           <Typography
             sx={{
-              display: 'block',
-              paddingBottom: "9px",
+              display: "block",
+              paddingBottom: "12px",
               fontSize: "20px",
               fontWeight: "bold",
               fontFamily: "Helvetica",
@@ -38,17 +43,17 @@ const EventCard = ({ event }) => {
               textAlign: "center",
             }}
           >
-            Jun
+            {dateTimeObj.shortMonth}
           </Typography>
           <Typography
             sx={{
               fontFamily: "Georgia",
-              fontSize: "2.2rem",
-              lineHeight: "2rem",
+              fontSize: "3rem",
+              lineHeight: "1rem",
               textAlign: "center",
             }}
           >
-            {event.attributes.date}
+            {dateTimeObj.dayOfMonth}
           </Typography>
         </Box>
         <Box>
@@ -71,17 +76,27 @@ const EventCard = ({ event }) => {
             >
               {event.attributes.title}
             </Link>
+            <Typography
+              sx={{
+                pt: 1.2,
+                textAlign: "left",
+                fontFamily: "arial",
+                fontSize: 16,
+              }}
+            >
+              {event.attributes.summary}
+            </Typography>
+            <Typography
+              sx={{
+                pt: 1.2,
+                textAlign: "left",
+                fontFamily: "arial",
+                fontSize: 20,
+              }}
+            >
+              {event.attributes.formatted_time_range}
+            </Typography>
           </Box>
-          <Typography
-            sx={{
-              pt: 1.2,
-              textAlign: "left",
-              fontFamily: "arial",
-              fontSize: 20,
-            }}
-          >
-            {event.attributes.time}
-          </Typography>
         </Box>
       </Box>
       {/* <Box
