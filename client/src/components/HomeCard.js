@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Typography } from "@mui/material";
-
 import Box from "@mui/material/Box";
+import { formatDate } from "../utils/formatTime";
 
 const colors = ["rgb(255, 143, 28)", "#003E85", "#00502B", "#ab1b1e"];
 
@@ -98,11 +98,19 @@ const HomeCard = ({ event, index = 0 }) => {
             <Typography
               sx={{
                 fontFamily: "Georgia, serif",
-                fontSize: 30,
+                fontSize: 20,
+              }}
+            >
+              {formatDate(event.attributes?.date)}
+            </Typography>
+            <Typography
+              sx={{
+                fontFamily: "Georgia, serif",
+                fontSize: 20,
                 mb: 1,
               }}
             >
-              {event.attributes.date}
+              {event.attributes.formatted_time_range}
             </Typography>
           </Box>
         </Box>
