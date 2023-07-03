@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
-import {createDateTimeObj} from '../utils/formatTime'
+import { createDateTimeObj, formatDate } from "../utils/formatTime";
 
-const EventCard = ({ event }) => {   
+const EventCard = ({ event }) => {
   const dateTimeObj = createDateTimeObj(event.attributes.date);
 
   return (
@@ -76,27 +76,26 @@ const EventCard = ({ event }) => {
             >
               {event.attributes.title}
             </Link>
-          <Typography
-            sx={{
-              pt: 1.2,
-              textAlign: "left",
-              fontFamily: "arial",
-              fontSize: 16,
-            }}
-          >
-            {event.attributes.summary}
-          </Typography>
-          <Typography
-            sx={{
-              pt: 1.2,
-              textAlign: "left",
-              fontFamily: "arial",
-              fontSize: 20,
-            }}
-          >
-            {dateTimeObj.startHour}
-          </Typography>
-
+            <Typography
+              sx={{
+                pt: 1.2,
+                textAlign: "left",
+                fontFamily: "arial",
+                fontSize: 16,
+              }}
+            >
+              {event.attributes.summary}
+            </Typography>
+            <Typography
+              sx={{
+                pt: 1.2,
+                textAlign: "left",
+                fontFamily: "arial",
+                fontSize: 20,
+              }}
+            >
+              {event.attributes.formatted_time_range}
+            </Typography>
           </Box>
         </Box>
       </Box>

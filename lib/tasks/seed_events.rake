@@ -92,7 +92,7 @@ namespace :db do
     
       Event.create(
         data.merge(
-          date: Date.new(2023, 4, 19),
+          # date: Date.new(2023, 4, 19),
           start_time: start_time,
           end_time: end_time
         )
