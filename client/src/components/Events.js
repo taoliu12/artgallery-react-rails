@@ -44,6 +44,7 @@ const Events = () => {
           <EventCard event={event} />
         </>
       ))}
+      <Box height={80}></Box>
     </Box>
   );
 };
