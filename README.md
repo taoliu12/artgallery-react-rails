@@ -29,4 +29,5 @@ Bug reports and pull requests are welcome on GitHub. This project is intended to
 
 ## License
 
-Available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+This project is licensed under the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for details.
+
