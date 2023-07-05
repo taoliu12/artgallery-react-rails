@@ -71,33 +71,24 @@ namespace :db do
       date: Date.new(2023, 8, 15),
       time: Time.new(2023, 6, 15, 19, 30)
     },
-  #   {
-  #     title: "Rosetta",
-  #     event_type: "Film Screening",
-  #     description: "Join us for a special screening of the film 'Rosetta.' The film follows the story of a young woman named Rosetta as she struggles to find a job and escape her challenging circumstances.",
-  #     summary: "A gripping drama depicting Rosetta's determination to overcome her obstacles and find a better life.",
-  #     banner_image: "https://fr.web.img5.acsta.net/medias/nmedia/18/64/04/29/18747734.jpg",
-  #     date: Date.new(2023, 11, 15),
-  #     time: Time.new(2023, 6, 15, 19, 30)
-  #   },
-  # ]
+  ]
 
-  #   event_data.each do |data|
-  #     start_time = Faker::Time.between(
-  #       from: DateTime.now.beginning_of_day + 11.hours,
-  #       to: DateTime.now.beginning_of_day + 17.hours
-  #     )
+    event_data.each do |data|
+      start_time = Faker::Time.between(
+        from: DateTime.now.beginning_of_day + 11.hours,
+        to: DateTime.now.beginning_of_day + 17.hours
+      )
     
-  #     end_time = start_time + 2.hours
+      end_time = start_time + 2.hours
     
-  #     Event.create(
-  #       data.merge(
-  #         # date: Date.new(2023, 4, 19),
-  #         start_time: start_time,
-  #         end_time: end_time
-  #       )
-  #     )
-  #   end
+      Event.create(
+        data.merge(
+          # date: Date.new(2023, 4, 19),
+          start_time: start_time,
+          end_time: end_time
+        )
+      )
+    end
 
     puts "Events seeded successfully!"
   end
