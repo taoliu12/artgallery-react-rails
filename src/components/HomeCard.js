@@ -8,7 +8,7 @@ const colors = ["rgb(255, 143, 28)", "#003E85", "#00502B", "#ab1b1e"];
 const HomeCard = ({ event, index = 0 }) => {
   const isEven = index % 2 === 0;
   const getColor = () => colors[index % colors.length];
-  const formattedTime = new Date(event.attributes.time).toLocaleString();
+  // const formattedTime = new Date(event.attributes.time).toLocaleString();
 
   const styles = {
     width: "100%",

@@ -9,7 +9,7 @@ const Home = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    fetch("events")
+    fetch("events?limit=5")
       .then((response) => response.json())
       .then(({ data }) => {
         setEvents(data);
