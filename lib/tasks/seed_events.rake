@@ -27,9 +27,6 @@ namespace :db do
       As you explore the exhibition, you will gain a deeper understanding of the cultural significance of animals in Russian folklore. Discover the parallels between the animal kingdom and human nature, as well as the values and lessons imparted through these timeless tales.",
       banner_image: "https://eternamenta.files.wordpress.com/2019/02/d182d0b5d180d0b5d0bcd0bed0ba.jpg",
       date: Date.new(2023, 4, 19),
-      start_time: Faker::Time.between(from: DateTime.now.beginning_of_day + 11.hours, to: DateTime.now.beginning_of_day + 17.hours),
-      end_time: Faker::Time.between(from: DateTime.now.beginning_of_day + 9.hours, to: DateTime.now.beginning_of_day + 17.hours) +
-      2.hours
     },
     {
       title: "Sculptures of Spain",
@@ -38,8 +35,7 @@ namespace :db do
       description: "Step into the realm of Spanish sculptures and immerse yourself in the profound beauty and artistic expressions of this captivating exhibition. This exhibit brings together a curated collection of sculptural masterpieces that span centuries of Spanish art history.\n
       From classical and Renaissance-inspired works to contemporary and avant-garde creations, this exhibition offers a comprehensive overview of the diverse styles, themes, and techniques employed by Spanish sculptors. Marvel at the exquisite craftsmanship and attention to detail evident in each sculpture, as they come to life in three-dimensional form.",
       banner_image: "https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F7ed45a4c-e637-11eb-a821-58982b1c936d.jpg?crop=4204%2C2803%2C0%2C0",
-      date: Date.new(2023, 4, 28),
-      time: Time.new(2023, 6, 15, 19, 30)
+      date: Date.new(2023, 4, 28),       
     },
     {
       title: "19th century Chinese silk paintings",
@@ -50,8 +46,7 @@ namespace :db do
       As you delve deeper into the exhibition, uncover the artistic techniques and symbolism employed by the skilled artists of the time. Gain a deeper appreciation for the cultural context and historical significance of these artworks, which served as a reflection of societal values and beliefs.\n
       Whether you are an art enthusiast, history buff, or simply curious about the beauty of Chinese art, this exhibition invites you to embark on a journey through time and immerse yourself in the captivating world of Chinese 19th century silk paintings. Don't miss this rare opportunity to witness the exquisite craftsmanship and artistic mastery that has stood the test of time.",
       banner_image: "https://www.artisoo.com/images/chinesepainting3/CNAG235280.jpg",
-      date: Date.new(2023, 5, 15),
-      time: Time.new(2023, 6, 15, 19, 30)
+      date: Date.new(2023, 5, 15),       
     },
     {
       title: "Hockney: Figures in Space",
@@ -59,8 +54,7 @@ namespace :db do
       description: "Dive into the extraordinary world of David Hockney's artistry at the \"Hockney: Figures in Space\" exhibition. This captivating showcase presents a mesmerizing collection of Hockney's works, focusing on his unique portrayal of human figures within dynamic spatial settings. With his vibrant color palettes and innovative use of perspective, Hockney's artworks transport viewers into immersive environments where figures come to life. From bustling city scenes to tranquil landscapes, Hockney's compositions capture the essence of movement and energy, inviting viewers to embark on a visual journey through his artistic vision. Immerse yourself in the intricacies of Hockney's brushstrokes and explore the interplay between figures and the surrounding space. \"Hockney: Figures in Space\" offers a profound and thought-provoking experience, allowing visitors to appreciate the brilliance of one of the most celebrated artists of our time. Don't miss the opportunity to witness Hockney's captivating fusion of figures and space, offering a fresh perspective on the human form in relation to the world around us.",
       summary: "An awe-inspiring exhibition that showcases the remarkable works of David Hockney, offering a captivating exploration of human figures within vibrant and dynamic spatial compositions.",
       banner_image: "https://www.washingtonpost.com/rf/image_982w/2010-2019/WashingtonPost/2020/10/06/Style/Images/gwif-hockney1011.jpg",
-      date: Date.new(2023, 6, 11),
-      time: Time.new(2023, 6, 15, 19, 30)
+      date: Date.new(2023, 6, 11),       
     },
     {
       title: "Monet: Water Lilies",
@@ -68,8 +62,7 @@ namespace :db do
       description: " Immerse yourself in the captivating world of Claude Monet's iconic lily pond paintings at the Monet Lilies Art Gallery Exhibition. This extraordinary exhibition brings together a remarkable collection of Monet's masterpieces, where he effortlessly captured the enchanting beauty of water lilies and their reflections. Through his vibrant brushstrokes and innovative use of light and color, Monet's paintings transport viewers to the serene and tranquil atmosphere of his beloved Giverny garden. Experience the artist's unparalleled talent and the timeless allure of impressionistic art as you explore the exquisite details and mesmerizing compositions of these remarkable artworks. Don't miss this opportunity to witness the profound impact of Monet's lilies on the art world and revel in the harmonious blend of nature and artistry that defines his extraordinary body of work.",
       summary: "The Monet Lilies Art Gallery Exhibition showcases a breathtaking collection of Claude Monet's iconic lily pond paintings, capturing the beauty of nature and impressionistic art.",
       banner_image: "https://www.claude-monet.com/images/paintings/water-lilies-claude-monet.jpg",
-      date: Date.new(2023, 8, 15),
-      time: Time.new(2023, 6, 15, 19, 30)
+      date: Date.new(2023, 8, 15),       
     },
   ]
 

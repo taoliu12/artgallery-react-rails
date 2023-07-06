@@ -1,9 +1,10 @@
 class EventsController < ApplicationController
   def index
-    events = Event.all
-    render json: EventSerializer.new(events).serialized_json
+    limit = params[:limit]
+    events = limit ? Event.order(date: :asc).limit(limit) : Event.order(date: :asc)  
+    render json: EventSerializer.new(events)
   end
-
+  
   
   def show
     event = Event.find(params[:id])
