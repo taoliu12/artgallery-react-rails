@@ -6,7 +6,6 @@ import SearchForm from "./SearchForm";
 import Button from "@mui/material/Button";
 import "./Artworks.scss";
 
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 
@@ -18,8 +17,8 @@ const style = {
   bgcolor: "#e5e6d2",
   boxShadow: 24,
   p: 4,
-  maxHeight: "100vh", // Set the maximum height to 90% of the viewport height
-  overflowY: "auto", // Enable vertical scrolling if content overflows
+  maxHeight: "100vh",
+  overflowY: "auto",
   margin: "auto",
   textAlign: "center",
 };
@@ -28,8 +27,8 @@ const infiniteScrollHasMoreThreshold = 19; // number of items to load after scro
 
 function ArtworkGallery() {
   const [searchArtworksResult, setSearchArtworksResult] = useState([]);
-  const [hasMore, setHasMore] = useState(true);
   const [searchParam, setSearchParam] = useState("");
+  const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(1);
 
   const [selectedArtwork, setSelectedArtwork] = useState(null);
