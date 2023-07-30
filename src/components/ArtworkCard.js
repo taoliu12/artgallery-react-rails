@@ -1,33 +1,31 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { Skeleton } from "@mui/material";
 
-export default class ArtworkCard extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            voteCount: 0
-         }
-    }
+const ArtworkCard = (props) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
 
-    handleClick(e) {
-        this.setState({
-            voteCount: this.state.voteCount + 1
-        })
-    }
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
 
-    render() {
-        // debugger
-        return (
-            <div className='ArtworkCard'>
-                {/* <button onClick={this.handleClick}>Vote</button>
-                <p>{this.state.voteCount}</p> */}
-                <h3>{this.props.artwork.title}</h3>
-                <p>{this.props.artwork.artist}</p>
-                <div className='card-image-div'>
-                    <img alt={this.props.artwork.title} className='ArtworkImage' src={this.props.artwork.url} />
-                </div>
-                    
-            </div>
-        )
-    }
-}
+  return (
+    <div className="ArtworkCard">
+      <h3>{props.artwork.title}</h3>
+      <p>{props.artwork.artist}</p>
+      <div className="card-image-div">
+        {!imageLoaded && (
+          <Skeleton variant="rounded" height={200} animation="wave" />
+        )}
+        <img
+          className="ArtworkImage"
+          alt={props.artwork.title}
+          src={props.artwork.url}
+          style={{ display: imageLoaded ? "block" : "none" }}
+          onLoad={handleImageLoad}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default ArtworkCard;
