@@ -20,7 +20,9 @@ const ArtworkCard = (props) => {
           className="ArtworkImage"
           alt={props.artwork.title}
           src={props.artwork.url}
-          style={{ display: imageLoaded ? "block" : "none" }}
+          style={{
+            display: imageLoaded ? "block" : "none",
+          }}
           onLoad={handleImageLoad}
         />
       </div>
