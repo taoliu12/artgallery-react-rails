@@ -3,12 +3,11 @@ class ArtworksController < ApplicationController
 
   def index
     @artworks = if params[:search].blank?
-      # @artworks = Artwork.newest_to_oldest
       Artwork.all
     else
       Artwork.where("lower(title) LIKE ? OR lower(artist) LIKE ?", "%#{params[:search].downcase.strip}%", "%#{params[:search].downcase.strip}%")
-    end
-    @pagy, @pagy_artworks = pagy(@artworks, items: [@artworks.count, 20].min, page: params[:page])
+    end     
+    @pagy, @pagy_artworks = pagy(@artworks, items: [@artworks.count, 50].min, page: params[:page])
     render json: @pagy_artworks
   end
 
