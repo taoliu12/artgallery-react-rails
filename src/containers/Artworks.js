@@ -23,7 +23,7 @@ const style = {
   textAlign: "center",
 };
 
-const infiniteScrollHasMoreThreshold = 19; // number of items to load after scrolling minus 1
+const infiniteScrollHasMoreThreshold = 49; // number of items to load after scrolling minus 1, also change in rails controller
 
 function ArtworkGallery() {
   const [searchArtworksResult, setSearchArtworksResult] = useState([]);
