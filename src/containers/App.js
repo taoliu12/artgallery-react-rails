@@ -1,27 +1,15 @@
-import React, { Component, useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import useScrollTrigger from "@mui/material/useScrollTrigger";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Fab from "@mui/material/Fab";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import Fade from "@mui/material/Fade";
-import PropTypes from "prop-types";
-import { StyledEngineProvider } from "@mui/material/styles";
-import Toolbar from "@mui/material/Toolbar";
-
+import React, { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import Home from "../components/Home";
-import NavBar from "../components/NavBar";
 import ResponsiveAppBar from "../components/ResponsiveAppBar";
 import Events from "../components/Events";
 import Artworks from "./Artworks";
 import ArtworkShow from "./ArtworkShow";
 import ArtworkForm from "./ArtworkForm";
-import ScrollToTop from "../components/ScrollToTop";
+import BackToTop from "../components/BackToTop";
 import SignupForm from "./SignupForm";
 import LoginForm from "./LoginForm";
 import Footer from "../components/Footer";
-import About from "../components/About";
 import EventShow from "../components/EventShow";
 
 import "./App.scss";
@@ -72,7 +60,7 @@ function App() {
             <Route path="/events" element={<Events />} />
 
           </Routes>
-          <ScrollToTop />
+          <BackToTop />
         </div>
       </main>
       <Footer />
