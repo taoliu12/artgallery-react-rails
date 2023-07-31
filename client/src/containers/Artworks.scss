@@ -1,6 +1,7 @@
 .ArtworksContainer {  
   display: flex;
   flex-wrap: wrap;
+  max-width: 1600px;
   padding: 1%;
   justify-content: center;
 }
