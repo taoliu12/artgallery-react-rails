@@ -10,17 +10,19 @@
   float: none;
   margin: 1%;
   width: 300px;
+  margin-bottom: 32px;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-inline: 10px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   max-height: 433px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
   border-radius: 1%;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   &:hover {
-    box-shadow: 3px 3px 11px rgba(0,0,0,0.25);
+    box-shadow: 2px 2px 11px rgba(0,0,0,0.2);
   }
 }
 
