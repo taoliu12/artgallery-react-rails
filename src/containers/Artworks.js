@@ -140,7 +140,7 @@ function ArtworkGallery() {
               textTransform: "none",
             }}
           >
-            {selectedArtwork?.artist}, {selectedArtwork?.description}
+            {selectedArtwork?.artist} {selectedArtwork?.description}
           </Typography>
           <br />
           <img src={selectedArtwork?.url} alt="artwork" />
