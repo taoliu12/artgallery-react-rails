@@ -8,6 +8,7 @@ import "./Artworks.scss";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const style = {
   position: "absolute",
@@ -150,7 +151,13 @@ function ArtworkGallery() {
         dataLength={searchArtworksResult.length}
         next={loadArtworks}
         hasMore={hasMore}
-        loader={<div>Loading...</div>}
+        loader={
+          <Box sx={{ height: 100 }}>
+            <CircularProgress
+              style={{ marginTop: 11, width: 45, height: 45 }}
+            />
+          </Box>
+        }
       ></InfiniteScroll>
     </div>
   );
