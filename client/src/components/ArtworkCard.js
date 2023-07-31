@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Skeleton } from "@mui/material";
+import { Skeleton, Typography } from "@mui/material";
 
 const ArtworkCard = (props) => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -7,11 +7,29 @@ const ArtworkCard = (props) => {
   const handleImageLoad = () => {
     setImageLoaded(true);
   };
-
+  console.log(props.artwork.title);
   return (
     <div className="ArtworkCard">
-      <h3>{props.artwork.title}</h3>
-      <p>{props.artwork.artist}</p>
+      <Typography
+        sx={{
+          fontWeight: "bold",
+          fontFamily: "Georgia",
+          fontSize: "1.4rem",
+          mb: 1,
+          textTransform: "none",
+        }}
+      >
+        {props.artwork.title}
+      </Typography>
+      <Typography
+        sx={{
+          fontSize: "1rem",
+          mb: 2,
+          textTransform: "none",
+        }}
+      >
+        {props.artwork.artist}
+      </Typography>
       <div className="card-image-div">
         {!imageLoaded && (
           <Skeleton variant="rounded" height={200} animation="wave" />
