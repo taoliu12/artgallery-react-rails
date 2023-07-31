@@ -9,5 +9,7 @@ cp -a client/build/. public/
 
 # Build commands for back end
 bundle install
-bundle exec rake db:migrate 
-bundle exec rake db:seed # if you have seed data, run this command for the initial deploy only to avoid duplicate records
+
+#commented out for now to make deploy faster
+#bundle exec rake db:migrate 
+#bundle exec rake db:seed # if you have seed data, run this command for the initial deploy only to avoid duplicate records
