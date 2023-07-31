@@ -27,6 +27,92 @@ const HomeCard = ({ event, index = 0 }) => {
         justifyContent: isEven ? "left" : "right",
       }}
     >
+      <Box
+        sx={{
+          width: "500px",
+          height: "100%",
+          backgroundColor: getColor(),
+          display: "flex",
+          flexDirection: "column",
+          // justifyContent: "flex-start",
+          justifyContent: "space-between",
+          paddingX: 5,
+          pt: 4,
+          pb: 5,
+          textAlign: "left",
+          fontWeight: 800,
+          textShadow: "2px 2px 4px rgba(0, 0, 0, 0.9)",
+        }}
+      >
+        <Typography
+          sx={{
+            textAlign: "left",
+            fontFamily: "Georgia, serif",
+            fontSize: 45,
+            letterSpacing: "-1px",
+            lineHeight: 1,
+            mb: 2,
+            "&:hover": {
+              textDecoration: "underline",
+            },
+          }}
+        >
+          <Link
+            style={{
+              textDecoration: "none",
+              color: "white",
+            }}
+            to={{
+              pathname: `/events/${event.id}`,
+              // state: { event }, // Pass the event object as state
+            }}
+            key={event.id}
+          >
+              {event.attributes.title}
+          </Link>
+        </Typography>
+
+        <Box>
+          <Typography
+            sx={{
+              fontFamily: "Georgia, serif",
+              fontSize: 25,
+            }}
+          >
+            {event.attributes.event_type}
+          </Typography>
+          <Typography
+            sx={{
+              fontFamily: "Georgia, serif",
+              fontSize: 20,
+            }}
+          >
+            {formatDate(event.attributes?.date)}
+          </Typography>
+          <Typography
+            sx={{
+              fontFamily: "Georgia, serif",
+              fontSize: 20,
+              mb: 1,
+            }}
+          >
+            {event.attributes.formatted_time_range}
+          </Typography>
+        </Box>
+      </Box>
+    </Box>
+  );
+
+  const imageBox = (
+    <Box
+      className="parent"
+      sx={{
+        // flex: 1,
+        width: "1200px",
+        overflow: "hidden",
+        position: "relative",
+      }}
+    >
       <Link
         style={{
           textDecoration: "none",
@@ -42,93 +128,18 @@ const HomeCard = ({ event, index = 0 }) => {
         key={event.id}
       >
         <Box
+          className="child"
           sx={{
-            width: "500px",
+            width: "1200px",
             height: "100%",
-            backgroundColor: getColor(),
-            display: "flex",
-            flexDirection: "column",
-            // justifyContent: "flex-start",
-            justifyContent: "space-between",
-            paddingX: 5,
-            pt: 4,
-            pb: 5,
-            textAlign: "left",
-            fontWeight: 800,
-            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.9)",
+            backgroundImage: `url(${event.attributes.banner_image})`,
+            backgroundSize: "cover",
+            backgroundPosition: "fit",
+            transition: "all .5s",
           }}
-        >
-          <Typography
-            sx={{
-              textAlign: "left",
-              fontFamily: "Georgia, serif",
-              fontSize: 45,
-              letterSpacing: "-1px",
-              lineHeight: 1,
-              mb: 2,
-            }}
-          >
-            <Link
-              style={{
-                textDecoration: "none",
-                color: "white",
-                "&:hover": {
-                  textDecoration: "underline",
-                },
-              }}
-              to={{
-                pathname: `/events/${event.id}`,
-                // state: { event }, // Pass the event object as state
-              }}
-              key={event.id}
-            >
-              {event.attributes.title}
-            </Link>
-          </Typography>
-
-          <Box>
-            <Typography
-              sx={{
-                fontFamily: "Georgia, serif",
-                fontSize: 25,
-              }}
-            >
-              {event.attributes.event_type}
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: "Georgia, serif",
-                fontSize: 20,
-              }}
-            >
-              {formatDate(event.attributes?.date)}
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: "Georgia, serif",
-                fontSize: 20,
-                mb: 1,
-              }}
-            >
-              {event.attributes.formatted_time_range}
-            </Typography>
-          </Box>
-        </Box>
+        ></Box>
       </Link>
     </Box>
-  );
-
-  const imageBox = (
-    <Box
-      sx={{
-        // flex: 1,
-        width: "1200px",
-        height: "100%",
-        backgroundImage: `url(${event.attributes.banner_image})`,
-        backgroundSize: "cover",
-        backgroundPosition: "fit",
-      }}
-    ></Box>
   );
 
   return (

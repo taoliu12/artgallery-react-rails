@@ -22,13 +22,6 @@ const Home = () => {
       <HomeBanner />
       {events?.map((event, index) => (
         <>
-          {/* <Box
-            sx={{
-              height: "2px",
-              backgroundColor: "#E8E8E8",
-            }}
-          >             
-          </Box> */}
           <HomeCard index={index} event={event} />
         </>
       ))}
