@@ -12,7 +12,7 @@ const ArtworkShow = ({ artwork, getArtwork }) => {
 
     return (
         <div className='artwork-modal'>
-            <h2>{artwork.title}</h2>
+            <h2>hi</h2>
             <p>{artwork.artist}</p>
             <p>{artwork.description}</p>
             <br/>
