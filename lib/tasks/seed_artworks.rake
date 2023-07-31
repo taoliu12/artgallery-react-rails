@@ -1,6 +1,7 @@
 namespace :db do
   desc "Seed only artworks table"
   task seed_artworks: :environment do
+    Artwork.destroy_all
     response = HTTParty.get("https://openaccess-api.clevelandart.org/api/artworks?limit=1000")
     artworksArray = JSON.parse(response.body)["data"]
 
