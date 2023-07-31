@@ -25,12 +25,12 @@ export default function SearchForm({searchParam, setSearchParam, searchArtworks,
   const handleSearch = (e) => {
     e.preventDefault();
     setPage(1)
-    searchArtworks();
+    searchArtworks(searchQuery);
   };
 
   const handleSearchInputChange = (event) => {
     setSearchQuery(event.target.value);
-    setSearchParam(event.target.value);
+    // setSearchParam(event.target.value);
   }
 
   return (
