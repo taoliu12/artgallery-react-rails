@@ -206,6 +206,10 @@ header {
   margin: auto;
 }
 
+.parent:hover .child {
+    transform: scale(1.1);
+}
+
 // Dark Mode styling
 //-------------------------------------
 
