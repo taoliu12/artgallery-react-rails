@@ -80,8 +80,8 @@ function ArtworkGallery() {
     setPage(page + 1);
   };
 
-  const searchArtworks = () => {
-    fetchSearchedArtworks(searchParam, 1);
+  const searchArtworks = (searchQuery) => {
+    fetchSearchedArtworks(searchQuery, 1);
   };
 
   console.log("search new artworks state", searchArtworksResult.length);
