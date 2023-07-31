@@ -5,7 +5,7 @@ import ArtworkCard from "../components/ArtworkCard";
 import SearchForm from "./SearchForm";
 import Button from "@mui/material/Button";
 import "./Artworks.scss";
-
+import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 
@@ -94,7 +94,6 @@ function ArtworkGallery() {
         searchArtworks={searchArtworks}
         setPage={setPage}
       />
-
       <div className="ArtworksContainer">
         {searchArtworksResult.map((artwork) => {
           return (
@@ -122,9 +121,27 @@ function ArtworkGallery() {
         aria-describedby="modal-modal-description"
       >
         <Box className="artwork-modal" sx={style}>
-          <h2>{selectedArtwork?.title}</h2>
-          <p>{selectedArtwork?.artist}</p>
-          <p>{selectedArtwork?.description}</p>
+          <Typography
+            sx={{
+              fontWeight: "bold",
+              fontFamily: "Georgia",
+              fontSize: "1.6rem",
+              lineHeight: "1.6rem",
+              mt: 2,
+              mb: 1,
+              textTransform: "none",
+            }}
+          >
+            {selectedArtwork?.title}
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: "1rem",
+              textTransform: "none",
+            }}
+          >
+            {selectedArtwork?.artist}, {selectedArtwork?.description}
+          </Typography>
           <br />
           <img src={selectedArtwork?.url} alt="artwork" />
         </Box>
