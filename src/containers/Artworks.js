@@ -152,7 +152,7 @@ function ArtworkGallery() {
         next={loadArtworks}
         hasMore={hasMore}
         loader={
-          <Box sx={{ height: 100 }}>
+          <Box sx={{ height: 600 }}>
             <CircularProgress
               style={{ marginTop: 11, width: 45, height: 45 }}
             />
