@@ -12,6 +12,9 @@ const styles = {
   flexDirection: "column",
   justifyContent: "space-between",
   alignItems: "bottom",
+  "@media (max-width: 600px)": {
+    backgroundPosition: "-120px center",
+  },
 };
 
 const HomeBanner = () => {

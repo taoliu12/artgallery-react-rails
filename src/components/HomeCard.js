@@ -42,7 +42,7 @@ const HomeCard = ({ event, index = 0 }) => {
           textAlign: "left",
           fontWeight: 800,
           textShadow: "2px 2px 4px rgba(0, 0, 0, 0.9)",
-          "@media (max-width: 444px)": {
+          "@media (max-width: 600px)": {
             paddingX: 3,
             pt: 3,
             pb: 2,
@@ -117,7 +117,7 @@ const HomeCard = ({ event, index = 0 }) => {
         width: "1200px",
         overflow: "hidden",
         position: "relative",
-        "@media (max-width: 444px)": {
+        "@media (max-width: 600px)": {
           display: "none",
         },
       }}
