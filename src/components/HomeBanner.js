@@ -17,6 +17,8 @@ const styles = {
   },
 };
 
+// const isSmallDevice = window.innerWidth <= 600;
+
 const HomeBanner = () => {
   return (
     <Box sx={styles}>
@@ -38,11 +40,16 @@ const HomeBanner = () => {
         <Box
           sx={{
             display: "flex",
+            // flexDirection: isSmallDevice ? "column" : "row",             
             maxWidth: "1000px",
             width: "100%",
             justifyContent: "space-between",
             color: "white",
             py: 2.2,
+            "@media (max-width: 600px)": {
+              flexDirection: "column",
+              height: 125,
+            },
           }}
         >
           <Box>
