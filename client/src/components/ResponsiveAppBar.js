@@ -72,14 +72,14 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
 
   return (
     <AppBar
-      className={isScrolled || !isHomePage ? "" : "transparentAppBar"}
+      className={isScrolled || !isHomePage || isSmallScreen ? "" : "transparentAppBar"}
       position="static"
       sx={{
         color: "white",
         position: `fixed !important`,
-        backgroundColor: isScrolled || !isHomePage  ? "#00438A" : "transparent",
+        backgroundColor: isScrolled || !isHomePage || isSmallScreen  ? "#00438A" : "transparent",
         boxShadow:
-          isScrolled || !isHomePage ? "0 2px 4px rgba(0, 0, 0, 0.4)" : "none",
+          isScrolled || !isHomePage || isSmallScreen ? "0 2px 4px rgba(0, 0, 0, 0.4)" : "none",
         transition: "background-color 0.3s ease, box-shadow 0.3s ease",
         textShadow: "0px 0px 3px #00000",
         zIndex: "11",
