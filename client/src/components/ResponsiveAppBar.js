@@ -13,6 +13,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import {useMediaQuery} from '@mui/material'
 import { textShadow } from "@mui/system";
 import NavbarButton from "./NavbarButton";
 import { useLocation } from "react-router-dom";
@@ -36,6 +37,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const [isScrolled, setIsScrolled] = useState(false);
+  const isSmallScreen = useMediaQuery("(max-width:600px)");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,14 +72,14 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
 
   return (
     <AppBar
-      className={isScrolled || !isHomePage ? "" : "transparentAppBar"}
+      className={isScrolled || !isHomePage || isSmallScreen ? "" : "transparentAppBar"}
       position="static"
       sx={{
         color: "white",
         position: `fixed !important`,
-        backgroundColor: isScrolled || !isHomePage ? "#00438A" : "transparent",
+        backgroundColor: isScrolled || !isHomePage || isSmallScreen  ? "#00438A" : "transparent",
         boxShadow:
-          isScrolled || !isHomePage ? "0 2px 4px rgba(0, 0, 0, 0.4)" : "none",
+          isScrolled || !isHomePage || isSmallScreen ? "0 2px 4px rgba(0, 0, 0, 0.4)" : "none",
         transition: "background-color 0.3s ease, box-shadow 0.3s ease",
         textShadow: "0px 0px 3px #00000",
         zIndex: "11",
@@ -94,31 +96,31 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
           }}
         >
           <Box id="logo-title">
-            <Link to="/"  style={{ textDecoration: "none", color: "white" }}>
+            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
               <Typography
                 sx={{
                   mr: 2,
-                  marginTop: isScrolled || !isHomePage ? -1 : 0,
+                  marginTop: isScrolled || !isHomePage || isSmallScreen ? -1 : 0,
                   fontFamily: "Georgia, serif",
                   fontWeight: 300,
-                  fontSize: isScrolled || !isHomePage ? "30px" : "50px",
+                  fontSize: isScrolled || !isHomePage || isSmallScreen ? "30px" : "50px",
                   letterSpacing: "0px",
                   color: "inherit",
                   textDecoration: "none",
                   transition: "font-size 0.3s ease, margin-top 0.3s ease",
+                  wordWrap: true
                 }}
               >
                 Tao Art Gallery
               </Typography>
             </Link>
           </Box>
-          <Box
+          <Box id="horizontal-nav-links"
             sx={{
               flexGrow: 1,
               textAlign: "right",
               display: { xs: "none", sm: "flex", md: "flex" },
             }}
-            id="horizontal-nav-links"
           >
             {pages
               .filter(
@@ -135,9 +137,8 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
                 />
               ))}
           </Box>
-
           {loggedInUser && (
-            <Box sx={{ flexGrow: 0 }}>
+            <Box id='avatar-menu' sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar alt="Remy Sharp" />
@@ -182,9 +183,8 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
               </Menu>
             </Box>
           )}
-          {/*hamburger*/}
           <Box
-            id="test"
+            id="hamburger"
             sx={{ flexGrow: 1, display: { xs: "flex", sm: "none" } }}
           >
             <IconButton
@@ -199,21 +199,23 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
             </IconButton>
             <Menu
               id="menu-appbar"
+              sx={{
+                width: 300,
+                background: 'transparent',
+                position: 'absolute',
+              }}
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "bottom",
-                horizontal: "left",
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
                 vertical: "top",
-                horizontal: "left",
+                horizontal: "right",
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
             >
               <Link to="/artworks">
                 <MenuItem onClick={handleCloseNavMenu}>
