@@ -42,6 +42,12 @@ const HomeCard = ({ event, index = 0 }) => {
           textAlign: "left",
           fontWeight: 800,
           textShadow: "2px 2px 4px rgba(0, 0, 0, 0.9)",
+          "@media (max-width: 444px)": {
+            paddingX: 3,
+            pt: 3,
+            pb: 2,
+            width: "100%",
+          },
         }}
       >
         <Typography
@@ -68,7 +74,7 @@ const HomeCard = ({ event, index = 0 }) => {
             }}
             key={event.id}
           >
-              {event.attributes.title}
+            {event.attributes.title}
           </Link>
         </Typography>
 
@@ -111,6 +117,9 @@ const HomeCard = ({ event, index = 0 }) => {
         width: "1200px",
         overflow: "hidden",
         position: "relative",
+        "@media (max-width: 444px)": {
+          display: "none",
+        },
       }}
     >
       <Link
