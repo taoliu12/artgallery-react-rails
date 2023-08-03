@@ -26,13 +26,17 @@
   }
 }
 
+main {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-device-width: 5in) {
   .ArtworkCard {
     width: 100%;
        margin-block: 10px;
        margin-inline: 0px;
   }
-
   main {
     padding: 0px;
   }
