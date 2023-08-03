@@ -1,10 +1,18 @@
+.MuiMenu-paper {
+  background-color: #00438a;
+}
+.MuiMenuItem-root {
+  color: white;
+  font-size: 2rem;
+}
+
 .formError {
   color: gray;
   font-style: italic;
 }
 
 form {
-  width: 400px
+  width: 400px;
 }
 
 .submit-btn {
@@ -19,7 +27,7 @@ form {
   &:hover {
     background-color: #518bff;
     color: white;
-  } 
+  }
   &.small {
     padding: 5px 15px;
     font-size: 11;
@@ -46,14 +54,14 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  float: left;  
+  float: left;
   font-size: 14px;
-  font-weight: bold;  
+  font-weight: bold;
 }
 
 button:hover {
   background-color: #45a049;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.42);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.42);
 }
 
 .App {
@@ -92,7 +100,7 @@ button:hover {
 body {
   color: #1a202c;
   background-color: #f3f4e0;
-  transition: color 0.2s ease-in;   
+  transition: color 0.2s ease-in;
 }
 
 #app {
@@ -121,7 +129,7 @@ main {
     margin: 8px 11px;
     border: none;
     border-radius: 4px;
-    font-size: 12px; 
+    font-size: 12px;
     color: white;
     background-color: #2151d6;
     font-size: 1.2em;
@@ -131,11 +139,10 @@ main {
 .dark-mode-div {
   color: white;
   display: inline;
-  float:right;
-  background-color:transparent;
+  float: right;
+  background-color: transparent;
   padding-right: 10px;
 }
-
 
 header {
   position: left;
@@ -149,10 +156,11 @@ header {
   font-size: 1.5em;
 
   input:hover {
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.12);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.12);
   }
-  
-  input[type=text], select {
+
+  input[type="text"],
+  select {
     width: 100%;
     padding: 12px 20px;
     margin: 5px 0 11px 0;
@@ -161,10 +169,10 @@ header {
     border-radius: 4px;
     box-sizing: border-box;
   }
-  
-  input[type=submit] {
+
+  input[type="submit"] {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: white;
     padding: 14px 20px;
     margin: 0px 0;
@@ -172,11 +180,10 @@ header {
     border-radius: 4px;
     cursor: pointer;
   }
-  
-  input[type=submit]:hover {
+
+  input[type="submit"]:hover {
     background-color: #45a049;
   }
-  
 }
 
 #toggle {
@@ -189,7 +196,7 @@ header {
   cursor: pointer;
   box-shadow: 0px 5px 20px -10px #000000;
   transition: background-color 0.2s ease-in;
-  
+
   .toggle-inner {
     width: 20px;
     height: 15px;
@@ -208,11 +215,11 @@ header {
   height: 100%;
   width: 100%;
   align-items: center;
-  
+
   flex-direction: column;
-  
+
   p {
-    opacity: .8;
+    opacity: 0.8;
   }
 }
 
@@ -223,7 +230,7 @@ header {
 .site-title {
   color: white;
   font-size: 3em;
-  font-family: 'Fredericka the Great', cursive;
+  font-family: "Fredericka the Great", cursive;
   font-weight: 100;
   background-color: #00270a;
   border-radius: 4px;
@@ -233,35 +240,37 @@ header {
 }
 
 .parent:hover .child {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 // Dark Mode styling
 //-------------------------------------
 
-
 .dark-mode {
   color: rgb(255, 255, 255);
   background-color: #1a202c;
-  
-  a, .ArtworkCard {
+
+  a,
+  .ArtworkCard {
     color: white;
   }
 
-  main, .artwork-card, .artwork-modal {
+  main,
+  .artwork-card,
+  .artwork-modal {
     background-color: #1a202c;
   }
 
   .site-title {
     color: white;
     font-size: 3em;
-    font-family: 'Fredericka the Great', cursive;
+    font-family: "Fredericka the Great", cursive;
     font-weight: 100;
     background-color: #00438a;
     border-radius: 4px;
     padding: 15px;
   }
-  
+
   #toggle {
     background-color: rgb(255, 255, 255);
 
@@ -272,7 +281,7 @@ header {
 }
 
 #toggle:hover {
-  box-shadow: 2px 2px 11px rgba(0,0,0,0.52);
+  box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.52);
 }
 // Dark Mode Toggle End
 

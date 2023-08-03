@@ -226,8 +226,16 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
               onClose={handleCloseNavMenu}
             >
               <Link to="/artworks">
-                <MenuItem onClick={handleCloseNavMenu}>
+                <MenuItem
+                  onClick={handleCloseNavMenu}
+                  sx={{ textDecoration: "none", fontSize: 2 }}
+                >
                   <Typography textAlign="center">Artworks</Typography>
+                </MenuItem>
+              </Link>
+              <Link to="/events">
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">Events</Typography>
                 </MenuItem>
               </Link>
               {pages.map(
