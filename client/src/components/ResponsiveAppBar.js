@@ -13,7 +13,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import {useMediaQuery} from '@mui/material'
+import { useMediaQuery } from "@mui/material";
 import { textShadow } from "@mui/system";
 import NavbarButton from "./NavbarButton";
 import { useLocation } from "react-router-dom";
@@ -72,14 +72,21 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
 
   return (
     <AppBar
-      className={isScrolled || !isHomePage || isSmallScreen ? "" : "transparentAppBar"}
+      className={
+        isScrolled || !isHomePage || isSmallScreen ? "" : "transparentAppBar"
+      }
       position="static"
       sx={{
         color: "white",
         position: `fixed !important`,
-        backgroundColor: isScrolled || !isHomePage || isSmallScreen  ? "#00438A" : "transparent",
+        backgroundColor:
+          isScrolled || !isHomePage || isSmallScreen
+            ? "#00438A"
+            : "transparent",
         boxShadow:
-          isScrolled || !isHomePage || isSmallScreen ? "0 2px 4px rgba(0, 0, 0, 0.4)" : "none",
+          isScrolled || !isHomePage || isSmallScreen
+            ? "0 2px 4px rgba(0, 0, 0, 0.4)"
+            : "none",
         transition: "background-color 0.3s ease, box-shadow 0.3s ease",
         textShadow: "0px 0px 3px #00000",
         zIndex: "11",
@@ -90,7 +97,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
         <Toolbar
           disableGutters
           sx={{
-            paddingTop: isScrolled || !isHomePage ? 0 : 3,
+            paddingTop: isScrolled || !isHomePage || isSmallScreen ? 0 : 3,
             transition: "padding-top 0.3s ease",
             height: "45px",
           }}
@@ -100,22 +107,27 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
               <Typography
                 sx={{
                   mr: 2,
-                  marginTop: isScrolled || !isHomePage || isSmallScreen ? -1 : 0,
+                  marginTop:
+                    isScrolled || !isHomePage || isSmallScreen ? -1 : 0,
                   fontFamily: "Georgia, serif",
                   fontWeight: 300,
-                  fontSize: isScrolled || !isHomePage || isSmallScreen ? "30px" : "50px",
+                  fontSize:
+                    isScrolled || !isHomePage || isSmallScreen
+                      ? "30px"
+                      : "50px",
                   letterSpacing: "0px",
                   color: "inherit",
                   textDecoration: "none",
                   transition: "font-size 0.3s ease, margin-top 0.3s ease",
-                  wordWrap: true
+                  wordWrap: true,
                 }}
               >
                 Tao Art Gallery
               </Typography>
             </Link>
           </Box>
-          <Box id="horizontal-nav-links"
+          <Box
+            id="horizontal-nav-links"
             sx={{
               flexGrow: 1,
               textAlign: "right",
@@ -138,7 +150,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
               ))}
           </Box>
           {loggedInUser && (
-            <Box id='avatar-menu' sx={{ flexGrow: 0 }}>
+            <Box id="avatar-menu" sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar alt="Remy Sharp" />
@@ -199,11 +211,6 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
             </IconButton>
             <Menu
               id="menu-appbar"
-              sx={{
-                width: 300,
-                background: 'transparent',
-                position: 'absolute',
-              }}
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "bottom",
@@ -218,7 +225,9 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
               onClose={handleCloseNavMenu}
             >
               <Link to="/artworks">
-                <MenuItem onClick={handleCloseNavMenu}>
+                <MenuItem
+                  onClick={handleCloseNavMenu}
+                >
                   <Typography textAlign="center">Artworks</Typography>
                 </MenuItem>
               </Link>

@@ -16,9 +16,8 @@ const styles = {
   backgroundColor: "#3c3f42",
   display: "flex",
   justifyContent: "center",
+  pl: 2,
   py: 8,
-  mb: 3,
-  px: 1,
   mt: 0,
   socialMediaIcon: {
     fontSize: '2rem',
@@ -27,6 +26,7 @@ const styles = {
   },
   "@media (max-width: 600px)": {
     py: 4,
+    pl: 2,
   },
 };
 
