@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div className="App" id="container">
-      
+      <main>
         <div id="back-to-top-anchor"></div>
         <ResponsiveAppBar
           loggedInUser={loggedInUser}
@@ -60,7 +60,7 @@ function App() {
           <Route path="/events" element={<Events />} />
         </Routes>
         <BackToTop />
-      
+      </main>
       <Footer />
     </div>
   );
