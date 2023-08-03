@@ -7,6 +7,8 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import {useMediaQuery} from '@mui/material';
+
 
 const styles = {
   width: "100%",
@@ -25,6 +27,8 @@ const styles = {
 };
 
 const Footer = () => {
+  const isSmallScreen = useMediaQuery("(max-width:600px)");
+
   const items = [
     "Careers and Opportunities",
     "Subscribe",
@@ -65,7 +69,7 @@ const Footer = () => {
           </Typography>
           <List
             sx={{
-              display: "flex",
+              display: isSmallScreen ? 'relative' : "flex",
               justifyContent: "center",
               alignItems: "center",
             }}

@@ -32,39 +32,37 @@ function App() {
       .then((json) => {
         setLoggedInUser(null);
       });
-  };   
+  };
 
   return (
-    <>
+    <div className="App" id="container">
       <main>
-        <div id='back-to-top-anchor'></div>
+        <div id="back-to-top-anchor"></div>
         <ResponsiveAppBar
           loggedInUser={loggedInUser}
           handleLogout={handleLogout}
         />
-        <div className="App" id="container">
-          <Routes>
-            <Route
-              path="/signup"
-              element={<SignupForm setLoggedInUser={setLoggedInUser} />}
-            />
-            <Route
-              path="/login"
-              element={<LoginForm setLoggedInUser={setLoggedInUser} />}
-            />
-            <Route path="/" element={<Home />} />
-            <Route path="/artwork/new" element={<ArtworkForm />} />
-            <Route path="/artworks/:id" element={<ArtworkShow />} />
-            <Route path="/artworks" element={<Artworks />} />
-            <Route path="/events/:eventId" element={<EventShow />} />
-            <Route path="/events" element={<Events />} />
 
-          </Routes>
-          <BackToTop />
-        </div>
+        <Routes>
+          <Route
+            path="/signup"
+            element={<SignupForm setLoggedInUser={setLoggedInUser} />}
+          />
+          <Route
+            path="/login"
+            element={<LoginForm setLoggedInUser={setLoggedInUser} />}
+          />
+          <Route path="/" element={<Home />} />
+          <Route path="/artwork/new" element={<ArtworkForm />} />
+          <Route path="/artworks/:id" element={<ArtworkShow />} />
+          <Route path="/artworks" element={<Artworks />} />
+          <Route path="/events/:eventId" element={<EventShow />} />
+          <Route path="/events" element={<Events />} />
+        </Routes>
+        <BackToTop />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
