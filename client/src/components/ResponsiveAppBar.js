@@ -100,6 +100,10 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
             paddingTop: isScrolled || !isHomePage || isSmallScreen ? 0 : 3,
             transition: "padding-top 0.3s ease",
             height: "45px",
+            "@media (max-width: 600px)": {
+              display: "flex",
+              justifyContent: "space-between",
+            },
           }}
         >
           <Box id="logo-title">
@@ -158,7 +162,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
               </Tooltip>
               <Menu
                 sx={{ mt: "45px" }}
-                id="menu-appbar"
+                id="mobile-menu"
                 anchorEl={anchorElUser}
                 anchorOrigin={{
                   vertical: "top",
@@ -195,10 +199,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
               </Menu>
             </Box>
           )}
-          <Box
-            id="hamburger"
-            sx={{ flexGrow: 1, display: { xs: "flex", sm: "none" } }}
-          >
+          <Box id="hamburger" sx={{ display: { xs: "flex", sm: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -225,9 +226,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
               onClose={handleCloseNavMenu}
             >
               <Link to="/artworks">
-                <MenuItem
-                  onClick={handleCloseNavMenu}
-                >
+                <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">Artworks</Typography>
                 </MenuItem>
               </Link>
