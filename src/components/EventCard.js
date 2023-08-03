@@ -12,7 +12,7 @@ const EventCard = ({ event }) => {
         display: "flex",
         paddingTop: "30px",
         paddingBottom: "30px",
-        justifyContent: "space-between",
+        justifyContent: "center",
         flexGrow: 0,
         flexShrink: 1,
         flexBasis: "auto",

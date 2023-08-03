@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import EventCard from "./EventCard";
 
-const styles = { maxWidth: "1111px" };
+const styles = { maxWidth: "1111px",
+display: "flex",
+flexDirection: "column",
+alignItems: "center",};
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -21,13 +24,13 @@ const Events = () => {
 
   return (
     <Box sx={styles}>
-      <Box height={80}></Box>
+      <Box height={110}></Box>
       <Typography
         sx={{
           textAlign: "left",
           fontFamily: "Georgia",
-          fontSize: "2.2rem",
-          mb: 4,
+          fontSize: "2.5rem",
+          width: "100%",
         }}
       >
         Events

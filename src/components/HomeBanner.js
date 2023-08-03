@@ -13,7 +13,7 @@ const styles = {
   justifyContent: "space-between",
   alignItems: "bottom",
   "@media (max-width: 600px)": {
-    backgroundPosition: "-120px center",
+    backgroundPosition: "-120px center", 
   },
 };
 
