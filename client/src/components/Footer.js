@@ -9,7 +9,6 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import {useMediaQuery} from '@mui/material';
 
-
 const styles = {
   width: "100%",
   height: "320px",
@@ -17,12 +16,17 @@ const styles = {
   backgroundColor: "#3c3f42",
   display: "flex",
   justifyContent: "center",
-  paddingY: 8,
+  py: 8,
+  mb: 3,
+  px: 1,
   mt: 0,
   socialMediaIcon: {
     fontSize: '2rem',
     marginRight: 2,
     color: "gray",
+  },
+  "@media (max-width: 600px)": {
+    py: 4,
   },
 };
 
@@ -86,7 +90,7 @@ const Footer = () => {
               </ListItem>
             ))}
           </List>
-          <p>React Drive, Ruby Park, Seattle, WA 55555-1380 | 555.555.5555</p>
+          {/* <p>React Drive, Ruby Park, Seattle, WA 55555-1380 | 555.555.5555</p> */}
         </Box>
         <Box>
           <FacebookIcon sx={styles.socialMediaIcon} />
