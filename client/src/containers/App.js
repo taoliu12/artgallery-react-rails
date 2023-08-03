@@ -11,7 +11,6 @@ import SignupForm from "./SignupForm";
 import LoginForm from "./LoginForm";
 import Footer from "../components/Footer";
 import EventShow from "../components/EventShow";
-
 import "./App.scss";
 
 function App() {
@@ -36,13 +35,12 @@ function App() {
 
   return (
     <div className="App" id="container">
+      <div id="back-to-top-anchor"></div>
       <main>
-        <div id="back-to-top-anchor"></div>
         <ResponsiveAppBar
           loggedInUser={loggedInUser}
           handleLogout={handleLogout}
         />
-
         <Routes>
           <Route
             path="/signup"
