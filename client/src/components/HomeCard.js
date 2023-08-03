@@ -17,6 +17,9 @@ const HomeCard = ({ event, index = 0 }) => {
     color: "white",
     justifyContent: "center",
     backgroundColor: getColor(),
+    "@media (max-width: 600px)": {
+      height: "250px",
+    },
   };
 
   const textBox = (
@@ -60,6 +63,9 @@ const HomeCard = ({ event, index = 0 }) => {
             mb: 2,
             "&:hover": {
               textDecoration: "underline",
+            },
+            "@media (max-width: 600px)": {
+              fontSize: 35,
             },
           }}
         >
