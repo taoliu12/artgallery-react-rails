@@ -5,10 +5,16 @@ import ArtworkCard from "../components/ArtworkCard";
 import SearchForm from "./SearchForm";
 import Button from "@mui/material/Button";
 import "./Artworks.scss";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
-import Box from "@mui/material/Box";
 import CircularProgress from "@mui/material/CircularProgress";
+import {
+  Modal,
+  Box,
+  Typography,
+  IconButton,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
 const style = {
   position: "absolute",
@@ -31,6 +37,8 @@ function ArtworkGallery() {
   const [searchParam, setSearchParam] = useState("");
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(1);
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const [selectedArtwork, setSelectedArtwork] = useState(null);
 
@@ -84,7 +92,99 @@ function ArtworkGallery() {
     fetchSearchedArtworks(searchQuery, 1);
   };
 
-  console.log("search new artworks state", searchArtworksResult.length);
+  const modal = (
+    <Modal
+      open={selectedArtwork !== null}
+      onClose={handleCloseModal}
+      aria-labelledby="modal-modal-title"
+      aria-describedby="modal-modal-description"
+    >
+      <Box className="artwork-modal" sx={style}>
+        <Typography
+          sx={{
+            fontWeight: "bold",
+            fontFamily: "Georgia",
+            fontSize: "1.6rem",
+            lineHeight: "1.6rem",
+            mt: 2,
+            mb: 1,
+            textTransform: "none",
+          }}
+        >
+          {selectedArtwork?.title}
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: "1rem",
+            textTransform: "none",
+          }}
+        >
+          {selectedArtwork?.artist} {selectedArtwork?.description}
+        </Typography>
+        <br />
+        <img src={selectedArtwork?.url} alt="artwork" />
+      </Box>
+    </Modal>
+  );
+
+  const mobileModal = (
+    <Modal
+      open={selectedArtwork !== null}
+      onClose={handleCloseModal}
+      aria-labelledby="modal-modal-title"
+      aria-describedby="modal-modal-description"
+    >
+      <Box
+        className="artwork-modal-mobile"
+        sx={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          backgroundColor: "white",
+          padding: "16px",
+          borderRadius: "8px",
+          maxWidth: "90%",
+        }}
+      >
+        <IconButton
+          aria-label="Close"
+          color="inherit"
+          onClick={handleCloseModal}
+          sx={{
+            position: "absolute",
+            top: "8px",
+            right: "8px",
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+        <Typography
+          sx={{
+            fontWeight: "bold",
+            fontFamily: "Georgia",
+            fontSize: "1.6rem",
+            lineHeight: "1.6rem",
+            mt: 2,
+            mb: 1,
+            textTransform: "none",
+          }}
+        >
+          {selectedArtwork?.title}
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: "1rem",
+            textTransform: "none",
+          }}
+        >
+          {selectedArtwork?.artist} {selectedArtwork?.description}
+        </Typography>
+        <br />
+        <img src={selectedArtwork?.url} alt="artwork" />
+      </Box>
+    </Modal>
+  );
 
   return (
     <div>
@@ -115,47 +215,15 @@ function ArtworkGallery() {
           );
         })}
       </div>
-      <Modal
-        open={selectedArtwork !== null}
-        onClose={handleCloseModal}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box className="artwork-modal" sx={style}>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              fontFamily: "Georgia",
-              fontSize: "1.6rem",
-              lineHeight: "1.6rem",
-              mt: 2,
-              mb: 1,
-              textTransform: "none",
-            }}
-          >
-            {selectedArtwork?.title}
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: "1rem",
-              textTransform: "none",
-            }}
-          >
-            {selectedArtwork?.artist} {selectedArtwork?.description}
-          </Typography>
-          <br />
-          <img src={selectedArtwork?.url} alt="artwork" />
-        </Box>
-      </Modal>
+      {isSmallScreen ? mobileModal : modal}
+
       <InfiniteScroll
         dataLength={searchArtworksResult.length}
         next={loadArtworks}
         hasMore={hasMore}
         loader={
           <Box sx={{ marginTop: 11, height: 600 }}>
-            <CircularProgress
-              style={{ width: 45, height: 45 }}
-            />
+            <CircularProgress style={{ width: 45, height: 45 }} />
           </Box>
         }
       ></InfiniteScroll>

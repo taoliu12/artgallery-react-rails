@@ -7,7 +7,7 @@ const ArtworkCard = (props) => {
   const handleImageLoad = () => {
     setImageLoaded(true);
   };
-  console.log(props.artwork.title);
+  // console.log(props.artwork.title);
   return (
     <div className="ArtworkCard">
       
