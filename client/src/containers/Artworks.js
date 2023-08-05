@@ -37,10 +37,9 @@ function ArtworkGallery() {
   const [searchParam, setSearchParam] = useState("");
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(1);
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
-
   const [selectedArtwork, setSelectedArtwork] = useState(null);
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   const handleOpenModal = (artwork) => {
     setSelectedArtwork(artwork);
@@ -138,13 +137,15 @@ function ArtworkGallery() {
         className="artwork-modal-mobile"
         sx={{
           position: "absolute",
+          display: 'flex',
+          flexDirection: "column",
+          alignItems: "center",
+          pb: 3,
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          backgroundColor: "white",
-          padding: "16px",
-          borderRadius: "8px",
-          maxWidth: "90%",
+          backgroundColor: "#f3f4e0",
+          maxWidth: "100%",
         }}
       >
         <IconButton
@@ -181,7 +182,11 @@ function ArtworkGallery() {
           {selectedArtwork?.artist} {selectedArtwork?.description}
         </Typography>
         <br />
-        <img src={selectedArtwork?.url} alt="artwork" />
+        <img
+          src={selectedArtwork?.url}
+          alt="artwork"
+          style={{ maxWidth: "100vw", height: "auto" }}
+        />
       </Box>
     </Modal>
   );
