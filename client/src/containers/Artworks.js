@@ -148,20 +148,9 @@ function ArtworkGallery() {
           width: "100%",
         }}
       >
-        <IconButton
-          aria-label="Close"
-          color="inherit"
-          onClick={handleCloseModal}
-          sx={{
-            position: "absolute",
-            top: "8px",
-            right: "8px",
-          }}
-        >
-          <CloseIcon />
-        </IconButton>
         <Typography
           sx={{
+            textAlign: "center",
             fontWeight: "bold",
             fontFamily: "Georgia",
             fontSize: "1.6rem",
@@ -175,6 +164,7 @@ function ArtworkGallery() {
         </Typography>
         <Typography
           sx={{
+            textAlign: "center",
             fontSize: "1rem",
             textTransform: "none",
           }}
