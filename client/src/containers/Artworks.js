@@ -137,9 +137,8 @@ function ArtworkGallery() {
         className="artwork-modal-mobile"
         sx={{
           position: "absolute",
-          display: 'flex',
+          display: "flex",
           flexDirection: "column",
-          alignItems: "center",
           pb: 3,
           top: "50%",
           left: "50%",
@@ -148,6 +147,16 @@ function ArtworkGallery() {
           width: "100%",
         }}
       >
+        <Box sx={{display: "flex",   justifyContent: 'flex-end', pt:1, pr: 2}}>
+          <IconButton
+            aria-label="Close"
+            color="inherit"
+            onClick={handleCloseModal}
+
+          >
+            <CloseIcon />
+          </IconButton>
+        </Box>
         <Typography
           sx={{
             textAlign: "center",
