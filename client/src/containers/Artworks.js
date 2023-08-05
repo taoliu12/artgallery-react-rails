@@ -145,7 +145,7 @@ function ArtworkGallery() {
           left: "50%",
           transform: "translate(-50%, -50%)",
           backgroundColor: "#f3f4e0",
-          maxWidth: "100%",
+          width: "100%",
         }}
       >
         <IconButton
@@ -185,7 +185,7 @@ function ArtworkGallery() {
         <img
           src={selectedArtwork?.url}
           alt="artwork"
-          style={{ maxWidth: "100vw", height: "auto" }}
+          style={{ width: "100%", height: "auto" }}
         />
       </Box>
     </Modal>
