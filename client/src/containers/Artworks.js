@@ -140,9 +140,9 @@ function ArtworkGallery() {
           display: "flex",
           flexDirection: "column",
           pb: 3,
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
+          top: "0",
+          left: "0",
+          // transform: "translate(-50%, -50%)",
           backgroundColor: "#f3f4e0",
           width: "100%",
         }}
