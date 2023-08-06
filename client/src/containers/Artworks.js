@@ -57,7 +57,7 @@ function ArtworkGallery() {
   const fetchArtworks = async (searchParam, pageNum) => {
     try {
       const response = await fetch(
-        `/artworks?search=${searchParam}&page=${pageNum}`
+        `/artworks?search=${searchParam}&page=${pageNum}`,
       );
       const data = await response.json();
       setSearchArtworksResult((prevArtworks) => prevArtworks.concat(data));
@@ -70,7 +70,7 @@ function ArtworkGallery() {
   const fetchSearchedArtworks = async (searchParam, pageNum) => {
     try {
       const response = await fetch(
-        `/artworks?search=${searchParam}&page=${pageNum}`
+        `/artworks?search=${searchParam}&page=${pageNum}`,
       );
       const data = await response.json();
       console.log("setSearchArtworksResult", data);
@@ -140,19 +140,18 @@ function ArtworkGallery() {
           display: "flex",
           flexDirection: "column",
           pb: 3,
-          top: "0",
+          top: "50px",
           left: "0",
           // transform: "translate(-50%, -50%)",
           backgroundColor: "#f3f4e0",
           width: "100%",
         }}
       >
-        <Box sx={{display: "flex",   justifyContent: 'flex-end', pt:1, pr: 2}}>
+        <Box sx={{ display: "flex", justifyContent: "flex-end", pt: 1, pr: 2 }}>
           <IconButton
             aria-label="Close"
             color="inherit"
             onClick={handleCloseModal}
-
           >
             <CloseIcon />
           </IconButton>

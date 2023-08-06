@@ -143,7 +143,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
                 (page) =>
                   page.alwaysShow ||
                   (!page.reqLogin && !loggedInUser) ||
-                  (page.reqLogin && loggedInUser)
+                  (page.reqLogin && loggedInUser),
               )
               .map((page) => (
                 <NavbarButton
@@ -247,7 +247,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
                         <Typography textAlign="center">{page.title}</Typography>
                       </MenuItem>
                     </Link>
-                  )
+                  ),
               )}
             </Menu>
           </Box>

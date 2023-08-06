@@ -1,0 +1,12 @@
+# Ignore artifacts:
+build
+coverage
+
+.byebug_history
+db/development.sqlite3
+tmp/
+log/
+client/package-lock.json
+config/master.key
+/config/master.key
+.byebug_history

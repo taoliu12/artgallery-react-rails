@@ -22,7 +22,6 @@ Run `npm install` to install all package dependencies
 
 Start up React server and enjoy the app! `npm start`
 
-
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
@@ -30,4 +29,3 @@ Bug reports and pull requests are welcome on GitHub. This project is intended to
 ## License
 
 This project is licensed under the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for details.
-
