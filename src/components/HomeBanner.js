@@ -13,7 +13,7 @@ const styles = {
   justifyContent: "space-between",
   alignItems: "bottom",
   "@media (max-width: 600px)": {
-    backgroundPosition: "-120px center", 
+    backgroundPosition: "-120px center",
   },
 };
 
@@ -40,7 +40,7 @@ const HomeBanner = () => {
         <Box
           sx={{
             display: "flex",
-            // flexDirection: isSmallDevice ? "column" : "row",             
+            // flexDirection: isSmallDevice ? "column" : "row",
             maxWidth: "1000px",
             width: "100%",
             justifyContent: "space-between",

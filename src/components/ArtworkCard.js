@@ -10,7 +10,6 @@ const ArtworkCard = (props) => {
   // console.log(props.artwork.title);
   return (
     <div className="ArtworkCard">
-      
       <div className="card-image-div">
         {!imageLoaded && (
           <Skeleton variant="rounded" height={200} animation="wave" />

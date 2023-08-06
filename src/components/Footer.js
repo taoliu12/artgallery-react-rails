@@ -7,7 +7,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import {useMediaQuery} from '@mui/material';
+import { useMediaQuery } from "@mui/material";
 
 const styles = {
   width: "100%",
@@ -20,7 +20,7 @@ const styles = {
   py: 8,
   mt: 0,
   socialMediaIcon: {
-    fontSize: '2rem',
+    fontSize: "2rem",
     marginRight: 2,
     color: "gray",
   },
@@ -73,7 +73,7 @@ const Footer = () => {
           </Typography>
           <List
             sx={{
-              display: isSmallScreen ? 'relative' : "flex",
+              display: isSmallScreen ? "relative" : "flex",
               justifyContent: "center",
               alignItems: "center",
             }}
