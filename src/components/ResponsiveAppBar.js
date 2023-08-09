@@ -1,43 +1,40 @@
-import React, { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import ColorLensIcon from "@mui/icons-material/ColorLens";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import { useMediaQuery } from "@mui/material";
-import { textShadow } from "@mui/system";
-import NavbarButton from "./NavbarButton";
-import { useLocation } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import { useMediaQuery } from '@mui/material';
+import NavbarButton from './NavbarButton';
+import { useLocation } from 'react-router-dom';
 
 const pages = [
-  { title: "Artworks", route: "/artworks", reqLogin: false, alwaysShow: true },
+  { title: 'Artworks', route: '/artworks', reqLogin: false, alwaysShow: true },
   // { title: "Articles", route: "/articles", reqLogin: false, alwaysShow: true },
-  { title: "Events", route: "/events", reqLogin: false, alwaysShow: true },
-  { title: "My Favorites", route: "/favorite_artworks", reqLogin: true },
-  { title: "Submit Artwork", route: "/artworks/new", reqLogin: true },
+  { title: 'Events', route: '/events', reqLogin: false, alwaysShow: true },
+  { title: 'My Favorites', route: '/favorite_artworks', reqLogin: true },
+  { title: 'Submit Artwork', route: '/artworks/new', reqLogin: true },
   // { title: "Signup", route: "/signup", reqLogin: false },
   // { title: "Login", route: "/login", reqLogin: false },
 ];
 
 const settings = [
-  { title: "Profile", route: "/profile" },
-  { title: "Logout", route: "/logout" },
+  { title: 'Profile', route: '/profile' },
+  { title: 'Logout', route: '/logout' },
 ];
 
 function ResponsiveAppBar({ loggedInUser, handleLogout }) {
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
+  const isHomePage = location.pathname === '/';
   const [isScrolled, setIsScrolled] = useState(false);
-  const isSmallScreen = useMediaQuery("(max-width:600px)");
+  const isSmallScreen = useMediaQuery('(max-width:600px)');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,9 +43,9 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
       setIsScrolled(scrollTop > 0);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -73,24 +70,24 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
   return (
     <AppBar
       className={
-        isScrolled || !isHomePage || isSmallScreen ? "" : "transparentAppBar"
+        isScrolled || !isHomePage || isSmallScreen ? '' : 'transparentAppBar'
       }
       position="static"
       sx={{
-        color: "white",
+        color: 'white',
         position: `fixed !important`,
         backgroundColor:
           isScrolled || !isHomePage || isSmallScreen
-            ? "#00438A"
-            : "transparent",
+            ? '#00438A'
+            : 'transparent',
         boxShadow:
           isScrolled || !isHomePage || isSmallScreen
-            ? "0 2px 4px rgba(0, 0, 0, 0.4)"
-            : "none",
-        transition: "background-color 0.3s ease, box-shadow 0.3s ease",
-        textShadow: "0px 0px 3px #00000",
-        zIndex: "11",
-        height: "65px",
+            ? '0 2px 4px rgba(0, 0, 0, 0.4)'
+            : 'none',
+        transition: 'background-color 0.3s ease, box-shadow 0.3s ease',
+        textShadow: '0px 0px 3px #00000',
+        zIndex: '11',
+        height: '65px',
       }}
     >
       <Container maxWidth="xl">
@@ -98,31 +95,31 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
           disableGutters
           sx={{
             paddingTop: isScrolled || !isHomePage || isSmallScreen ? 0 : 3,
-            transition: "padding-top 0.3s ease",
-            height: "45px",
-            "@media (max-width: 600px)": {
-              display: "flex",
-              justifyContent: "space-between",
+            transition: 'padding-top 0.3s ease',
+            height: '45px',
+            '@media (max-width: 600px)': {
+              display: 'flex',
+              justifyContent: 'space-between',
             },
           }}
         >
           <Box id="logo-title">
-            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+            <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
               <Typography
                 sx={{
                   mr: 2,
                   marginTop:
                     isScrolled || !isHomePage || isSmallScreen ? -1 : 0,
-                  fontFamily: "Georgia, serif",
+                  fontFamily: 'Georgia, serif',
                   fontWeight: 300,
                   fontSize:
                     isScrolled || !isHomePage || isSmallScreen
-                      ? "30px"
-                      : "50px",
-                  letterSpacing: "0px",
-                  color: "inherit",
-                  textDecoration: "none",
-                  transition: "font-size 0.3s ease, margin-top 0.3s ease",
+                      ? '30px'
+                      : '50px',
+                  letterSpacing: '0px',
+                  color: 'inherit',
+                  textDecoration: 'none',
+                  transition: 'font-size 0.3s ease, margin-top 0.3s ease',
                   wordWrap: true,
                 }}
               >
@@ -134,8 +131,8 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
             id="horizontal-nav-links"
             sx={{
               flexGrow: 1,
-              textAlign: "right",
-              display: { xs: "none", sm: "flex", md: "flex" },
+              textAlign: 'right',
+              display: { xs: 'none', sm: 'flex', md: 'flex' },
             }}
           >
             {pages
@@ -143,7 +140,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
                 (page) =>
                   page.alwaysShow ||
                   (!page.reqLogin && !loggedInUser) ||
-                  (page.reqLogin && loggedInUser),
+                  (page.reqLogin && loggedInUser)
               )
               .map((page) => (
                 <NavbarButton
@@ -161,17 +158,17 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
                 </IconButton>
               </Tooltip>
               <Menu
-                sx={{ mt: "45px" }}
+                sx={{ mt: '45px' }}
                 id="mobile-menu"
                 anchorEl={anchorElUser}
                 anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
+                  vertical: 'top',
+                  horizontal: 'right',
                 }}
                 keepMounted
                 transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
+                  vertical: 'top',
+                  horizontal: 'right',
                 }}
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
@@ -179,7 +176,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
                 <Link to="/profile">
                   <MenuItem onClick={handleCloseUserMenu}>
                     <Typography
-                      sx={{ my: 2, color: "black" }}
+                      sx={{ my: 2, color: 'black' }}
                       textAlign="center"
                     >
                       Profile
@@ -189,7 +186,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
                 <Link to="" onClick={handleLogout}>
                   <MenuItem onClick={handleCloseUserMenu}>
                     <Typography
-                      sx={{ my: 2, color: "black" }}
+                      sx={{ my: 2, color: 'black' }}
                       textAlign="center"
                     >
                       Logout
@@ -199,7 +196,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
               </Menu>
             </Box>
           )}
-          <Box id="hamburger" sx={{ display: { xs: "flex", sm: "none" } }}>
+          <Box id="hamburger" sx={{ display: { xs: 'flex', sm: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -214,26 +211,44 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "right",
+                vertical: 'bottom',
+                horizontal: 'right',
               }}
               keepMounted
               transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
+                vertical: 'top',
+                horizontal: 'right',
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
             >
-              <Link to="/artworks">
+              <Link
+                to="/artworks"
+                style={{
+                  textDecoration: 'none',
+                  color: 'white',
+                  '&:hover': {
+                    textDecoration: 'underline',
+                  },
+                }}
+              >
                 <MenuItem
                   onClick={handleCloseNavMenu}
-                  sx={{ textDecoration: "none", fontSize: 2 }}
+                  sx={{ textDecoration: 'none', fontSize: 2 }}
                 >
                   <Typography textAlign="center">Artworks</Typography>
                 </MenuItem>
               </Link>
-              <Link to="/events">
+              <Link
+                to="/events"
+                style={{
+                  textDecoration: 'none',
+                  color: 'white',
+                  '&:hover': {
+                    textDecoration: 'underline',
+                  },
+                }}
+              >
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">Events</Typography>
                 </MenuItem>
@@ -247,7 +262,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
                         <Typography textAlign="center">{page.title}</Typography>
                       </MenuItem>
                     </Link>
-                  ),
+                  )
               )}
             </Menu>
           </Box>
