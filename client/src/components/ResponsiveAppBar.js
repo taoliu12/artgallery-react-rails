@@ -108,8 +108,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
               <Typography
                 sx={{
                   mr: 2,
-                  marginTop:
-                    isScrolled || !isHomePage || isSmallScreen ? -1 : 0,
+                  marginTop: (isScrolled || !isHomePage) && !isSmallScreen ? -1 : 0,
                   fontFamily: 'Georgia, serif',
                   fontWeight: 300,
                   fontSize:
