@@ -7,6 +7,7 @@ import { formatDate } from "../utils/formatTime";
 const Container = styled("div")({
   maxWidth: "750px",
   textAlign: "left",
+  margin: "0 20px",
   marginTop: 30,
 });
 
