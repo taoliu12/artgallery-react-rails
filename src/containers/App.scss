@@ -202,7 +202,9 @@ header {
     height: 15px;
     background-color: white;
     border-radius: 1000px;
-    transition: margin-left 0.2s ease-in, background-color 0.2s ease-in;
+    transition:
+      margin-left 0.2s ease-in,
+      background-color 0.2s ease-in;
 
     &.toggle-active {
       margin-left: 20px;

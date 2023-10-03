@@ -1,4 +1,4 @@
-.ArtworksContainer {  
+.ArtworksContainer {
   display: flex;
   flex-wrap: wrap;
   max-width: 1400px;
@@ -20,19 +20,23 @@
   overflow: hidden;
   max-height: 433px;
   border-radius: 1%;
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   &:hover {
-    box-shadow: 2px 2px 11px rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.2);
   }
+}
+
+main {
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-device-width: 5in) {
   .ArtworkCard {
     width: 100%;
-       margin-block: 10px;
-       margin-inline: 0px;
+    margin-block: 10px;
+    margin-inline: 0px;
   }
-
   main {
     padding: 0px;
   }
@@ -44,7 +48,7 @@
   overflow: hidden;
 }
 
-.ArtworkCard  h3 {
+.ArtworkCard h3 {
   font-size: 20px;
   line-height: 1;
   margin-bottom: 15px;

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react"; 
 import { Box, Typography } from "@mui/material";
 import EventCard from "./EventCard";
 
@@ -38,16 +37,9 @@ const Events = () => {
       >
         Events
       </Typography>
-      {events?.map((event, index) => (
+      {events?.map((event, idx) => (
         <>
-          {/* <Box
-            sx={{
-              height: "2px",
-              backgroundColor: "#E8E8E8",
-            }}
-          >             
-          </Box> */}
-          <EventCard event={event} />
+          <EventCard event={event} key={idx}/>
         </>
       ))}
       <Box height={80}></Box>

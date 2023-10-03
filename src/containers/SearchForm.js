@@ -74,7 +74,8 @@ export default function SearchForm({ searchArtworks, setPage }) {
         </Box>
       </form>
       {searchParam == "" ? null : (
-        <Button className="submit-btn"
+        <Button
+          className="submit-btn"
           onClick={resetSearch}
           sx={{
             margin: "auto",
