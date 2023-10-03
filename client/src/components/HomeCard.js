@@ -36,8 +36,7 @@ const HomeCard = ({ event, index = 0 }) => {
           height: "100%",
           backgroundColor: getColor(),
           display: "flex",
-          flexDirection: "column",
-          // justifyContent: "flex-start",
+          flexDirection: "column",           
           justifyContent: "space-between",
           paddingX: 5,
           pt: 4,
@@ -75,8 +74,7 @@ const HomeCard = ({ event, index = 0 }) => {
               color: "white",
             }}
             to={{
-              pathname: `/events/${event.id}`,
-              // state: { event }, // Pass the event object as state
+              pathname: `/events/${event.id}`,               
             }}
             key={event.id}
           >
@@ -137,8 +135,7 @@ const HomeCard = ({ event, index = 0 }) => {
           },
         }}
         to={{
-          pathname: `/events/${event.id}`,
-          // state: { event }, // Pass the event object as state
+          pathname: `/events/${event.id}`,           
         }}
         key={event.id}
       >

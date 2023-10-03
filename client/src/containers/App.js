@@ -4,14 +4,12 @@ import Home from "../components/Home";
 import ResponsiveAppBar from "../components/ResponsiveAppBar";
 import Events from "../components/Events";
 import Artworks from "./Artworks";
-import ArtworkShow from "./ArtworkShow";
 import ArtworkForm from "./ArtworkForm";
 import BackToTop from "../components/BackToTop";
 import SignupForm from "./SignupForm";
 import LoginForm from "./LoginForm";
 import Footer from "../components/Footer";
 import EventShow from "../components/EventShow";
-
 import "./App.scss";
 
 function App() {
@@ -36,13 +34,12 @@ function App() {
 
   return (
     <div className="App" id="container">
-      
-        <div id="back-to-top-anchor"></div>
+      <div id="back-to-top-anchor"></div>
+      <main>
         <ResponsiveAppBar
           loggedInUser={loggedInUser}
           handleLogout={handleLogout}
         />
-
         <Routes>
           <Route
             path="/signup"
@@ -54,13 +51,12 @@ function App() {
           />
           <Route path="/" element={<Home />} />
           <Route path="/artwork/new" element={<ArtworkForm />} />
-          <Route path="/artworks/:id" element={<ArtworkShow />} />
           <Route path="/artworks" element={<Artworks />} />
           <Route path="/events/:eventId" element={<EventShow />} />
           <Route path="/events" element={<Events />} />
         </Routes>
         <BackToTop />
-      
+      </main>
       <Footer />
     </div>
   );

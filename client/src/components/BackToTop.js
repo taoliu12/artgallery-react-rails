@@ -17,7 +17,7 @@ function ScrollTop(props) {
 
   const handleClick = (event) => {
     const anchor = (event.target.ownerDocument || document).querySelector(
-      "#back-to-top-anchor"
+      "#back-to-top-anchor",
     );
 
     if (anchor) {
@@ -47,7 +47,7 @@ export default function BackToTop(props) {
         <Button
           aria-label="scroll back to top"
           sx={{
-            textTransform: 'none',
+            textTransform: "none",
             letterSpacing: 0,
             borderRadius: 5,
             px: 1,

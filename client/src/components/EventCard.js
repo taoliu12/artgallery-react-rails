@@ -16,7 +16,6 @@ const EventCard = ({ event }) => {
         flexGrow: 0,
         flexShrink: 1,
         flexBasis: "auto",
-        // lineHeight: "33px",
         textAlign: "left",
         width: "100%",
       }}
@@ -69,8 +68,7 @@ const EventCard = ({ event }) => {
             <Link
               style={{ textDecoration: "none", color: "black" }}
               to={{
-                pathname: `/events/${event.id}`,
-                // state: { event }, // Pass the event object as state
+                pathname: `/events/${event.id}`,                 
               }}
               key={event.id}
             >
@@ -99,22 +97,6 @@ const EventCard = ({ event }) => {
           </Box>
         </Box>
       </Box>
-      {/* <Box
-        sx={{
-          width: "auto",
-          paddingTop: "0px",
-          paddingRight: "0px",
-          paddingLeft: "10px",
-          textAlign: "right",
-          objectFit: "fill",
-          "@media (max-width: 600px)": {
-            marginTop: "14px",
-            textAlign: "center",
-          },
-        }}
-      >
-        <h3>image</h3>
-      </Box> */}
     </Box>
   );
 };

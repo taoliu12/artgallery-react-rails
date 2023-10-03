@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './containers/App';
-import * as serviceWorker from './serviceWorker';
-import store from './store'
-import { Provider } from 'react-redux'
-import { BrowserRouter } from 'react-router-dom';
-import { StyledEngineProvider } from '@mui/material/styles';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./containers/App";
+import * as serviceWorker from "./serviceWorker";
+import store from "./store";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import { StyledEngineProvider } from "@mui/material/styles";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <React.StrictMode>
@@ -18,7 +18,7 @@ root.render(
         </Provider>
       </StyledEngineProvider>
     </React.StrictMode>
-  </BrowserRouter>
+  </BrowserRouter>,
 );
 
 // If you want your app to work offline and load faster, you can change
