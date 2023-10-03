@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import EventCard from "./EventCard";
 
-const styles = { maxWidth: "1111px",
-display: "flex",
-flexDirection: "column",
-alignItems: "center",};
+const styles = {
+  maxWidth: "1111px",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  margin: "0 20px",
+};
 
 const Events = () => {
   const [events, setEvents] = useState([]);
