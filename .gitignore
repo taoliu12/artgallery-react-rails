@@ -6,5 +6,5 @@ client/package-lock.json
 client/node_modules
 node_modules/
 config/master.key
-/config/master.key
-.byebug_history
+config/secrets.yml
+.env
