@@ -7,3 +7,4 @@ client/node_modules
 node_modules/
 config/master.key
 config/secrets.yml
+.env
