@@ -10,7 +10,7 @@ gem "rails", "~> 6.0"
 gem "pg"
 gem "faker"
 gem "httparty"
-gem "dotenv"
+gem 'dotenv-rails', groups: [:development, :test]
 gem "fast_jsonapi"
 gem "pagy"
 gem "bundler-audit"
